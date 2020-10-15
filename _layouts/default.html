@@ -21,7 +21,7 @@
           <img class="logo" src="{{site.logo | relative_url }}" alt="Logo" />
         {% endif %} -->
 
-        <p style="text-align: center; margin-top: 12px; padding: 20px; ">{{ site.description | default: site.github.project_tagline }}</p>
+        <p class="headline">{{ site.description | default: site.github.project_tagline }}</p>
         <div class="contacts">
           <a href="https://www.linkedin.com/in/jeongwon-yoo/"><span><i class="fab fa-linkedin-in"></i></span></a>
           <a href="https://github.com/hannah26hannah?tab=repositories"><span><i class="fab fa-github"></i></span></a>
@@ -33,11 +33,11 @@
         </div>
         <hr>
         <div class="category">
-          <span>About me</span>
-          <span>Portfolio</span>
-          <span>Resume</span>
-          <span>blog</span>
-          <span>contact</span>
+          <a href="#about"><span>About me</span></a>
+          <a href="#portfolio"><span>Portfolio</span></a>
+          <a href="#"><span>Resume</span></a>
+          <a href="#"><span>blog</span></a>
+          <a href="#contact"><span>contact</span></a>
         </div>
         <!-- {% if site.github.is_project_page %}
         <p class="view"><a href="{{ site.github.repository_url }}">View the Project on GitHub <small>{{ site.github.repository_nwo }}</small></a></p>
