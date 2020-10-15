@@ -217,19 +217,16 @@ a { color: black; }
 
 a:hover { color: #F8C291; }
 
-@media print, screen and (max-width: 960px) { body header { padding: 0; }
-  body section { padding: 20px 20px; } }
-@media print, screen and (max-width: 720px) { div.wrapper { width: auto; margin: 0; }
-  div.wrapper body { padding: 0; margin: 0; } }
-@media print, screen and (max-width: 480px) { body { padding: 0; margin: 0; } }
-body { width: 80%; height: 100%; }
-body header { background-color: #777068; position: relative; }
-body header h1 { font-family: 'Rubik Mono One', sans-serif; font-size: 35px; line-height: 47px; padding: 7px 0 0 20px; }
-body header .profile { width: 158px; box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.5); background-image: url("/images/jung.jpg"); background-repeat: no-repeat; background-size: cover; display: block; margin-left: auto; margin-right: auto; border-radius: 50%; }
-body header .contacts { display: flex; justify-content: space-around; }
-body header .contacts span { font-size: 28px; }
-body header .sub-contacts { margin-top: 10px; margin-bottom: 22px; text-align: center; display: flex; flex-direction: column; }
-body header .category { margin-top: 20px; padding-bottom: 50px; display: flex; flex-direction: column; justify-content: center; align-items: center; }
-body header .category span { display: block; font-family: 'Rubik Mono One', sans-serif; font-size: 23px; line-height: 30px; }
-body section { padding-top: 13px; }
-body section .c_footer { font-size: 11px; }
+@media print, screen and (max-width: 960px) { header { padding: 0 !important; } }
+@media print, screen and (max-width: 720px) { header { padding: 0 !important; } }
+body .wrapper header { background-color: #777068; position: relative; margin-bottom: 25px; }
+body .wrapper header h1 { font-family: 'Rubik Mono One', sans-serif; font-size: 35px; line-height: 47px; padding: 7px 0 0 20px; }
+body .wrapper header .profile { width: 158px; box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.5); background-image: url("/images/jung.jpg"); background-repeat: no-repeat; background-size: cover; display: block; margin-left: auto; margin-right: auto; border-radius: 50%; }
+body .wrapper header .contacts { display: flex; justify-content: space-around; }
+body .wrapper header .contacts span { font-size: 28px; }
+body .wrapper header .sub-contacts { margin-top: 10px; margin-bottom: 22px; text-align: center; display: flex; flex-direction: column; }
+body .wrapper header .category { margin-top: 20px; padding-bottom: 50px; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+body .wrapper header .category span { display: block; font-family: 'Rubik Mono One', sans-serif; font-size: 23px; line-height: 30px; }
+body .wrapper section { padding-top: 13px; }
+body .wrapper section h1, body .wrapper section h2, body .wrapper section h3, body .wrapper section h4 { font-family: 'Rubik Mono One', sans-serif; border-left: 5px solid #F8C291; padding-left: 10px; }
+body .wrapper section .c_footer { font-size: 11px; }

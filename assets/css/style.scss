@@ -14,43 +14,67 @@ a:hover {
 }
 
 // media query
+// @media print, screen and (min-width: 960px) and (max-width: 1100px) {
+//     .wrapper {
+//         width: 100%;
+//     }
+// }
+// @media print, screen and (max-width: 1100px) {
+//     body {
+//         div.wrapper {
+//             width: 84%;
+//             margin: 0;
+//             header {
+//                 padding: 0;
+//             }
+//             section {
+//                 padding: 20px 20px;
+//             }
+//         }
+//     }
+// }
+
+// @media print, screen and (max-width: 720px) {
+//     div.wrapper {
+//         width: auto;
+//         margin: 0;
+//     body {
+//         padding: 0;
+//         margin: 0;
+//     }
+//     }
+// }
 @media print, screen and (max-width: 960px) {
-    body {
-        header {
-            padding: 0;
-        }
-        section {
-            padding: 20px 20px;
-        }
+    header {
+        padding : 0 !important; 
     }
 }
-
 @media print, screen and (max-width: 720px) {
-    div.wrapper {
-        width: auto;
-        margin: 0;
-    body {
-        padding: 0;
-        margin: 0;
-    }
+    header {
+        padding : 0 !important; 
     }
 }
 
-@media print, screen and (max-width: 480px) {
-    body {
-        padding: 0;
-        margin: 0;
-    }
-}
+
+// @media print, screen and (max-width: 480px) {
+//     body {
+//         padding: 0;
+//         margin: 0;
+//     }
+// }
 
 body {
-    // padding: 35px;
-    width: 80%;
-    height: 100%;
+    // width: 100%;
+    // margin: auto;
+    // height: 100%;
+    // display: flex;
+    .wrapper {
+        // width: 80%;
     header {
         background-color: #777068;
         position: relative;
-        
+        margin-bottom: 25px;
+        // width:100%;
         h1 {
             font-family: 'Rubik Mono One', sans-serif;
             font-size: 35px;
@@ -102,9 +126,15 @@ body {
     }
     section {
         padding-top: 13px;
+        h1, h2, h3, h4 {
+            font-family: 'Rubik Mono One', sans-serif;
+            border-left : 5px solid #F8C291;
+            padding-left: 10px;
+           
+        }
         .c_footer {
             font-size: 11px;
         }
     }
 }
- 
+}
