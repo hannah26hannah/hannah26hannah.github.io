@@ -12,10 +12,45 @@ a {
 a:hover {
     color: #F8C291;
 }
+
+// media query
+@media print, screen and (max-width: 960px) {
+    body {
+        header {
+            padding: 0;
+        }
+        section {
+            padding: 20px 20px;
+        }
+    }
+}
+
+@media print, screen and (max-width: 720px) {
+    div.wrapper {
+        width: auto;
+        margin: 0;
+    body {
+        padding: 0;
+        margin: 0;
+    }
+    }
+}
+
+@media print, screen and (max-width: 480px) {
+    body {
+        padding: 0;
+        margin: 0;
+    }
+}
+
 body {
-    padding: 35px;
+    // padding: 35px;
+    width: 80%;
+    height: 100%;
     header {
         background-color: #777068;
+        position: relative;
+        
         h1 {
             font-family: 'Rubik Mono One', sans-serif;
             font-size: 35px;
@@ -45,18 +80,31 @@ body {
             margin-top: 10px;
             margin-bottom: 22px;
             text-align: center;
+            display: flex;
+            flex-direction: column;
         }
     
         .category {
-            padding-left: 40px;
+            // padding-left: 40px;
             margin-top: 20px;
             padding-bottom: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             span {
                 display: block;
                 font-family: 'Rubik Mono One', sans-serif;
-                font-size: 26px;
-                line-height: 33px;
+                font-size: 23px;
+                line-height: 30px;
             }
         }
     }
+    section {
+        padding-top: 13px;
+        .c_footer {
+            font-size: 11px;
+        }
+    }
 }
+ 
