@@ -1,80 +1,87 @@
+<link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
+
 # About Me
 <article id="about">
-
-Hi! 🧐 I am a Junior Developer seeking for the job opportunity. I have studied in both Front-end and Back-end fields. I am currently in the course of Data Scientist Specialist training course using Java and Data Analysis class using Python respectively. 
-
-Before diving into Computer Science, I had worked in marketing & sales, writing various articles and fashion department over 6 years. This work experience gave me social adaptibility so that I can communicate with various people and learn new things easily. With this strength I enjoy bringing productivity and creativity to the environment where I work.
+안녕하세요. 2020년부터 본격적으로 개발을 공부하기 시작한 주니어 개발자입니다. 프론트-백엔드 분야를 두루 공부하고, 현재는 프론트엔드 개발자를 꿈꾸고 있습니다. 새로운 분야에 도전하는 것을 즐기고 있습니다.  
+<br /><br />
+Hi! 🧐 I am a Junior Developer seeking for the job opportunity. I worked as a Front-End junior developer(Internship) recently. While I have trained myself in both Front-end and Back-end fields, I am more used to and interested in Front-end now. 
+<br /><br />
+But I am also passionate to learn anything related compute science. 👩‍💻
 </article>
 
-# Skills
-<img src="images/html.png" alter="html" />
-<img src="images/css.png" alter="css"/>
-<img src="images/sass.png" alter="sass" />
-<img src="images/javascript.png" alter="javascript"/>
-<img src="images/vuejs.png" alter="vuejs"/>
-- essential knowledge for web programming (HTML5, CSS3, SASS, Tailwinds, JavaScript ES6, vue.js.)
-
-<img src="images/java.png" alter="java"/>
-<img src="images/mysql.png" alter="mysql" />
-<img src="images/oracle.png" alter="oracle" />
-- I took 4 months of intensive java programming training course and learnt SQL query, data base modeling, JSTL, Servlet/JSP, Web Server, Spring, MVC design pattern.
-
-<img src="images/r.png" alter="r"/>
-<img src="images/python.png" alter="python" />
-- For my own interest towards Data Science, I studied Data Analysis and Python & R for data processing. 
-- ADsP certificate(obtained in Sep, 2020) 
-
-<img src="images/github.png" alter="github" />
-- I am used to utilize version control system like git. 
-
-# Portfolio
-<article id="portfolio">
-<h2>Bulletin Board System</h2>
-<a href="https://placeholder.com"><img src="https://via.placeholder.com/500x150.png?text=BBS+Display+Image"></a>
-<a href="https://github.com/hannah26hannah/">Go to Github 🔍</a>
+# Language
+<article id="lang">
+<h3>👩‍🏫 Human Language</h3>
 <ul>
-    <li>Used technologies : Java, JSP, OracleSQL, MyBatis, JSTL, EL, MVC.</li>
-    <li>Paging, File upload/download, post-editor, login, sign-up</li>
+    <li><b>English</b> : I am flent for daily conversations and have no problem when searching and learning with this language. I also have experienced with multi-cultural co-workers in various business environment
+    </li>
+    <li><b>Chinese</b> : I currently started learning Chinese via Duolingo!</li>
+    <li><b>Japanese</b> : I am familiar with Japanese but I can't say I'm better than the other beginners, but can travel easily alone in Japan 🙌</li>
+</ul>
+<h3>👀 Programming Language</h3>
+<ul>
+    <li><b>JavaScript(Vue.js, ES6+)</b></li>
+    <li><b>TypeScript</b></li>
+    <li><b>Java(Spring)</b></li>
+    <li><b>Python</b></li>
+    <li><b>R</b></li>
+    <li><b>SQL, MySQL</b></li>
+    <li><b>HTML5</b></li>
+    <li><b>CSS(scss)</b></li>
 </ul>
 
-<h2>Cloning Kakao Chat</h2>
-<a href="https://placeholder.com"><img src="https://via.placeholder.com/500x150.png?text=Kakao+Display+Image"></a>
-
-<a href="https://github.com/hannah26hannah/kakao">Go to Github 🔍</a>
-<ul>
-    <li>Used technologies : HTML5, CSS3, JavaScript, Vue.js, SCSS.</li>
-</ul>
-
-<h2>Vanilla JS Series</h2>
-<h3>Weather Dashboard Using Open API</h3>
-<a href="https://placeholder.com"><img src="https://via.placeholder.com/500x150.png?text=Vanilla+Display+Image"></a>
-<a href="https://github.com/hannah26hannah/weather-app">Go to Github 🔍</a>
-<ul>
-    <li>Used technologies : </li>
-    <li>What I learnt : </li>
-</ul>
-
-<h3>RCP game</h3>
-<a href="https://placeholder.com"><img src="https://via.placeholder.com/500x150.png?text=Vanilla+Display+Image"></a>
-<a href="https://github.com/hannah26hannah/Rock-paper-and-Scissors">Go to Github 🔍</a>
-<ul>
-    <li>Used technologies : </li>
-    <li>What I learnt : </li>
-</ul>
-<h3>Meditation app</h3>
-<a href="https://placeholder.com"><img src="https://via.placeholder.com/500x150.png?text=Vanilla+Display+Image"></a>
-<a href="https://github.com/hannah26hannah/meditation-app">Go to Github 🔍</a>
-<ul>
-    <li>Used technologies : </li>
-    <li>What I learnt : </li>
-</ul>
 </article>
 
+<!-- # Core Competency
+<article id="core">
+</article> -->
+
+# Experience
+<article id="experience">
+<h2>週間讀書(Weekly-Reading)
+<br />
+<i>Wep Service Design & Front-end Development</i></h2>
+Users can set the goal specifically to enhance reading habit and watch their challenge status based on book reviews they make.
+
+<ul>
+    <li>Design and Prototypeing with Figma</li>
+    <li>Vue.js (Vuex)</li>
+    <li>Firebase(auth, storage, firestore, functions) + Algolria(searching)</li>
+    <li>Element-UI UI framework</li>
+</ul>
+<hr />
+
+<h2>Personal Dashboard(untitled)
+<br />
+<i>Web Service Front-end Development</i></h2> 
+Personalized Dashboard Offering some features 
+<ul>
+    <li>Integrated several vanila JavaScript toy projects into this project.</li>
+    <li>Refactoring with TypeScript + Vue.js</li>
+</ul>
+<hr />
+
+<h2>Interactive Visual Journal Page(untitled)
+<br />
+<i>placeholder</i></h2> 
+placeholder
+<ul>
+    <li>placeholder</li>
+    <li>placeholder</li>
+</ul>
+<hr />
+
+<h2>Kakao Clone
+<br />
+<i>Mobile Web App Front-end Development</i></h2>
+<ul>
+    <li>HTML5, CSS3, Scss, Vanila JavaScript</li>
+    <li>Responsive Design</li>
+</ul>
+<hr />
+
+</article>
 # Contact
 <article id="contact">
-<a href="https://uiyoji-journal.tistory.com/"><img src="images/blog.png" alter="blog"/><span>Blog</span></a> 
-<a href="https://github.com/hannah26hannah?tab=repositories"><img src="images/github.png" alter="blog"/><span>Github</span></a> 
-<a href="https://www.linkedin.com/in/jeongwon-yoo/"><img src="images/linkedin.png" alter="linkedIn"/><span>LinkedIn</span></a> 
-
-<p>Contact Me via this too! <strong>💌 guaranteed.by.prismo@gmail.com</strong></p>
+    <p>Contact Me via this too! <strong>💌 guaranteed.by.prismo@gmail.com</strong></p>
 </article>

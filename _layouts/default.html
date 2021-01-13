@@ -11,15 +11,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
     <![endif]-->
   </head>
-  <body style="padding-top: 20px;">
+  <body>
     <div class="wrapper">
-      <header style="color: #ffffff; ">
-        <h1><a style="color: #ffffff;" href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a></h1>
+      <header>
+        <h1><a href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a></h1>
         
         <img class="profile" src="/images/jung.jpg" alt="profile">
-        <!-- {% if site.logo %}
-          <img class="logo" src="{{site.logo | relative_url }}" alt="Logo" />
-        {% endif %} -->
 
         <p class="headline">{{ site.description | default: site.github.project_tagline }}</p>
         <div class="contacts">
@@ -34,9 +31,9 @@
         <hr>
         <div class="category">
           <a href="#about"><span>About me</span></a>
-          <a href="#portfolio"><span>Portfolio</span></a>
+          <a href="#experience"><span>Experience</span></a>
           <a href="#"><span>Resume</span></a>
-          <a href="#"><span>blog</span></a>
+          <a href="https://uiyoji-journal.tistory.com/"><span>blog</span></a>
           <a href="#contact"><span>contact</span></a>
         </div>
         <!-- {% if site.github.is_project_page %}

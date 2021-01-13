@@ -8,9 +8,13 @@
 // reset original setting
 a {
     color: black;
-}
-a:hover {
+    
+    &:hover {
     color: #F8C291;
+    }
+    &:visited {
+        color: black;
+    }
 }
 
 // media query
@@ -34,11 +38,13 @@ body {
             background-color: #777068;
             position: relative;
             margin-bottom: 25px;
+            color: #ffffff;
             h1 {
                 font-family: 'Rubik Mono One', sans-serif;
                 font-size: 35px;
                 line-height: 47px;
                 padding: 7px 0 0 20px;
+                color: #ffffff;
             }
             .profile {
                 width: 158px;
@@ -91,7 +97,7 @@ body {
         }
         section {
             padding-top: 13px;
-            h1, h2, h3, h4 {
+            h1, h3, h4 {
                 font-family: 'Rubik Mono One', sans-serif;
                 border-left : 5px solid #F8C291;
                 padding-left: 10px;
@@ -103,4 +109,18 @@ body {
         }
 }
 }
+}
+
+// index.md
+#about,
+#lang, 
+#core,
+#experience {
+    margin-bottom: 2rem;
+}
+
+#experience {
+    ul {
+        margin: 2rem 0;
+    }
 }
