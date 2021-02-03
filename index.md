@@ -1,15 +1,17 @@
 <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
 
 # About Me
+
 <article id="about">
-안녕하세요. 2020년부터 본격적으로 개발을 공부하기 시작한 주니어 개발자입니다. 프론트-백엔드 분야를 두루 공부하고, 현재는 프론트엔드 개발자를 꿈꾸고 있습니다. 새로운 분야에 도전하는 것을 즐기고 있습니다.  
+안녕하세요. 2020년부터 본격적으로 개발을 공부하기 시작한 주니어 개발자입니다. 프론트-백엔드 분야를 두루 공부하고, 현재는 프론트엔드 개발자를 꿈꾸고 있습니다. 향후 컨텐츠와 미디어를 위한 인터랙티브 기술과 UI/UX 분야에 진출하고 싶습니다. 
 <br /><br />
-Hi! 🧐 I am a Junior Developer seeking for the job opportunity. I worked as a Front-End junior developer(Internship) recently. While I have trained myself in both Front-end and Back-end fields, I am more used to and interested in Front-end now. 
+Hi! 🧐 I am a Junior Developer seeking for the job opportunity. I worked as a Front-End junior developer(Internship) recently. While I have trained myself in both Front-end and Back-end fields, I am more used to and interested in Front-end now. But I am also passionate to learn anything related compute science.
 <br /><br />
-But I am also passionate to learn anything related compute science. 👩‍💻
+Since I worked as a writer before and enjoy consuming contents/media products, I am eager to work for interactive technology for those area in the future. 👩‍💻
 </article>
 
 # Language
+
 <article id="lang">
 <h3>👩‍🏫 Human Language</h3>
 <ul>
@@ -18,16 +20,22 @@ But I am also passionate to learn anything related compute science. 👩‍💻
     <li><b>Chinese</b> : I currently started learning Chinese via Duolingo!</li>
     <li><b>Japanese</b> : I am familiar with Japanese but I can't say I'm better than the other beginners, but can travel easily alone in Japan 🙌</li>
 </ul>
-<h3>👀 Programming Language</h3>
+<h3>👀 Programming Skills</h3>
 <ul>
     <li><b>JavaScript(Vue.js, ES6+)</b></li>
     <li><b>TypeScript</b></li>
     <li><b>Java(Spring)</b></li>
-    <li><b>Python</b></li>
-    <li><b>R</b></li>
     <li><b>SQL, MySQL</b></li>
     <li><b>HTML5</b></li>
     <li><b>CSS(scss)</b></li>
+</ul>
+<h3>👀 Other Skills</h3>
+<ul>
+    <li><b>Figma for prototyping</b></li>
+    <li><b>Fast Reading & understanding development documents</b></li>
+    <li><b>Basic Knowledge for Data Science (acquired ADsP certification)</b> 
+    <br> __ <i>Advanced Data Analytics Semi-Professional</i></li>
+    <li><b>Highly adaptable to use new tools for cooperation (Slack, Notion, Zeplin)</b></li>
 </ul>
 
 </article>
@@ -37,6 +45,7 @@ But I am also passionate to learn anything related compute science. 👩‍💻
 </article> -->
 
 # Experience
+
 <article id="experience">
 <h2>週間讀書(Weekly-Reading)
 <br />
@@ -74,8 +83,12 @@ placeholder
 <h2>Kakao Clone
 <br />
 <i>Mobile Web App Front-end Development</i></h2>
+
+<image src="./images/kakao.png"></image>
+<a href="https://hannah26hannah.github.io/kakao/index.html">💎 Click to see Source Code</a>
+
 <ul>
-    <li>HTML5, CSS3, Scss, Vanila JavaScript</li>
+    <li>HTML5, CSS3, SCSS, Vanila JavaScript</li>
     <li>Responsive Design</li>
 </ul>
 <hr />
