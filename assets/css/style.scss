@@ -4,11 +4,10 @@
 @import "{{ site.theme }}";
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap');
 
-
+// TODO: scroll-top component 만들기, 이미지 왼쪽 오른쪽 슬라이드 scss로만 구현
 // reset original setting
 a {
     color: black;
-    
     &:hover {
     color: #F8C291;
     }

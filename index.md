@@ -23,11 +23,12 @@ Since I worked as a writer before and enjoy consuming contents/media products, I
 <h3>👀 Programming Skills</h3>
 <ul>
     <li><b>JavaScript(Vue.js, ES6+)</b></li>
+    <li><b>Node.js</b></li>
     <li><b>TypeScript</b></li>
     <li><b>Java(Spring)</b></li>
     <li><b>SQL, MySQL</b></li>
     <li><b>HTML5</b></li>
-    <li><b>CSS(scss)</b></li>
+    <li><b>CSS(Scss, Tailwinds)</b></li>
 </ul>
 <h3>👀 Other Skills</h3>
 <ul>
@@ -60,23 +61,34 @@ Users can set the goal specifically to enhance reading habit and watch their cha
 </ul>
 <hr />
 
-<h2>Personal Dashboard(untitled)
-<br />
-<i>Web Service Front-end Development</i></h2> 
-Personalized Dashboard Offering some features 
-<ul>
-    <li>Integrated several vanila JavaScript toy projects into this project.</li>
-    <li>Refactoring with TypeScript + Vue.js</li>
-</ul>
-<hr />
-
-<h2>Interactive Visual Journal Page(untitled)
+<!-- <h2>Interactive Visual Journal Page(untitled) / Podcast related
 <br />
 <i>placeholder</i></h2> 
 placeholder
 <ul>
     <li>placeholder</li>
     <li>placeholder</li>
+</ul>
+<hr /> -->
+
+
+<h2>Personal Dashboard Web App
+<br />
+<i>Component Design, Front-end Development</i></h2>
+Personalized Dashboard Offering todo list, Calendar, Daily & Weekly Reports
+<image src="./images/moon-todo.png"></image>
+<image src="./images/moon-todo-2.png"></image>
+<image src="./images/moon-todo-3.png"></image>
+<br />
+<a href="#">💎 Click to see the project</a> <br>
+<a href="https://github.com/hannah26hannah/vuejs-todolist-2.0">📝 Click to see the Source Code</a>
+<ul>
+    <li>Vue.js</li>
+    <li>Manage state with Vuex</li>
+    <li>Refactoring with TypeScript</li>
+    <li>TailWinds & SCSS</li>
+    <li>Handling SVG Graphics & Animation with anime.js</li>
+    <li>Display data with chart.js reactively</li>
 </ul>
 <hr />
 
@@ -85,7 +97,8 @@ placeholder
 <i>Mobile Web App Front-end Development</i></h2>
 
 <image src="./images/kakao.png"></image>
-<a href="https://hannah26hannah.github.io/kakao/index.html">💎 Click to see the project</a>
+<br />
+<a href="https://hannah26hannah.github.io/kakao/index.html">💎 Click to see the project</a> <br>
 <a href="https://github.com/hannah26hannah/kakao">📝 Click to see the Source Code</a>
 
 <ul>
