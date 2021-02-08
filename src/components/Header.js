@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Menu } from 'grommet-icons'
+import { Menu, FormClose } from 'grommet-icons'
 import logo from '../logo.svg';
 import {
   Box,
@@ -12,6 +12,7 @@ import {
   Stack,
   Anchor
 } from 'grommet';
+
 
 const AppBar = (props) => ( 
   <Box
@@ -116,9 +117,23 @@ class Header extends Component {
                             style={{
                                 position: 'absolute',
                                 top: '0px',
-                                zIndex: '2'
+                                zIndex: '3'
                             }}
                             >
+                                    <Button
+                                        plain primary
+                                        icon={<FormClose />}
+                                        onClick={() => this.setState({ showSidebar: !this.state.showSidebar })}
+                                        style={{
+                                            display: 'block',
+                                            position: 'absolute',
+                                            top: '15px', 
+                                            right: '5%',
+                                            zIndex: '3',
+                                            background: '#57816D',
+                                        }}
+                                        size='small'
+                                    />
                             <MainNavigation />
                             </Sidebar>
                         </Collapsible>
@@ -132,7 +147,7 @@ class Header extends Component {
                             position: 'absolute',
                             top: '15px', 
                             right: '5%',
-                            zIndex: '5'
+                            zIndex: '2'
                         }}
                         />
                     )}
@@ -144,5 +159,3 @@ class Header extends Component {
 }
 
 export default Header;
-// const rootElement = document.getElementById('root');
-// ReactDOM.render(<App />, rootElement);

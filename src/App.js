@@ -4,6 +4,7 @@ import {
   Grommet
 } from 'grommet';
 import Header from './components/Header.js'
+import Footer from './components/Footer.js'
 
 const theme = {
   global: {
@@ -13,7 +14,8 @@ const theme = {
     colors: {
       orange: '#F39C12',
       moon: '#F1C40F',
-      paper: '#F8EFBA'
+      paper: '#F8EFBA',
+      logoGreen: '#57816D'
     },
     font: {
       family: 'consolas',
@@ -36,7 +38,8 @@ function App() {
           <Box direction="row" flex overflow={{ horizontal: 'hidden' }}>
             <Box flex align='center' justify='center'>app body</Box>
           </Box>
-        </Box> 
+      </Box> 
+      <Footer />
     </Grommet>
   );
 }
