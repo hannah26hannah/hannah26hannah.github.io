@@ -1,20 +1,43 @@
+import React from "react";
+import {
+  Box,
+  Grommet
+} from 'grommet';
+import Header from './components/Header.js'
+
+const theme = {
+  global: {
+    hover: {
+
+    },
+    colors: {
+      orange: '#F39C12',
+      moon: '#F1C40F',
+      paper: '#F8EFBA'
+    },
+    font: {
+      family: 'consolas',
+      size: '18px',
+      height: '20px'
+    }
+  },
+  list: {
+    item: {
+      border: ''
+    }
+  }
+}
+
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Hello, World (Second Branch)
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Grommet theme={theme} full>
+        <Header />
+        <Box fill>
+          <Box direction="row" flex overflow={{ horizontal: 'hidden' }}>
+            <Box flex align='center' justify='center'>app body</Box>
+          </Box>
+        </Box> 
+    </Grommet>
   );
 }
 
