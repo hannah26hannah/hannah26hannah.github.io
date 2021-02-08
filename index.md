@@ -110,5 +110,5 @@ Personalized Dashboard Offering todo list, Calendar, Daily & Weekly Reports
 </article>
 # Contact
 <article id="contact">
-    <p>Contact Me via this too! <strong>💌 guaranteed.by.prismo@gmail.com</strong></p>
+    <p>Contact Me via this too! <strong>💌 jeongwon.y.h@gmail.com</strong></p>
 </article>
