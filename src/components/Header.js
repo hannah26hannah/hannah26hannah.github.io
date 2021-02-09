@@ -34,7 +34,7 @@ const categories = [
   {title: 'Blog', isOnMain: true, href: '#' },
   {title: 'Contact', isOnMain: true, href: '#' },
 ]
-const HeaderNav = (props) => (
+const HeaderNav = () => (
   <Nav
     direction='row'
     alignSelf='end'
@@ -72,6 +72,20 @@ const SidebarHeader = () => (
     </Stack>
   </Box>
 )
+const SidebarFooter = (props) => (
+  <Nav responsive={false}
+  direction='row'
+    alignSelf='end'
+  >
+    {
+      props.channel.map( my => (
+        <SidebarButton icon={my.icon} href={my.href} a11yTitle={ my.a11yTitle } key={my.name} color='black'/>
+      ))
+    }
+    
+  </Nav>
+)
+
 const MainNavigation = () => (
   <Nav
     responsive={false}
@@ -85,13 +99,14 @@ const MainNavigation = () => (
 )
 
 class Header extends Component { 
-    constructor() { 
-        super();
-        this.state = {
-            showSidebar: false
-        }
-    }
-    render() { 
+  constructor(props) { 
+      super(props);
+      this.state = {
+        showSidebar: false,
+        channel: props.channel
+      }
+  }
+  render() { 
         return (
             <ResponsiveContext.Consumer>
                 {size => (
@@ -112,6 +127,7 @@ class Header extends Component {
                             width='medium'
                             background='orange'
                             header={<SidebarHeader />}
+                            footer={<SidebarFooter channel={ this.state.channel}/>}
                             pad={{ left: 'small', right: 'medium', vertical: 'small' }}
                             elevation='small'
                             style={{
@@ -120,21 +136,21 @@ class Header extends Component {
                                 zIndex: '3'
                             }}
                             >
-                                    <Button
-                                        plain primary
-                                        icon={<FormClose />}
-                                        onClick={() => this.setState({ showSidebar: !this.state.showSidebar })}
-                                        style={{
-                                            display: 'block',
-                                            position: 'absolute',
-                                            top: '15px', 
-                                            right: '5%',
-                                            zIndex: '3',
-                                            background: '#57816D',
-                                        }}
-                                        size='small'
-                                    />
-                            <MainNavigation />
+                              <Button
+                                  plain primary
+                                  icon={<FormClose />}
+                                  onClick={() => this.setState({ showSidebar: !this.state.showSidebar })}
+                                  style={{
+                                      display: 'block',
+                                      position: 'absolute',
+                                      top: '15px', 
+                                      right: '5%',
+                                      zIndex: '3',
+                                      background: '#57816D',
+                                  }}
+                                  size='small'
+                              />
+                              <MainNavigation />
                             </Sidebar>
                         </Collapsible>
                     )}

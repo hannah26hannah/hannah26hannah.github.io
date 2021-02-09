@@ -1,24 +1,21 @@
 import React, { Component } from 'react';
 import logo from '../logo.svg';
-import { Github, Linkedin, Mail, Blog } from 'grommet-icons';
 import { Anchor, Box, Footer as AppFooter, grommet, Grommet, Text } from 'grommet';
 
-const myMedia = [
-    {name: 'Github', a11yTitle: 'Check My Github Profile', href: 'https://github.com/hannah26hannah', icon: <Github color='black' />},
-    {name: 'LinkedIn', a11yTitle: 'Follow me on LinkedIn', href: 'https://www.linkedin.com/in/jeongwon-yoo/', icon: <Linkedin color='black' />},
-    {name: 'Mail', a11yTitle: 'Send me an Email', href: 'mailto:jeongwon.y.h', icon: <Mail color='black' />},
-    {name: 'Blog', a11yTitle: 'Here is My Tistory Blog', href: 'https://uiyoji-journal.tistory.com/', icon: <Blog color='black' />}
-]
 
-const Media = () => (
+const Media = (props) => (
     <Box direction='row' gap='xxsmall' justify='center'>
-        {myMedia.map(my => (
+        {props.channel.map(my => (
             <Anchor icon={ my.icon } href={my.href} a11yTitle={my.a11yTitle} key={ my.name } color='black' />
         ))}
     </Box>
 )
 
-export default class Footer extends Component { 
+export default class Footer extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {channel: props.channel}
+     }
     render() { 
         return (
             <Grommet theme={grommet}>
@@ -33,7 +30,7 @@ export default class Footer extends Component {
                             <img src={logo} className='App-logo' alt='logo' />
                         </Box>
                     </Anchor>
-                    <Media />
+                    <Media channel={this.state.channel}/>
                 </AppFooter>
             </Grommet>
         )
