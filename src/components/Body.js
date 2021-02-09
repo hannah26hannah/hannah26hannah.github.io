@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Main, ResponsiveContext, Box, Heading, Text } from 'grommet';
 import contents from './contents';
 import Contact from './Contact.js'
+import Experience from './Experience.js';
+
 const MainSection = (props) => (
     props.contents.map(content => (
          <Box
@@ -18,6 +20,7 @@ const MainSection = (props) => (
             {content.image && (
                 <Box
                     tag='article'
+                    id={content.link}
                     width={props.size === 'small' ? 'small' : 'medium'}
                     gap='small'
                     pad='small'
@@ -27,37 +30,29 @@ const MainSection = (props) => (
                     <img src={content.image} alt={content.imageAlt} />
                 </Box>
             )}
-        <Box
-            tag='article'
-            width='large'
-            pad='large'
-            >
-            <Heading
-                level={2}
-                margin="none"
-                a11yTitle={ content.title.subject }
-                textAlign={props.size === 'small' ? 'center' : 'start'}>{ content.title.subject }
-            </Heading>
-            {content.title.subtitle && (
-                <Heading
-                    margin="none"
-                    level={2}
-                    a11yTitle={ content.title.subtitle }
-                    textAlign={props.size === 'small' ? 'center' : 'start'}
-                    color='orange'>{content.title.subtitle}</Heading>     
-            )}
-                {content.title.detail && (
+            <Box
+                tag='article'
+                width='large'
+                pad='large'
+                >
+                {content.title && (
                     <Heading
-                        level={2}
+                        level={1}
                         margin="none"
-                        a11yTitle={ content.title.detail }
-                        textAlign={props.size === 'small' ? 'center' : 'start'}>
-                        { content.title.detail }
+                        a11yTitle={content.title}
+                        textAlign={ content.order === 2 ? 'start' : 'center'}>{ content.title }
                     </Heading>
-            )}
+                )}
+                {content.titleComponent}
+                
                 <Text size='large' margin={{ top: '5rem' }} color='dark-2'>{content.contents}</Text>
-                {content.order === 7 && (
+                {content.contentsComponent}
+
+                {content.order === 6 && (
                     <Contact channel={ props.channel }/>
+                )}
+                {content.order === 3 && (
+                    <Experience />
                 )}
             </Box>
         </Box>
@@ -73,7 +68,6 @@ export default class Body extends Component {
             }
     }
     render() {
-        console.log('Body의 state 상태 ', this.state)
         return (
             <ResponsiveContext.Consumer>
                 {size => (
@@ -81,7 +75,6 @@ export default class Body extends Component {
                         style={{
                         height: 'auto'
                     }}>
-                        <Heading level={1} alignSelf='center'>{size}</Heading>
                         <MainSection size={size} contents={this.state.contents} channel={ this.state.channel}/>
                     </Main>
                 )}

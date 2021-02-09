@@ -15,7 +15,7 @@ const ContactList = (props) => (
         }}
     >
         {datum => (
-            <Box direction='row-response' flex gap='medium' alignSelf='center' size='medium' align='center' justify='around' pad='small'>
+            <Box direction='row-responsive' flex gap='medium' alignSelf='center' size='medium' align='center' justify='around' pad='small'>
                 <Anchor icon={datum.icon} href={datum.href} a11yTitle={datum.a11yTitle} key={datum.name} size='small'
                     style={{
                         backgroundColor: 'orange',

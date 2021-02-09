@@ -26,13 +26,17 @@ const AppBar = (props) => (
     {...props}
   />
 )
-
+// TODO: GNB Handling
+// TODO: Open Notion Resume and Link it to navigation
+// TODO: Labeling toy project's tech stacks
+// TODO: Blog Page, Router in React, Tistory Open API
+// TODO: GNB Hover
 const categories = [
-  {title: 'About', isOnMain: true, href: '#'},
-  {title: 'Portfolio', isOnMain: true, href: '#' },
+  {title: 'About', isOnMain: true, href: '#About'},
+  {title: 'Portfolio', isOnMain: true, href: '#Portfolio' },
   {title: 'Resume', isOnMain: false, href: '#' },
-  {title: 'Blog', isOnMain: true, href: '#' },
-  {title: 'Contact', isOnMain: true, href: '#' },
+  {title: 'Blog', isOnMain: true, href: '#Blog' },
+  {title: 'Contact', isOnMain: true, href: '#Contact' },
 ]
 const HeaderNav = () => (
   <Nav
