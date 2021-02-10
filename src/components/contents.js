@@ -26,7 +26,7 @@ const contents = [
         titleComponent: <TitleContent1 />,
         image: profile,
         imageAlt: 'main profile',
-        contents: 'who loves to learn modern technologies to solve problems in real world'
+        contents: 'who loves to learn modern technologies to solve problems in real world. Welcome to my portfolio web site!'
     },
     {
         order: 2,
@@ -40,12 +40,12 @@ const contents = [
         order: 3,
         titleComponent: <TitleContent desc='Featured Works' />,
         link: 'Portfolio',
-        contents: 'Placeholder'
+        contents: 'My goal as a developer is to make well-functioning web products as well as to give pleasant experience to users. Here are my main projects to achieve this goal:'
     },
     {
         order: 4,
         titleComponent: <TitleContent desc='Side Projects' />,
-        contents: 'My goal as a developer is to make well-functioning web products as well as to give pleasant experience to users. Here are side projects I made during training period to achieve this goal:'
+        contents: 'I made several side projects to learn various techniques as many as possible during training period.'
     },
     {
         order: 5,

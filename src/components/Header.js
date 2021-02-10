@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { Menu, FormClose } from 'grommet-icons'
 import logo from '../logo.svg';
-
-
 import {
   Box,
   Button,
@@ -12,9 +10,8 @@ import {
   Nav,
   Sidebar,
   Stack,
-  Anchor
+  Anchor,
 } from 'grommet';
-
 
 const AppBar = (props) => ( 
   <Box
@@ -45,7 +42,12 @@ const HeaderNav = () => (
     alignSelf='end'
   >
     { categories.map(category => (
-        <Anchor label={category.title} href={category.href} key={ category.title} color='black' onClick={() => document.querySelector(category.href).scrollIntoView({ behavior: 'smooth', block: 'center' })} />
+      <Anchor
+        label={category.title}
+        href={category.href}
+        key={category.title}
+        color={category.title === 'Resume' ? 'orange' : 'black' }
+        onClick={() => document.querySelector(category.href).scrollIntoView({ behavior: 'smooth', block: 'center' })} />
     ))
     }
   </Nav>
@@ -114,6 +116,7 @@ class Header extends Component {
   }
   render() { 
         return (
+          
             <ResponsiveContext.Consumer>
                 {size => (
                 <Box fill>

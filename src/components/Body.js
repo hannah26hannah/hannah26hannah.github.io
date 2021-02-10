@@ -4,6 +4,7 @@ import contents from './contents';
 import Contact from './Contact.js'
 import Experience from './Experience.js';
 import ScrollToTop from './ScrollToTop.js';
+import Portfolio from './Portfolio.js'
 
 const MainSection = (props) => (
     props.contents.map(content => (
@@ -16,7 +17,7 @@ const MainSection = (props) => (
             align='center'
             pad={{ bottom: 'large' }}
             key={content.order}
-            margin={{ top: '2rem', bottom: '5rem' }}
+            margin={{ top: '2rem', bottom: '3rem' }}
             border={{ side: 'bottom', color: 'dark-2'}}
         >
             {content.image && (
@@ -34,26 +35,31 @@ const MainSection = (props) => (
             <Box
                 tag='article'
                 width='large'
-                pad='large'
+                pad='medium'
                 >
                 {content.title && (
                     <Heading
                         level={1}
                         margin="none"
                         a11yTitle={content.title}
-                        textAlign={ content.order === 2 ? 'start' : 'center'}>{ content.title }
+                        textAlign={content.order === 2 ? 'start' : 'center'}>{ content.title }
                     </Heading>
                 )}
                 {content.titleComponent}
                 
-                <Text size='large' margin={{ top: '5rem' }} color='dark-2'>{content.contents}</Text>
+                <Text size='large' margin={{ top: '2rem', bottom: '4rem' }} color='dark-2'>{content.contents}</Text>
+
                 {content.contentsComponent}
 
+                {content.order === 3 && (
+                    <Portfolio />
+                )}
+                
+                {content.order === 4 && (
+                    <Experience />
+                )}
                 {content.order === 6 && (
                     <Contact channel={ props.channel }/>
-                )}
-                {content.order === 3 && (
-                    <Experience />
                 )}
             </Box>
         </Box>

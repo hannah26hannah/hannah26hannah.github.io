@@ -1,5 +1,5 @@
-import { Box, List, Anchor, Text } from 'grommet';
 import React, { Component } from 'react';
+import { Box, List, Anchor, Text } from 'grommet';
 
 const skills = [
     { title: 'JavaScript', iconName: 'JS' },
@@ -15,10 +15,7 @@ const skills = [
     // { title: 'Express' },
     { title: 'Git/Github' },
 ]
-
 //     { title: 'figma', iconName: 'Figma' },
-
-
 //    'Git/Github'
 const a11yTitleFunc = (name) => { return `Click to see my projects using ${name}` };
 const hrefFunc = (name) => { return `https://github.com/hannah26hannah?tab=repositories&q=${name}&type=&language=` };
