@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Menu, FormClose } from 'grommet-icons'
 import logo from '../logo.svg';
+
+
 import {
   Box,
   Button,
@@ -26,9 +28,8 @@ const AppBar = (props) => (
     {...props}
   />
 )
-// TODO: GNB Handling
-// TODO: Open Notion Resume and Link it to navigation
-// TODO: Labeling toy project's tech stacks
+
+
 // TODO: Blog Page, Router in React, Tistory Open API
 // TODO: GNB Hover
 const categories = [
@@ -44,11 +45,12 @@ const HeaderNav = () => (
     alignSelf='end'
   >
     { categories.map(category => (
-        <Anchor label={category.title} href={category.href} key={ category.title} color='black' />
+        <Anchor label={category.title} href={category.href} key={ category.title} color='black' onClick={() => document.querySelector(category.href).scrollIntoView({ behavior: 'smooth', block: 'center' })} />
     ))
     }
   </Nav>
 )
+
 const SidebarButton = ({label, href, ...rest}) => (
   <Box pad='small'>
     <Button
@@ -96,7 +98,7 @@ const MainNavigation = () => (
   >
     {
       categories.map(category => (
-        <SidebarButton label={category.title} href={category.href} key={ category.title} color='black'/>
+        <SidebarButton label={category.title} href={category.href} key={ category.title} color='black' />
       ))
     }
   </Nav>

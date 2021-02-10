@@ -5,11 +5,10 @@ import {
   Grommet
 } from 'grommet';
 
-
 import myMedia from './components/social.js';
-import Header from './components/Header.js'
-import Body from './components/Body.js'
-import Footer from './components/Footer.js'
+import Header from './components/Header.js';
+import Body from './components/Body.js';
+import Footer from './components/Footer.js';
 
 const theme = {
   global: {
@@ -37,13 +36,12 @@ const theme = {
 // const cards = Array(2).fill().map((_, i) => <Text key={i}>{`Card ${i}`}</Text>);
 
 function App() {
-  // const size = useContext(ResponsiveContext);
   return (
     <Grommet id='container' theme={theme}>
       <Box>
         <Header channel={ myMedia}/>
       </Box>
-        <Body id='main-content' channel={myMedia}/>
+      <Body id='main-content' channel={myMedia} />
       <Footer channel={myMedia} />
     </Grommet>
   );

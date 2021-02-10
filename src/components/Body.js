@@ -3,11 +3,13 @@ import { Main, ResponsiveContext, Box, Heading, Text } from 'grommet';
 import contents from './contents';
 import Contact from './Contact.js'
 import Experience from './Experience.js';
+import ScrollToTop from './ScrollToTop.js';
 
 const MainSection = (props) => (
     props.contents.map(content => (
          <Box
             tag='section'
+            id={content.link}
             direction='row-responsive'
             flex
             justify='around'
@@ -20,7 +22,6 @@ const MainSection = (props) => (
             {content.image && (
                 <Box
                     tag='article'
-                    id={content.link}
                     width={props.size === 'small' ? 'small' : 'medium'}
                     gap='small'
                     pad='small'
@@ -76,6 +77,7 @@ export default class Body extends Component {
                         height: 'auto'
                     }}>
                         <MainSection size={size} contents={this.state.contents} channel={ this.state.channel}/>
+                        <ScrollToTop size={ size } />
                     </Main>
                 )}
             </ResponsiveContext.Consumer> 
