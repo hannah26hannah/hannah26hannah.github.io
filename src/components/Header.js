@@ -30,12 +30,13 @@ const AppBar = (props) => (
 // TODO: Blog Page, Router in React, Tistory Open API
 // TODO: GNB Hover
 const categories = [
-  {title: 'About', isOnMain: true, href: '#About'},
-  {title: 'Portfolio', isOnMain: true, href: '#Portfolio' },
-  {title: 'Resume', isOnMain: false, href: '#' },
-  {title: 'Blog', isOnMain: true, href: '#Blog' },
-  {title: 'Contact', isOnMain: true, href: '#Contact' },
+  {title: 'About', href: '#About'},
+  {title: 'Portfolio', href: '#Portfolio' },
+  {title: 'Resume', href: 'https://www.notion.so/Jeongwon-Yoo-72675253e1284032a53a8749a383d31a' },
+  {title: 'Blog', href: '#Blog' },
+  {title: 'Contact', href: '#Contact'},
 ]
+
 const HeaderNav = () => (
   <Nav
     direction='row'
@@ -47,9 +48,11 @@ const HeaderNav = () => (
         href={category.href}
         key={category.title}
         color={category.title === 'Resume' ? 'orange' : 'black' }
-        onClick={() => document.querySelector(category.href).scrollIntoView({ behavior: 'smooth', block: 'center' })} />
-    ))
-    }
+        
+        onClick={() => (category.title !== 'Resume') ? document.querySelector(category.href).scrollIntoView({ behavior: 'smooth', block: 'center'}) : console.log('clicked')
+        } 
+      />
+    ))}
   </Nav>
 )
 

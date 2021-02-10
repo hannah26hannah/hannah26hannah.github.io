@@ -9,9 +9,9 @@ const workContents = [
     {
         title: 'Moon-todo',
         tags: [
-            'Vue.js', 'Vuex', 'Tailwinds', 'TypeScript', 'Chart.js'
+            'Vue.js', 'Tailwinds', 'TypeScript', 'Chart.js'
         ],
-        detail: 'Moon-todo is a personal dashboard Web application. Calendar and Chart Report are offered based on simple to do feature.',
+        detail: 'Moon-todo is a personal dashboard Web application. Calendar and Chart Report are offered based on simple to do feature. I used Vue.js, Vuex, TypeScript, Chart.js, Tailwinds CSS library, SCSS for this app.',
         images: [
             {
                 order: 1,
@@ -36,9 +36,9 @@ const workContents = [
         ],
         gif: {alt: 'preview gif', src: moon4},
         links: [
-            {order: 1, title: 'Demo', href: 'https://hannah26hannah.github.io/vuejs-todolist-2.0', icon: <CirclePlay color='black' />},
-            {order: 2, title: 'Work Log', href: 'https://uiyoji-journal.tistory.com/search/vue-todo', icon: <Archive color='black' />},
-            {order: 3, title: 'Github Source Code', href: 'https://github.com/hannah26hannah/vuejs-todolist-2.0', icon: <Console color='black' />}
+            {title: 'Demo', href: 'https://hannah26hannah.github.io/vuejs-todolist-2.0', icon: <CirclePlay color='black' />},
+            {title: 'Work Log', href: 'https://uiyoji-journal.tistory.com/search/vue-todo', icon: <Archive color='black' />},
+            {title: 'Github Source Code', href: 'https://github.com/hannah26hannah/vuejs-todolist-2.0', icon: <Console color='black' />}
         ]
     },
     {

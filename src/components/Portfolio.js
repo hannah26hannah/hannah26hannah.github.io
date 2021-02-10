@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import { Box, Image, Heading, Button, Anchor } from 'grommet';
+import { Box, Image, Heading, Button, Anchor, Text } from 'grommet';
 
 import workContents from './workContents.js';
 
 const Tags = (props) => (
     <Box flex
-        direction='row-responsive'
+        direction='row'
         align='center'
         gap='small'
         pad='xsmall'
@@ -75,7 +75,7 @@ const LinkList = (props) => (
             icon={link.icon}
             href={link.href}
             color='black'
-            key={link.order}
+            key={link.href}
             label={link.title}
             margin='xxsmall'
             hoverIndicator='orange'
@@ -90,14 +90,18 @@ const WorkSlice = (props) => (
         <Box tag='section'
             border={{ side: 'all', color: 'light-4'}}
             round={{ size: 'small'}}
-            pad='medium'
+            pad='large'
             gap='xxsmall'
             margin={{ top: 'medium', bottom: 'medium'}}
             elevation='medium'
-            key={content.order}
+            key={content.detail}
         >
-            <Heading level={2} textAlign='start' margin={{left: 'medium'}}>
-                {content.title}</Heading>
+            <Heading level={1} textAlign='start' 
+            style={{ margin: 0 }}>
+            {content.title} </Heading>
+            
+            <Text size='medium' margin={{ top: '2rem', bottom: '2rem' }} color='dark-2'>{content.detail}</Text>
+
             <Tags tags={content.tags}/>            
             <PreviewSlider images={content.images} />
             {content.gif.src !== '' && (
