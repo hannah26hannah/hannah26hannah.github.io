@@ -48,12 +48,6 @@ const contents = [
         contents: 'I made several side projects to learn various techniques as many as possible during training period.'
     },
     {
-        order: 5,
-        title: 'Blog',
-        link: 'Blog',
-        contents: 'Date / Project Name / Used Skills / site || Github'
-    },
-    {
         order: 6,
         titleComponent: <TitleContent title='Contact' desc='via these channels' />,
         link: 'Contact',

@@ -2,11 +2,18 @@ import React, { Component } from 'react';
 import { Main, ResponsiveContext, Box, Heading, Text } from 'grommet';
 import contents from '../contents';
 import Contact from '../Contact.js'
-// import Experience from './Experience.js';
 import ScrollToTop from '../ScrollToTop.js';
 import Portfolio from '../Portfolio.js'
 import SidePortfolio from '../SidePortfolio.js'
+import { Route } from 'react-router-dom';
+// import MyBlog from '../Blog.js'
 
+const BlogSection = (props) => (
+    <Box pad='large'>
+        <Heading>{ props.size }</Heading>
+    </Box>
+    
+)
 const MainSection = (props) => (
     props.contents.map(content => (
          <Box
@@ -83,8 +90,16 @@ export default class Body extends Component {
                     <Main pad='large' fill='vertical'
                         style={{
                         height: 'auto'
-                    }}>
-                        <MainSection size={size} contents={this.state.contents} channel={ this.state.channel}/>
+                        }}>
+                            <Route
+                                exact={true}
+                                path='/'
+                                component={() => <MainSection contents={this.state.contents} channel={this.state.channel} />}
+                            />
+                            <Route
+                                path='/blog'
+                                component={() => <BlogSection size={size} />} />
+                                {/* <MainSection size={size} contents={this.state.contents} channel={this.state.channel} /> */}
                         <ScrollToTop size={ size } />
                     </Main>
                 )}

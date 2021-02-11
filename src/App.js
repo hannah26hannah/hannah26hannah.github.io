@@ -10,13 +10,16 @@ import Body from './components/common/Body.js';
 import Footer from './components/common/Footer.js';
 import theme from './components/common/theme.js'
 
+const MainBody = () => (
+  <Body id='main-content' channel={myMedia} />
+)
 function App() {
   return (
     <Grommet id='container' theme={theme}>
       <Box>
         <Header channel={myMedia} theme={theme}/>
       </Box>
-      <Body id='main-content' channel={myMedia} />
+      <MainBody />
       <Footer channel={myMedia} />
     </Grommet>
   );
