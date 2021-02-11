@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Menu, FormClose } from 'grommet-icons'
-import logo from '../logo.svg';
+import logo from './logo.svg';
 import {
   Box,
   Button,
@@ -28,7 +28,7 @@ const AppBar = (props) => (
 
 
 // TODO: Blog Page, Router in React, Tistory Open API
-// TODO: GNB Hover
+
 const categories = [
   {title: 'About', href: '#About'},
   {title: 'Portfolio', href: '#Portfolio' },
@@ -36,6 +36,12 @@ const categories = [
   {title: 'Blog', href: '#Blog' },
   {title: 'Contact', href: '#Contact'},
 ]
+
+const scrollTo = (href, title) => {
+  if (title !== 'Resume') {
+    document.querySelector(href).scrollIntoView({ behavior: 'smooth', block: 'center'})
+  }
+}
 
 const HeaderNav = () => (
   <Nav
@@ -48,9 +54,8 @@ const HeaderNav = () => (
         href={category.href}
         key={category.title}
         color={category.title === 'Resume' ? 'orange' : 'black' }
-        
-        onClick={() => (category.title !== 'Resume') ? document.querySelector(category.href).scrollIntoView({ behavior: 'smooth', block: 'center'}) : console.log('clicked')
-        } 
+        target={category.title === 'Resume' ? '_blank' : '_self' }
+        onClick={() => scrollTo(category.href, category.title) } 
       />
     ))}
   </Nav>

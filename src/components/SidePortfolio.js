@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
+import sideContents from './sideContents.js';
 import { Box, Image, Heading, Button, Anchor, Text } from 'grommet';
-import workContents from './workContents.js';
-
-// TODO: image size 조정하기
 
 const Tags = (props) => (
     <Box flex
@@ -11,11 +9,11 @@ const Tags = (props) => (
         align='center'
         gap='small'
         pad='xsmall'
-        justify='around'
+        justify='end'
         overflow='auto'
         >
         {props.tags.map((tag, i) => (
-            <Box key={i} margin={{top: 'small', bottom: 'small'}}>
+            <Box key={i} margin={{top: 'xsmall', bottom: 'xsmall'}}>
             <Button color='paper' 
                 primary 
                 label={tag}
@@ -26,30 +24,7 @@ const Tags = (props) => (
         )}
     </Box>
 )
-
-const PreviewSlider = (props) => (
-    <Box tag='article'
-        direction='row'
-        flex 
-        align='center'
-        margin={{top: 'medium', bottom: 'medium'}}
-        border={{side: 'all', color: 'dark-2'}}
-        round
-        pad='small'
-
-    >
-    {props.images.map(img => (
-        <Image 
-            fit='cover' 
-            src={img.src} 
-            key={img.order} 
-            alt={img.alt} 
-            style={{borderRadius: '12px'}}
-            />
-    ))}
-    </Box>
-)
-const PreviewGif = (props) => (
+const Preview = (props) => (
     <Box tag='article'
         direction='row'
         flex 
@@ -58,15 +33,15 @@ const PreviewGif = (props) => (
         border={{side: 'all', color: 'dark-2'}}
         round
         pad='small'
-
     >
         <Image 
-            fit='cover' 
-            src={props.gif.src} 
-            alt={props.gif.alt}
+            fit='cover'
+            src={props.image.src} 
+            alt={props.image.alt} 
             style={{borderRadius: '12px'}}
             />
     </Box>
+
 )
 const LinkList = (props) => (
     <Box
@@ -86,38 +61,48 @@ const LinkList = (props) => (
     </Box>
 )
 
-const WorkSlice = (props) => (
+const SideSlice = (props) => (
     props.contents.map(content => (
         <Box tag='section'
             border={{ side: 'all', color: 'light-4'}}
             round={{ size: 'small'}}
-            pad='large'
-            gap='xxsmall'
-            margin={{ top: 'medium', bottom: 'medium'}}
+            pad='medium'
             elevation='medium'
             key={content.detail}
-        >
-            <Heading level={1} textAlign='start' 
+            width='large'
+            margin='small'
+            >
+            <Heading level={3} textAlign='start' 
             style={{ margin: 0 }}>
             {content.title} </Heading>
             
             <Text size='medium' margin={{ top: '2rem', bottom: '2rem' }} color='dark-2'>{content.detail}</Text>
 
             <Tags tags={content.tags}/>            
-            <PreviewSlider images={content.images} />
-            {content.gif.src !== '' && (
-               <PreviewGif gif={content.gif}/>
-            )}
+            <Preview image={content.image} />
             <LinkList links={content.links}/>
         </Box>
-    ))   
+    ))
 )
+export default class SidePortfolio extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            size: props.size
+        }
+    }
 
-
-export default class Portfolio extends Component {    
     render() {
         return (
-            <WorkSlice contents={workContents} />
+            <Box 
+                tag='main' 
+                flex
+                direction='row-responsive'
+                justify='center'
+                align='center'
+            >
+            <SideSlice contents={sideContents} size={this.state.size}/>
+            </Box>
         )
     }
 }

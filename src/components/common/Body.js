@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { Main, ResponsiveContext, Box, Heading, Text } from 'grommet';
-import contents from './contents';
-import Contact from './Contact.js'
-import Experience from './Experience.js';
-import ScrollToTop from './ScrollToTop.js';
-import Portfolio from './Portfolio.js'
+import contents from '../contents';
+import Contact from '../Contact.js'
+// import Experience from './Experience.js';
+import ScrollToTop from '../ScrollToTop.js';
+import Portfolio from '../Portfolio.js'
+import SidePortfolio from '../SidePortfolio.js'
 
 const MainSection = (props) => (
     props.contents.map(content => (
@@ -56,7 +57,8 @@ const MainSection = (props) => (
                 )}
                 
                 {content.order === 4 && (
-                    <Experience />
+                    // <Experience />
+                    <SidePortfolio size={props.size}/>
                 )}
                 {content.order === 6 && (
                     <Contact channel={ props.channel }/>

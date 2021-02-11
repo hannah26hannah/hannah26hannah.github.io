@@ -1,16 +1,14 @@
-import React from "react"; // { useContext } 
+import React from "react";
 import {
   Box,
-  // ResponsiveContext,
   Grommet
 } from 'grommet';
 
-import myMedia from './components/social.js';
-import Header from './components/Header.js';
-import Body from './components/Body.js';
-import Footer from './components/Footer.js';
-import theme from './components/theme.js'
-// const cards = Array(2).fill().map((_, i) => <Text key={i}>{`Card ${i}`}</Text>);
+import myMedia from './components/common/social.js';
+import Header from './components/common/Header.js';
+import Body from './components/common/Body.js';
+import Footer from './components/common/Footer.js';
+import theme from './components/common/theme.js'
 
 function App() {
   return (
