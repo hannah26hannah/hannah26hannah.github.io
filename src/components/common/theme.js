@@ -17,12 +17,6 @@ const theme = {
         value: 375
       }
     },
-    // anchor: {
-    //     hover: {
-    //         textDecoration: 'none',
-    //     },
-    //     textDecoration: 'none'
-    // }
   }
 }
 export default theme;

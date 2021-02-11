@@ -58,12 +58,12 @@ const MenuNav = (prop) => (
     )}
     {useLocation().pathname !== '/' && (
       <Box>
-        <Link class='routeLink' to='/'>👈 Take me to Home</Link>
+        <Link className='routeLink' to='/'>👈 Take me to Home</Link>
       </Box>
     )}
     <Box margin={{top: '-1rem'}}>
       <Anchor className='resumeLink' label='Resume' href={resumeLink} color='moon' target='_blank' />
-      <Link class='routeLink' to='blog' >Blog</Link>
+      <Link className='routeLink' to='blog' >Blog</Link>
     </Box>
   </Nav>
 )
