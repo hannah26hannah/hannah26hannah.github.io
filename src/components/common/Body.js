@@ -1,52 +1,14 @@
 import React, { Component } from 'react';
-import { Main, ResponsiveContext, Box, Heading, Text, List, Tabs, Tab } from 'grommet';
+import { Route } from 'react-router-dom';
+import { Main, ResponsiveContext, Box, Heading, Text } from 'grommet';
 import contents from '../contents';
 import Contact from '../Contact.js'
 import ScrollToTop from '../ScrollToTop.js';
 import Portfolio from '../Portfolio.js'
 import SidePortfolio from '../SidePortfolio.js'
-import { Route } from 'react-router-dom';
+import Blog from '../Blog.js';
 
 
-const MainPost = () => (
-    <Box tag='main'>
-        
-            <List
-            primaryKey='title'
-            secondaryKey='date'
-            data={[
-                { title: '제목입니다', date: `${new Date()}`, href: '주소' },
-                { title: '제목입니다', date: `${new Date()}`, href: '주소' },
-                { title: '제목입니다', date: `${new Date()}`, href: '주소' },
-                { title: '제목입니다', date: `${new Date()}`, href: '주소' },
-                { title: '제목입니다', date: `${new Date()}`, href: '주소' },
-                { title: '제목입니다', date: `${new Date()}`, href: '주소' },
-            ]}
-            onClickItem={e => console.log(e.item) }
-            />
-            
-    </Box>
-)
-const TabNames = [
-    {title: 'TIL', body: <MainPost />},
-    { title: 'Feature', body: <MainPost /> },
-    { title: 'Published from Tistory', body: <MainPost />, state: 'disabled' }
-]
-const BlogSection = (props) => (
-    <Box pad='large'>
-        <Tabs alignControls='start'>
-            {TabNames.map(tab => (
-                <Tab title={tab.title}
-                    key={ tab.title }
-                    margin={{ bottom: '2rem' }}
-                    disabled={tab.state === 'disabled' ? true : false}>
-                    {tab.body}
-                </Tab>    
-            ))}
-            
-        </Tabs>
-    </Box>
-)
 const MainSection = (props) => (
     props.contents.map(content => (
          <Box
@@ -97,7 +59,6 @@ const MainSection = (props) => (
                 )}
                 
                 {content.order === 4 && (
-                    // <Experience />
                     <SidePortfolio size={props.size}/>
                 )}
                 {content.order === 6 && (
@@ -131,7 +92,7 @@ export default class Body extends Component {
                             />
                             <Route
                                 path='/blog'
-                                component={() => <BlogSection size={size} />} />
+                            component={() => <Blog />} />
                         <ScrollToTop size={ size } />
                     </Main>
                 )}
