@@ -24,7 +24,7 @@ export default class Footer extends Component {
                         <AppFooter
                             background='orange'
                             pad='small'
-                            height={size==='small'? 'small' : 'xsmall'}
+                            height={['xsmall', 'small'].includes(size) ? 'small' : 'xsmall'}
                         >
                             <Box
                                 direction='row-responsive'

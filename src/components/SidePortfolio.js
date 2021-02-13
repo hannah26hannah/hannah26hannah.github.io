@@ -85,13 +85,6 @@ const SideSlice = (props) => (
     ))
 )
 export default class SidePortfolio extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            size: props.size
-        }
-    }
-
     render() {
         return (
             <Box 
@@ -101,7 +94,7 @@ export default class SidePortfolio extends Component {
                 justify='center'
                 align='center'
             >
-            <SideSlice contents={sideContents} size={this.state.size}/>
+            <SideSlice contents={sideContents} />
             </Box>
         )
     }

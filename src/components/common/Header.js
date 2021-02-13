@@ -100,17 +100,6 @@ const SidebarFooter = (props) => (
   </Nav>
 )
 
-// const MainNavigation = () => (
-//   <Nav
-//     responsive={false}
-//   >
-//     {
-//       categories.map(category => (
-//         <SidebarButton label={category.title} href={category.href} key={ category.title} color='black' />
-//       ))
-//     }
-//   </Nav>
-// )
 
 export default class Header extends Component { 
   constructor(props) { 
@@ -127,9 +116,9 @@ export default class Header extends Component {
                 <Box fill>
                   <AppBar>
                     <Link to='/'><LinkToHome /></Link>
-                    {size !== 'small' && (<MenuNav location='header' />)}
+                    {['medium', 'large'].includes(size) && (<MenuNav location='header' />)}
                   </AppBar>
-                  {size === 'small' && (
+                  {['xsmall', 'small'].includes(size) && (
                   <Collapsible
                       direction='horizontal'
                       open={this.state.showSidebar}>
@@ -165,7 +154,7 @@ export default class Header extends Component {
                           </Sidebar>
                       </Collapsible>
                   )}
-                    {size === 'small' && (
+                    {['xsmall', 'small'].includes(size) && (
                         <Button
                         icon={<Menu />}
                             onClick={() => { this.setState({ showSidebar: !this.state.showSidebar})}}

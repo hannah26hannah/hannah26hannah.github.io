@@ -11,7 +11,7 @@ import Footer from './components/common/Footer.js';
 import theme from './components/common/theme.js'
 
 const MainBody = () => (
-  <Body id='main-content' channel={myMedia} />
+  <Body channel={myMedia} />
 )
 function App() {
   return (

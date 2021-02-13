@@ -20,8 +20,7 @@ export default class ScrollToTop extends Component {
     }
 
     toggleVisibility() { 
-        let y = window.scrollY; // get the current scroll value
-        // if (window.pageYOffset > 250) {
+        let y = window.scrollY;
         if (y > 0) {
             this.setState({
                 isVisible : true
@@ -59,7 +58,7 @@ export default class ScrollToTop extends Component {
                     display: 'inline-flex',
                     cursor: 'pointer',
                     backgroundColor: 'yello',
-                    width: size === 'medium' ? '85px' : '50px',
+                    width: ['medium', 'large'].includes(size) ? '85px' : '60px',
                     height: 'auto'
                 }}
             >

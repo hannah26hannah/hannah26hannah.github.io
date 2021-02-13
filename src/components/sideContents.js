@@ -1,5 +1,4 @@
 import moon1 from '../assets/images/moon_1.png';
-import moon2 from '../assets/images/moon_2.png';
 import { CirclePlay, Console, Archive } from 'grommet-icons'
 
 const sideContents = [
@@ -22,7 +21,7 @@ const sideContents = [
             'HTML5', 'CSS3', 'Responsive'
         ],
         detail: 'Vanila JavaScript',
-        image: {alt: 'preview image', src: moon2},
+        image: {alt: 'preview image', src: moon1},
         links: [
             {title: 'Demo', href: 'https://hannah26hannah.github.io/vuejs-todolist-2.0', icon: <CirclePlay color='black' />},
             {title: 'Work Log', href: 'https://uiyoji-journal.tistory.com/search/vue-todo', icon: <Archive color='black' />},

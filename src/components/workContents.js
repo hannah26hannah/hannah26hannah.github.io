@@ -1,11 +1,34 @@
-import moon1 from '../assets/images/moon_1.png';
-import moon2 from '../assets/images/moon_2.png';
-import moon3 from '../assets/images/moon_3.png';
-import moon4 from '../assets/images/moon_4.png';
+// import moon1 from '../assets/images/moon_1.png';
+import moon from '../assets/images/moon_mob_pad.png';
 
-import { CirclePlay, Console, Archive } from 'grommet-icons'
+import port_preview from '../assets/images/portfolio_b_m.png';
+import { CirclePlay, Console, Archive } from 'grommet-icons';
+
+const BASE_DEMO = 'https://hannah26hannah.github.io/';
+const BASE_REPO = 'https://github.com/hannah26hannah/';
+const BASE_BLOG = 'https://uiyoji-journal.tistory.com/tag/';
 
 const workContents = [
+    {
+        title: 'Tech Portfolio Blog',
+        tags: [
+            'React.js', 'Grommet', 'Responsive', 'Markdown'
+        ],
+        detail: 'This project is mainly built with React.js. I used grommet, node-sass for styling and react router for navigating menu. I also chose markdown for managing blog posts.',
+        images: [
+            {
+                order: 1,
+                alt: 'browser window preview',
+                src: port_preview
+            }
+        ],
+        gif: {alt: 'preview gif', src: ''},
+        links: [
+            {title: 'Demo', href: BASE_DEMO, icon: <CirclePlay color='black' />},
+            {title: 'Work Log', href: `${BASE_BLOG}techBlog`, icon: <Archive color='black' />},
+            {title: 'Github Source Code', href: `${BASE_REPO}hannah26hannah.github.io`, icon: <Console color='black' />}
+        ]
+    },
     {
         title: 'Moon-todo',
         tags: [
@@ -16,51 +39,16 @@ const workContents = [
             {
                 order: 1,
                 alt: 'preview image',
-                src: moon1
-            },
-            {
-                order: 2,
-                alt: 'preview image',
-                src: moon2
-            },
-            {
-                order: 3,
-                alt: 'preview image',
-                src: moon3
-            },
-            {
-                order: 4,
-                alt: 'preview image',
-                src: moon4
-            },
-        ],
-        gif: {alt: 'preview gif', src: moon4},
-        links: [
-            {title: 'Demo', href: 'https://hannah26hannah.github.io/vuejs-todolist-2.0', icon: <CirclePlay color='black' />},
-            {title: 'Work Log', href: 'https://uiyoji-journal.tistory.com/search/vue-todo', icon: <Archive color='black' />},
-            {title: 'Github Source Code', href: 'https://github.com/hannah26hannah/vuejs-todolist-2.0', icon: <Console color='black' />}
-        ]
-    },
-    {
-        title: 'Weekly-Reading',
-        tags: [
-            'Vue.js', 'Vuex', 'Firebase'
-        ],
-        detail: 'Weekly-Reading is a personal book review Web application.',
-        images: [
-            {
-                order: 1,
-                alt: 'preview image',
-                src: 'moon1'
+                src: moon
             }
         ],
         gif: {alt: 'preview gif', src: ''},
         links: [
-            {title: 'Demo', href: 'https://hannah26hannah.github.io/vuejs-todolist-2.0', icon: <CirclePlay color='black' />},
-            {title: 'Work Log', href: 'https://uiyoji-journal.tistory.com/search/vue-todo', icon: <Archive color='black' />},
-            {title: 'Github Source Code', href: 'https://github.com/hannah26hannah/vuejs-todolist-2.0', icon: <Console color='black' />}
+            {title: 'Demo', href: `${BASE_DEMO}/vuejs-todolist-2.0`, icon: <CirclePlay color='black' />},
+            {title: 'Work Log', href: `${BASE_BLOG}todolist`, icon: <Archive color='black' />},
+            {title: 'Github Source Code', href: `${BASE_REPO}vuejs-todolist-2.0`, icon: <Console color='black' />}
         ]
-    },
+    }
 ]
 
 export default workContents

@@ -18,7 +18,7 @@ const MainSection = (props) => (
             flex
             justify='around'
             align='center'
-            pad={{ bottom: 'large' }}
+            pad={{ top: 'large', bottom: 'large' }}
             key={content.order}
             margin={{ top: '2rem', bottom: '3rem' }}
             border={{ side: 'bottom', color: 'dark-2'}}
@@ -45,7 +45,8 @@ const MainSection = (props) => (
                         level={1}
                         margin="none"
                         a11yTitle={content.title}
-                        textAlign={content.order === 2 ? 'start' : 'center'}>{ content.title }
+                        textAlign='center'
+                    >{content.title}
                     </Heading>
                 )}
                 {content.titleComponent}
@@ -55,11 +56,11 @@ const MainSection = (props) => (
                 {content.contentsComponent}
 
                 {content.order === 3 && (
-                    <Portfolio />
+                    <Portfolio size={ props.size } />
                 )}
                 
                 {content.order === 4 && (
-                    <SidePortfolio size={props.size}/>
+                    <SidePortfolio />
                 )}
                 {content.order === 6 && (
                     <Contact channel={ props.channel }/>
@@ -68,6 +69,7 @@ const MainSection = (props) => (
         </Box>
     ))
 )
+
 
 export default class Body extends Component { 
     constructor(props) {
@@ -81,18 +83,19 @@ export default class Body extends Component {
         return (
             <ResponsiveContext.Consumer>
                 {size => (
-                    <Main pad='large' fill='vertical'
+                    <Main
+                        pad='large' fill='vertical'
                         style={{
                         height: 'auto'
                         }}>
                             <Route
                                 exact={true}
                                 path='/'
-                                component={() => <MainSection contents={this.state.contents} channel={this.state.channel} />}
+                            component={() => <MainSection contents={this.state.contents} channel={this.state.channel} size={ size } />}
                             />
                             <Route
                                 path='/blog'
-                            component={() => <Blog />} />
+                                component={() => <Blog />} />
                         <ScrollToTop size={ size } />
                     </Main>
                 )}
