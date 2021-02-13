@@ -3,6 +3,7 @@
 ## Process log
 - Set up for development
 - Set up for UI library, grommet
+- Merged with master branch with second branch
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
