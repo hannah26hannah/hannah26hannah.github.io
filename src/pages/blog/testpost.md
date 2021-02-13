@@ -2,4 +2,4 @@
 
 ## Title 2
 ### Table
-*React.js*
+Tags: *React.js, Responsive Design*

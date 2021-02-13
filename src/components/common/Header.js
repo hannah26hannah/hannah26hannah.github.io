@@ -35,21 +35,12 @@ const LinkToHome = () => (
   </Heading>
 )
 
-// const categories = [
-//   {title: 'About', href: '#About'},
-//   {title: 'Portfolio', href: '#Portfolio' },
-//   {title: 'Resume', href: 'https://www.notion.so/Jeongwon-Yoo-72675253e1284032a53a8749a383d31a' },
-//   {title: 'Blog', href: '/blog' },
-//   {title: 'Contact', href: '#Contact'},
-// ]
-
-
 const scrollTo = (param) => { 
   document.querySelector(param).scrollIntoView({ behavior: 'smooth', block: 'start' })
 }
 const MenuNav = (prop) => (
   <Nav className={'commonAlign' + (prop.location === 'header' ? ' headerAlign' : ' sideAlign')}>
-    {useLocation().pathname !== '/blog' && (
+    {useLocation().pathname === '/' && (
       <Box>
         <Anchor className='anchorLink' href='#About' label='About' onClick={ () => scrollTo('#About') } />
         <Anchor className='anchorLink' href='#Portfolio' label='Portfolio' onClick={ () => scrollTo('#Portfolio') } />
