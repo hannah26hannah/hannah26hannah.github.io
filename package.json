@@ -21,7 +21,9 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build && rm -rf docs && mv build docs",
+    "prebuild": "rmdir /s docs",
+    "build": "react-scripts build && ren build docs",
+    "rename": "ren build docs",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
