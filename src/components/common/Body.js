@@ -60,7 +60,7 @@ const MainSection = (props) => (
                 )}
                 
                 {content.order === 4 && (
-                    <SidePortfolio />
+                    <SidePortfolio size={ props.size } />
                 )}
                 {content.order === 6 && (
                     <Contact channel={ props.channel }/>

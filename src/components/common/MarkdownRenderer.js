@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Box, Button } from 'grommet';
 import { Link } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown'
-import markdownPath from '../../../src/pages/blog/testpost.md';
+import markdownPath from '../../../src/pages/blog/posts/testpost.md';
 
 export default class BlogDetail extends Component { 
     constructor(props) { 

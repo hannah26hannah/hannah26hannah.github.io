@@ -44,7 +44,7 @@ const workContents = [
         ],
         gif: {alt: 'preview gif', src: ''},
         links: [
-            {title: 'Demo', href: `${BASE_DEMO}/vuejs-todolist-2.0`, icon: <CirclePlay color='black' />},
+            {title: 'Demo', href: `${BASE_DEMO}vuejs-todolist-2.0`, icon: <CirclePlay color='black' />},
             {title: 'Work Log', href: `${BASE_BLOG}todolist`, icon: <Archive color='black' />},
             {title: 'Github Source Code', href: `${BASE_REPO}vuejs-todolist-2.0`, icon: <Console color='black' />}
         ]

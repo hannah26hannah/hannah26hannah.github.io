@@ -1,29 +1,8 @@
 import React, { Component } from 'react';
 import sideContents from './sideContents.js';
-import { Box, Image, Heading, Button, Anchor, Text } from 'grommet';
+import { Box, Image, Heading, Anchor, Text } from 'grommet';
 
-const Tags = (props) => (
-    <Box flex
-        direction='row'
-        style={{flexWrap: 'wrap'}}
-        align='center'
-        gap='small'
-        pad='xsmall'
-        justify='end'
-        overflow='auto'
-        >
-        {props.tags.map((tag, i) => (
-            <Box key={i} margin={{top: 'xsmall', bottom: 'xsmall'}}>
-            <Button color='paper' 
-                primary 
-                label={tag}
-                hoverIndicator='light-1'
-            />
-            </Box>
-            )
-        )}
-    </Box>
-)
+
 const Preview = (props) => (
     <Box tag='article'
         direction='row'
@@ -77,14 +56,19 @@ const SideSlice = (props) => (
             {content.title} </Heading>
             
             <Text size='medium' margin={{ top: '2rem', bottom: '2rem' }} color='dark-2'>{content.detail}</Text>
-
-            <Tags tags={content.tags}/>            
             <Preview image={content.image} />
+            <Text size='medium' margin={{ top: '1rem', bottom: '1rem' }} color='dark-2'>{content.tags}</Text>
             <LinkList links={content.links}/>
         </Box>
     ))
 )
 export default class SidePortfolio extends Component {
+    constructor(props) { 
+        super(props)
+        this.state = {
+            size: props.size
+        }
+    }
     render() {
         return (
             <Box 
@@ -94,7 +78,7 @@ export default class SidePortfolio extends Component {
                 justify='center'
                 align='center'
             >
-            <SideSlice contents={sideContents} />
+            <SideSlice contents={sideContents} size={ this.state.size } />
             </Box>
         )
     }
