@@ -3,7 +3,7 @@ import { Tabs, Tab, Box } from 'grommet';
 import { Route, withRouter } from 'react-router-dom';
 import BlogPostList from './common/BlogPostList.js';
 import BlogPostDetail from './common/BlogPostDetail';
-
+import ServerTest from './ServerTest.js'
 
 const TabNames = [
     { title: 'TIL', body: <BlogPostList title='til' detail='🔍 Today I Learned' />},
@@ -24,6 +24,7 @@ class Blog extends Component {
         return (
             <Box pad='large'>
                 {/* Tab to display Index */}
+                <ServerTest />
                 <Tabs alignControls='start'>
                     {TabNames.map(tab => (
                     <Tab title={tab.title}
