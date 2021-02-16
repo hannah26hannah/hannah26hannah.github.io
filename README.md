@@ -6,6 +6,14 @@
 - Merged with master branch with second branch
 - Integrated markdown in React app
     - TODO: image processing 
+- Activate AWS RDS for mySQL 
+
+## Dev Stacks
+- React.js
+- Node.js(Express)
+- Grommet, Sass (UI/UX)
+- MySQL
+
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
