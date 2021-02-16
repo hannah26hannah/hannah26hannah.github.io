@@ -1,31 +1,15 @@
 import React, { Component } from 'react';
 import { Tabs, Tab, Box } from 'grommet';
-import { Link, Route, withRouter } from 'react-router-dom';
-import BlogDetail from './common/MarkdownRenderer';
-const blogSimpleInfo = [
-    { title: '제목입니다', date: `${new Date()}`, href: '1' },
-    { title: '제목입니다', date: `${new Date()}`, href: '2' },
-    { title: '제목입니다', date: `${new Date()}`, href: '3' },
-    { title: '제목입니다', date: `${new Date()}`, href: '4' },
-    { title: '제목입니다', date: `${new Date()}`, href: '5' },
-    { title: '제목입니다', date: `${new Date()}`, href: '6' },
-]
+import { Route, withRouter } from 'react-router-dom';
+import BlogPostList from './common/BlogPostList.js';
+import BlogPostDetail from './common/BlogPostDetail';
+// import BlogDetail from './common/MarkdownRenderer';
 
-const BlogList = (props) => (
-    <Box tag='main'>
-        <h4>{ props.detail }</h4>
-        <ul>
-            {blogSimpleInfo.map(info => (
-                <Link to={ `/blog/${props.title}/${info.href}` } key={info.href}><li>{ info.title }</li></Link>
-            ))}
-        </ul>
-    </Box>
-)
 
 const TabNames = [
-    { title: 'TIL', body: <BlogList title='til' detail='🔍 Today I Learned' />},
-    { title: 'Feature', body: <BlogList title='feature' detail='👀 Featured Article' />},
-    { title: 'Tistory', body: <BlogList title='tistory' detail='📝 Published From Tistory' />, state: 'disabled' }
+    { title: 'TIL', body: <BlogPostList title='til' detail='🔍 Today I Learned' />},
+    { title: 'Feature', body: <BlogPostList title='feature' detail='👀 Featured Article' />},
+    { title: 'Tistory', body: <BlogPostList title='tistory' detail='📝 Published From Tistory' />, state: 'disabled' }
 ]
 
 class Blog extends Component { 
@@ -52,7 +36,7 @@ class Blog extends Component {
                     ))}
                 </Tabs>
                 {/* Each Post */}
-                <Route path={`${match.path}/:id`} component={BlogDetail} />
+                <Route path={`${match.path}/:id`} component={BlogPostDetail} />
             </Box>
         )
     }
