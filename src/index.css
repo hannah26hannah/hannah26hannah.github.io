@@ -1,3 +1,5 @@
+/* MIXINS */
+/* VARIABLES */
 html {
   height: 100%;
   margin: 0;
@@ -35,3 +37,17 @@ html {
 
 .sideAlign div .resumeLink {
   color: white; }
+
+/* Blog */
+.blogListWrap {
+  list-style-type: disc; }
+  .blogListWrap .blogList {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    color: black;
+    text-decoration: none; }
+    .blogListWrap .blogList:visited {
+      color: black; }
+    .blogListWrap .blogList:hover {
+      background-color: #F8EFBA; }

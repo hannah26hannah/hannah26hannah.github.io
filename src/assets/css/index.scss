@@ -1,3 +1,19 @@
+/* MIXINS */
+
+
+@mixin anchorStyle {
+    color: black;
+    text-decoration: none;
+}
+
+
+/* VARIABLES */
+$orange: #F39C12;
+$moon: #F1C40F;
+$paper: #F8EFBA;
+$logoGreen: #57816D;
+
+
 html {
     height: 100%;
     margin: 0;
@@ -16,8 +32,7 @@ html {
   font-size: 1.5rem;
   .routeLink,
   .anchorLink {
-    color: black;
-    text-decoration: none;
+    @include anchorStyle;
     font-weight: bold;
     &:hover {
       text-decoration: underline;
@@ -45,6 +60,23 @@ html {
         }
         .resumeLink {
             color: white;
+        }
+    }
+}
+
+/* Blog */
+.blogListWrap {
+    list-style-type: disc;
+    .blogList {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        @include anchorStyle;
+        &:visited {
+            color: black;
+        }
+        &:hover {
+            background-color: $paper;
         }
     }
 }
