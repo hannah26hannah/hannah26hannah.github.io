@@ -96,15 +96,6 @@ export default class MarkdownRenderer extends Component {
         this.setState({
             markdown: text
         })
-        // fetch()
-        // .then(res => { 
-        //     return res.text()
-        // })
-        // .then(text => {
-        //     this.setState({
-        //         markdown: text
-        //     })
-        // })        
     }
     render() { 
         return (

@@ -8,7 +8,7 @@ const dateToString = (date) => {
 
 const blogSimpleInfo = [
     { title: 'testpost', category: 'til', filename: 'testpost', date: dateToString(new Date())},
-    { title: 'testPost2', category: 'til', filename: 'testPost2', date: dateToString(new Date())},
+    { title: 'testPost2', category: 'feature', filename: 'testPost2', date: dateToString(new Date())},
 ]
 
 
@@ -22,21 +22,20 @@ class PostList extends Component {
     }
     render() { 
         const { match } = this.props;
-        
+        const categoryMatched = blogSimpleInfo.find(post => post.category === this.state.category);
         return (
             <Box tag='main'>
                 <Heading level={ 3 }>{ this.state.detail }</Heading>
                 <ul className='blogListWrap'>
-                    {blogSimpleInfo.map(({ title, date }) => (
-                        <li key={title}>
-                            <Link to={`${match.url}${this.state.category}/${title.split(" ").join("-")}`}
-                                className='blogList'
-                            >
-                                <Text pad={{ right: 'small' }}>{title}</Text>
-                                <Text color='light-4'>{date}</Text>
-                            </Link>
-                        </li>
-                    ))}
+
+                    {<li>
+                        <Link to={`${match.url}/${this.state.category}/${categoryMatched.title.split(" ").join("-")}`}
+                            className='blogList'
+                        >
+                            <Text pad={{ right: 'small' }}>{categoryMatched.title}</Text>
+                            <Text color='light-4'>{categoryMatched.date}</Text>
+                        </Link>
+                    </li>}
                 </ul>
             </Box>
         )

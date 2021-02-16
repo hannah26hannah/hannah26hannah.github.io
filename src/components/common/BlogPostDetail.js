@@ -21,12 +21,10 @@ const GoBack = (props) => (
 
 export default class BlogDetail extends Component { 
     render() {
-        const { match, history, location } = this.props;
-        const categoryId = match.params.id;
+        const { history, location } = this.props;
         const str = location.pathname;
         const postId = str.substring(str.lastIndexOf('/') + 1, str.length);
-        
-        const post = blogSimpleInfo.find(post => post.filename === postId && post.category === categoryId);
+        const post = blogSimpleInfo.find(post => post.filename === postId);
 
         return (
             <Box>
