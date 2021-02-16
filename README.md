@@ -4,6 +4,8 @@
 - Set up for development
 - Set up for UI library, grommet
 - Merged with master branch with second branch
+- Integrated markdown in React app
+    - TODO: image processing 
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

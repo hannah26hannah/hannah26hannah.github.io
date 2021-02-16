@@ -22,7 +22,7 @@
   "scripts": {
     "start": "react-scripts start",
     "prebuild": "rmdir /s docs",
-    "build": "react-scripts build && ren build docs",
+    "build": "react-scripts build && rmdir /s docs && ren build docs",
     "rename": "ren build docs",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
