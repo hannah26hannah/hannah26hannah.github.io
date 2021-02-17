@@ -1,5 +1,6 @@
 // import moon1 from '../assets/images/moon_1.png';
 import moon from '../assets/images/moon_mob_pad.png';
+import koopkorea from '../assets/images/koopkorea_b_m.png';
 
 import port_preview from '../assets/images/portfolio_b_m.png';
 import { CirclePlay, Console, Archive } from 'grommet-icons';
@@ -11,6 +12,7 @@ const BASE_BLOG = 'https://uiyoji-journal.tistory.com/tag/';
 const workContents = [
     {
         title: 'Tech Portfolio Blog',
+        year: '2021',
         tags: [
             'React.js', 'Grommet', 'Responsive', 'Markdown'
         ],
@@ -30,7 +32,27 @@ const workContents = [
         ]
     },
     {
+        title: 'KoopKorea Online Store Front',
+        year: '2020',
+        tags: [
+            'Stencil CLI', 'jQuery', 'scss', 'Handlebar.js'
+        ],
+        detail: 'I re-developed some web components for online store, KoopKorea. I used BigCommerce-Stencil CLI emulator for devleopment, bundling and publishing.',
+        images: [
+            {
+                order: 1,
+                alt: 'browser window preview',
+                src: koopkorea
+            }
+        ],
+        gif: {alt: 'preview gif', src: ''},
+        links: [
+            {title: 'Website', href: 'https://koopkorea.nl/', icon: <CirclePlay color='black' />},
+        ]
+    },
+    {
         title: 'Moon-todo',
+        year: '2021',
         tags: [
             'Vue.js', 'Tailwinds', 'TypeScript', 'Chart.js'
         ],

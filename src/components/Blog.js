@@ -24,7 +24,7 @@ class Blog extends Component {
         return (
             <Box pad='large'>
                 {/* Tab to display Index */}
-                <ServerTest />
+                {/* <ServerTest /> */}
                 <Tabs alignControls='start'>
                     {TabNames.map(tab => (
                     <Tab title={tab.title}
