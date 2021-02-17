@@ -91,7 +91,7 @@
     "rename": "ren build docs",
     "test": "node scripts/test.js",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d docs"
   },
   "eslintConfig": {
     "extends": [
