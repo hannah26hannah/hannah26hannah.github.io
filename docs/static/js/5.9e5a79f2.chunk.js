@@ -1,2 +1,0 @@
-(this["webpackJsonpmy-first-react"]=this["webpackJsonpmy-first-react"]||[]).push([[5],{587:function(t,s,e){"use strict";e.r(s),s.default=e.p+"static/media/testpost.0ddb07ef.md"}}]);
-//# sourceMappingURL=5.9e5a79f2.chunk.js.map
