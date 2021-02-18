@@ -1,9 +1,12 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import sideContents from './sideContents.js';
-import { Box, Image, Heading, Anchor, Text } from 'grommet';
+import { Box, Image, Heading, Anchor, Text, Layer, Button } from 'grommet';
 
 
-const Preview = (props) => (
+const Preview = (props) => {
+    const [show, setShow] = useState();
+    
+    return (
     <Box tag='article'
         direction='row'
         flex 
@@ -18,27 +21,61 @@ const Preview = (props) => (
             src={props.image.src} 
             alt={props.image.alt} 
             style={{borderRadius: '12px'}}
+            onClick={() => { 
+                setShow(true)
+            }}
             />
+        {show && (
+            <Layer 
+                onEsc={() => setShow(false)}
+                onClickOutside={() => setShow(false)}
+                margin='xlarge'
+            >
+                <Box
+                    pad='small'
+                >
+                    <Image 
+                        fit='cover'
+                        src={props.image.src} 
+                        alt={props.image.alt} 
+                        style={{borderRadius: '12px'}}
+                        margin='small'
+                    />
+                    <Box
+                        width='small'
+                        alignSelf='end'
+                >
+                    <Button 
+                        primary
+                        hoverIndicator='light-1'
+                        color='logoGreen'
+                        label='close' 
+                        onClick={() => { setShow(false)}} />
+                    </Box>
+                </Box>
+            </Layer>
+        )}
     </Box>
-
-)
-const LinkList = (props) => (
-    <Box
-        pad='small'
-    >{
-    props.links.map(link => (
-        <Anchor
-            icon={link.icon}
-            href={link.href}
-            target='_blank'  
-            color='black'
-            key={link.href}
-            label={link.title}
-            margin='xxsmall'
-        />
-    ))}
-    </Box>
-)
+)}
+const LinkList = (props) => {
+    const validLinks = props.links.filter(link => link.href !== '');
+    return (
+        <Box pad='small'>
+            {validLinks.map(link => (
+                <Anchor
+                icon={link.icon}
+                href={link.href}
+                target='_blank'  
+                color='black'
+                key={link.href}
+                label={link.title}
+                margin='xxsmall'
+                />
+            ))}
+            
+        </Box>
+    )
+}
 
 const SideSlice = (props) => (
     props.contents.map(content => (
