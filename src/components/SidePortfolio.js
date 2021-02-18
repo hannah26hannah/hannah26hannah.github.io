@@ -1,6 +1,6 @@
 import React, { Component, useState } from 'react';
 import sideContents from './sideContents.js';
-import { Box, Image, Heading, Anchor, Text, Layer, Button } from 'grommet';
+import { Box, Image, Heading, Anchor, Text, Layer, Button, Grid } from 'grommet';
 
 
 const Preview = (props) => {
@@ -26,6 +26,7 @@ const Preview = (props) => {
             }}
             />
         {show && (
+            //TODO: When user click image to make it bigger, if the screen size is mobile then after escaping Layer, screen goes to top. 
             <Layer 
                 onEsc={() => setShow(false)}
                 onClickOutside={() => setShow(false)}
@@ -33,24 +34,27 @@ const Preview = (props) => {
             >
                 <Box
                     pad='small'
+                    direction='column'
+                    flex
+                    background='paper'
                 >
                     <Image 
-                        fit='cover'
+                        fit='contain'
                         src={props.image.src} 
                         alt={props.image.alt} 
-                        style={{borderRadius: '12px'}}
-                        margin='small'
+                        style={{borderRadius: '12px', paddingTop: '1rem'}}
                     />
                     <Box
-                        width='small'
+                        pad='small'
                         alignSelf='end'
-                >
-                    <Button 
-                        primary
-                        hoverIndicator='light-1'
-                        color='logoGreen'
-                        label='close' 
-                        onClick={() => { setShow(false)}} />
+                    >
+                        <Button
+                            style={{ width: '100%'}}
+                            primary
+                            hoverIndicator='light-1'
+                            color='logoGreen'
+                            label='close' 
+                            onClick={() => { setShow(false)}} />
                     </Box>
                 </Box>
             </Layer>
@@ -77,6 +81,7 @@ const LinkList = (props) => {
     )
 }
 
+
 const SideSlice = (props) => (
     props.contents.map(content => (
         <Box tag='section'
@@ -87,6 +92,7 @@ const SideSlice = (props) => (
             key={content.detail}
             width='large'
             margin='small'
+            
             >
             <Heading level={3} textAlign='start' 
             style={{ margin: 0 }}>
@@ -99,6 +105,10 @@ const SideSlice = (props) => (
         </Box>
     ))
 )
+
+    
+    
+
 export default class SidePortfolio extends Component {
     constructor(props) { 
         super(props)
@@ -114,8 +124,23 @@ export default class SidePortfolio extends Component {
                 direction='row-responsive'
                 justify='center'
                 align='center'
+                pad={{left: '3vw'}}
             >
-            <SideSlice contents={sideContents} size={ this.state.size } />
+            {['medium', 'large'].includes(this.state.size) && (
+                <Grid 
+                gap='medium' 
+                rows='auto'
+                columns={{ 
+                    count: 'fill', 
+                    size: ['small', 'medium']
+                }}
+                >
+                <SideSlice contents={sideContents} size={ this.state.size } />
+            </Grid>
+            )}
+            {['xsmall','small'].includes(this.state.size) && (
+                <SideSlice contents={sideContents} size={ this.state.size } />
+            )}
             </Box>
         )
     }

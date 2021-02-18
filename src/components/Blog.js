@@ -3,7 +3,7 @@ import { Tabs, Tab, Box } from 'grommet';
 import { Route, withRouter } from 'react-router-dom';
 import BlogPostList from './common/BlogPostList.js';
 import BlogPostDetail from './common/BlogPostDetail';
-import ServerTest from './ServerTest.js'
+// import ServerTest from './ServerTest.js'
 
 const TabNames = [
     { title: 'TIL', body: <BlogPostList title='til' detail='🔍 Today I Learned' />},
