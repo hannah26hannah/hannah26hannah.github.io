@@ -2,10 +2,15 @@ import React, { Component, useState } from 'react';
 import sideContents from './sideContents.js';
 import { Box, Image, Heading, Anchor, Text, Layer, Button, Grid } from 'grommet';
 
-
+function returnYOffset(y) {
+    if (window.pageYOffset === 0) {
+        window.scrollTo(0, y);
+    }
+}
 const Preview = (props) => {
     const [show, setShow] = useState();
-    
+    const [yOffSet, setYOffSet] = useState();
+
     return (
     <Box tag='article'
         direction='row'
@@ -22,41 +27,50 @@ const Preview = (props) => {
             alt={props.image.alt} 
             style={{borderRadius: '12px'}}
             onClick={() => { 
+                setYOffSet(window.pageYOffset);
                 setShow(true)
             }}
             />
         {show && (
-            //TODO: When user click image to make it bigger, if the screen size is mobile then after escaping Layer, screen goes to top. 
-            <Layer 
-                onEsc={() => setShow(false)}
-                onClickOutside={() => setShow(false)}
-                margin='xlarge'
+           <Layer 
+           onEsc={() => {
+                setShow(false);
+                returnYOffset(yOffSet)
+           }}
+           onClickOutside={() => {
+                setShow(false)
+                returnYOffset(yOffSet)
+           }}
+           margin='xlarge'
+           >
+            <Box
+               pad='small'
+               direction='column'
+               flex
+               background='paper'
             >
-                <Box
-                    pad='small'
-                    direction='column'
-                    flex
-                    background='paper'
-                >
-                    <Image 
-                        fit='contain'
-                        src={props.image.src} 
-                        alt={props.image.alt} 
-                        style={{borderRadius: '12px', paddingTop: '1rem'}}
-                    />
-                    <Box
-                        pad='small'
-                        alignSelf='end'
-                    >
-                        <Button
-                            style={{ width: '100%'}}
-                            primary
-                            hoverIndicator='light-1'
-                            color='logoGreen'
-                            label='close' 
-                            onClick={() => { setShow(false)}} />
-                    </Box>
-                </Box>
+                <Image 
+                   fit='contain'
+                   src={props.image.src} 
+                   alt={props.image.alt} 
+                   style={{borderRadius: '12px', paddingTop: '1rem'}}
+               />
+               <Box
+                   pad='small'
+                   alignSelf='end'
+               >
+                   <Button
+                       style={{ width: '100%'}}
+                       primary
+                       hoverIndicator='light-1'
+                       color='logoGreen'
+                       label='close' 
+                       onClick={(e) => {
+                           setShow(false)
+                           returnYOffset(yOffSet)
+                       }} />
+               </Box>
+            </Box>
             </Layer>
         )}
     </Box>

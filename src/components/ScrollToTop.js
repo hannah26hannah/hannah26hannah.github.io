@@ -44,7 +44,7 @@ export default class ScrollToTop extends Component {
     }
     
     render() { 
-        const { isVisible, size } = this.state;
+        const { isVisible } = this.state;
 
         return (
             <Box 
