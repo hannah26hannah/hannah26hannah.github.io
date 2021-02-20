@@ -6,7 +6,6 @@ const ContactList = (props) => (
         data={props.channel}
         pad='small'
         border={false}
-        margin={{ top: '5rem' }}
         direction='column'
         style={{
             display: 'flex',
