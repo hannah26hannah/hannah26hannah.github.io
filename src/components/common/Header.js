@@ -41,18 +41,18 @@ const scrollTo = (param) => {
 const MenuNav = (prop) => (
   <Nav className={'commonAlign' + (prop.location === 'header' ? ' headerAlign' : ' sideAlign')}>
     {useLocation().pathname === '/' && (
-      <Box>
+      <Box className='subAlign'>
         <Anchor className='anchorLink' href='#About' label='About' onClick={ () => scrollTo('#About') } />
         <Anchor className='anchorLink' href='#Portfolio' label='Portfolio' onClick={ () => scrollTo('#Portfolio') } />
         <Anchor className='anchorLink' href='#Contact' label='Contact' onClick={() => scrollTo('#Contact')} />
       </Box>
     )}
     {useLocation().pathname !== '/' && (
-      <Box>
+      <Box className='subAlign'>
         <Link className='routeLink' to='/'>👈 Take me to Home</Link>
       </Box>
     )}
-    <Box margin={{top: '-1rem'}}>
+    <Box className='subAlign'>
       <Anchor className='resumeLink' label='Resume' href={resumeLink} color='moon' target='_blank'/>
       <Link className='routeLink' to='blog'>Blog</Link>
     </Box>

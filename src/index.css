@@ -15,7 +15,13 @@ html {
   height: 100vh; }
 
 .commonAlign {
-  font-size: 1.5rem; }
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: row !important; }
+  .commonAlign .subAlign {
+    display: flex;
+    flex-direction: row;
+    height: auto; }
   .commonAlign .routeLink,
   .commonAlign .anchorLink {
     color: black;
@@ -26,13 +32,10 @@ html {
       text-decoration: underline; }
 
 /* header menu nav style */
-.headerAlign {
-  display: block ruby !important; }
-  .headerAlign div {
-    display: block ruby;
-    align-self: end; }
-    .headerAlign div a {
-      margin-left: 1rem; }
+.headerAlign div {
+  align-self: end; }
+  .headerAlign div a {
+    margin-left: 1rem; }
 
 /* side menu nav style */
 .sideAlign div a {

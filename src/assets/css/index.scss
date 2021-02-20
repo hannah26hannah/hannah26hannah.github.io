@@ -34,6 +34,13 @@ html {
 
 .commonAlign {
   font-size: 1.5rem;
+  display: flex;
+  flex-direction: row !important;
+  .subAlign {
+    display: flex;
+    flex-direction: row;
+    height: auto;
+  }
   .routeLink,
   .anchorLink {
     @include anchorStyle;
@@ -46,13 +53,10 @@ html {
 
 /* header menu nav style */
 .headerAlign {
-    display: block ruby !important;
     div {  
-        display: block ruby;
         align-self: end;
         a {
-            margin-left: 1rem;        
-        }
+            margin-left: 1rem; }
     }
 } 
 
