@@ -1,10 +1,13 @@
+/* FONT */
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;500;700&display=swap");
 /* MIXINS */
 /* VARIABLES */
 html {
   height: 100%;
   margin: 0;
   padding: 0;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  font-family: 'Comfortaa', cursive; }
   html body {
     margin: 0; }
 

@@ -8,7 +8,7 @@ const theme = {
       logoGreen: '#57816D',
     },
     font: {
-      family: 'consolas',
+      family: 'Comfortaa',
       size: '18px',
       height: '20px'
     },
