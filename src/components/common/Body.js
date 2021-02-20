@@ -32,7 +32,7 @@ const MainSection = (props) => (
                     border={{side: 'between'}}
                     round
                     alignSelf='center'>
-                    <img src={content.image} alt={content.imageAlt} />
+                    <img src={content.image} alt={content.imageAlt} style={{ width: '100%', height: 'auto' }}/>
                 </Box>
             )}
             <Box
