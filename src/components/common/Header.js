@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Menu, FormClose } from 'grommet-icons'
-import logo from './logo.svg';
+import logo from '../../assets/svg/logo.svg';
+import logoMobile from '../../assets/svg/logo_m.svg';
+
 import { Link, useLocation } from 'react-router-dom';
 
 import {
@@ -29,9 +31,14 @@ const AppBar = (props) => (
     {...props}
   />
 )
-const LinkToHome = () => (
+const LinkToHome = (prop) => (
   <Heading level='3' margin='none'>
-    <img src={logo} className='App-logo' alt='logo' />
+    {prop.size === 'xsmall' && (
+      <img src={logoMobile} className='mobile-App-logo' alt='logo' />
+    )}
+    {['small', 'medium', 'large'].includes(prop.size) && (
+      <img src={logo} className='App-logo' alt='logo' />
+    )}
   </Heading>
 )
 
@@ -39,7 +46,9 @@ const scrollTo = (param) => {
   document.querySelector(param).scrollIntoView({ behavior: 'smooth', block: 'start' })
 }
 const MenuNav = (prop) => (
-  <Nav className={'commonAlign' + (prop.location === 'header' ? ' headerAlign' : ' sideAlign')}>
+  <Nav 
+    className={'commonAlign' + (prop.location === 'header' ? ' headerAlign' : ' sideAlign')}
+    >
     {useLocation().pathname === '/' && (
       <Box className='subAlign'>
         <Anchor className='anchorLink' href='#About' label='About' onClick={ () => scrollTo('#About') } />
@@ -70,7 +79,7 @@ const SidebarButton = ({label, href, ...rest}) => (
     ></Button>
   </Box>
 )
-const SidebarHeader = () => (
+const SidebarHeader = (prop) => (
   <Box
     align='center'
     gap='small'
@@ -82,7 +91,13 @@ const SidebarHeader = () => (
       align='center'
       anchor='top-right'
     >
+    {['xsmall'].includes(prop.size) && (
+      <img src={logoMobile} className='mobile-App-logo' alt='logo' />
+    )}
+    {['small', 'medium', 'large'].includes(prop.size) && (
       <img src={logo} className='App-logo' alt='logo' />
+    )}
+      
     </Stack>
   </Box>
 )
@@ -115,18 +130,21 @@ export default class Header extends Component {
                 {size => (
                 <Box fill>
                   <AppBar>
-                    <Link to='/'><LinkToHome /></Link>
-                    {['medium', 'large'].includes(size) && (<MenuNav location='header' />)}
+                    <Link to='/'><LinkToHome size={size} /></Link>
+                    {['medium', 'large'].includes(size) && (<MenuNav location='header' size={size} />)}
                   </AppBar>
                   {['xsmall', 'small'].includes(size) && (
                   <Collapsible
                       direction='horizontal'
-                      open={this.state.showSidebar}>
+                      open={this.state.showSidebar}
+                      style={{ height: '100vh' }}
+                      >
+                      
                           <Sidebar
                           responsive={false}
                           width='medium'
                           background='orange'
-                          header={<SidebarHeader />}
+                          header={<SidebarHeader size={size} />}
                           footer={<SidebarFooter channel={ this.state.channel}/>}
                           pad={{ left: 'small', right: 'medium', vertical: 'small' }}
                           elevation='small'
@@ -143,10 +161,11 @@ export default class Header extends Component {
                                 style={{
                                     display: 'block',
                                     position: 'absolute',
-                                    top: '15px', 
+                                    top: '17px', 
                                     right: '5%',
                                     zIndex: '3',
                                     background: '#57816D',
+                                    margin: '12px'
                                 }}
                                 size='small'
                             />

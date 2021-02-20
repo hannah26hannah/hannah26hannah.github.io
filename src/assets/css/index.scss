@@ -2,8 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;500;700&display=swap');
 
 /* MIXINS */
-
-
 @mixin anchorStyle {
     color: black;
     text-decoration: none;
@@ -35,7 +33,7 @@ html {
 .commonAlign {
   font-size: 1.5rem;
   display: flex;
-  flex-direction: row !important;
+
   .subAlign {
     display: flex;
     flex-direction: row;
@@ -53,6 +51,7 @@ html {
 
 /* header menu nav style */
 .headerAlign {
+    flex-direction: row !important;
     div {  
         align-self: end;
         a {
@@ -62,7 +61,10 @@ html {
 
 /* side menu nav style */
 .sideAlign {
-    div {
+    flex-direction: column;
+    .subAlign {
+        display: flex;
+        flex-direction: column;
         a {
             padding: 1rem;
         }
@@ -72,6 +74,12 @@ html {
     }
 }
 
+/* Header logo */
+.mobile-App-logo {
+    margin-top: 5px;
+    left: 5%;
+    padding: 12px;
+}
 /* Blog */
 .blogListWrap {
     list-style-type: disc;

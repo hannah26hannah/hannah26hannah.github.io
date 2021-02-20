@@ -16,8 +16,7 @@ html {
 
 .commonAlign {
   font-size: 1.5rem;
-  display: flex;
-  flex-direction: row !important; }
+  display: flex; }
   .commonAlign .subAlign {
     display: flex;
     flex-direction: row;
@@ -32,17 +31,29 @@ html {
       text-decoration: underline; }
 
 /* header menu nav style */
-.headerAlign div {
-  align-self: end; }
-  .headerAlign div a {
-    margin-left: 1rem; }
+.headerAlign {
+  flex-direction: row !important; }
+  .headerAlign div {
+    align-self: end; }
+    .headerAlign div a {
+      margin-left: 1rem; }
 
 /* side menu nav style */
-.sideAlign div a {
-  padding: 1rem; }
+.sideAlign {
+  flex-direction: column; }
+  .sideAlign .subAlign {
+    display: flex;
+    flex-direction: column; }
+    .sideAlign .subAlign a {
+      padding: 1rem; }
+    .sideAlign .subAlign .resumeLink {
+      color: white; }
 
-.sideAlign div .resumeLink {
-  color: white; }
+/* Header logo */
+.mobile-App-logo {
+  margin-top: 5px;
+  left: 5%;
+  padding: 12px; }
 
 /* Blog */
 .blogListWrap {
