@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Tabs, Tab, Box } from 'grommet';
+import { Tabs, Tab, Box, Anchor } from 'grommet';
 import { Route, withRouter } from 'react-router-dom';
 import BlogPostList from './common/BlogPostList.js';
 import BlogPostDetail from './common/BlogPostDetail';
@@ -23,6 +23,13 @@ class Blog extends Component {
         const { match } = this.props
         return (
             <Box pad='large'>
+                <Box pad='small' background='paper' margin={{ bottom: 'large' }} gap='small'>
+                    <span>Still Working On .. 🚧</span>
+                    <br />
+                    <span>Currently Tistory Blog is open. You can read some posts there!</span>
+                    <br />
+                    <Anchor label='👉 Go to Blog' href='https://uiyoji-journal.tistory.com/' target='blank' />
+                </Box>
                 {/* Tab to display Index */}
                 {/* <ServerTest /> */}
                 <Tabs alignControls='start'>

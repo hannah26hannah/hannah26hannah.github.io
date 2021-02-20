@@ -54,7 +54,7 @@ const MenuNav = (prop) => (
     )}
     <Box margin={{top: '-1rem'}}>
       <Anchor className='resumeLink' label='Resume' href={resumeLink} color='moon' target='_blank'/>
-      <Link className='routeLink' to='blog'>🚧 Blog</Link>
+      <Link className='routeLink' to='blog'>Blog</Link>
     </Box>
   </Nav>
 )

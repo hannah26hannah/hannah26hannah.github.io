@@ -25,7 +25,7 @@ const sideContents = [
         detail: 'Practice vanilla JavaScript & fetching Open API',
         image: {alt: 'preview image of weather app', src: weather},
         links: [
-            {title: 'Demo', href: 'hannah-weather-app.netlify.app', icon: <CirclePlay color='black' />},
+            {title: 'Demo', href: 'https://hannah-weather-app.netlify.app', icon: <CirclePlay color='black' />},
             {title: 'Work Log', href: '', icon: <Archive color='black' />},
             {title: 'Github Source Code', href: `${BASE_REPO}weather-app`, icon: <Console color='black' />}
         ]
