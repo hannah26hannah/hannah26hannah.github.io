@@ -20,23 +20,35 @@ const Preview = (props) => {
         border={{side: 'all', color: 'dark-2'}}
         round
         pad='small'
-        style={{width: '100%', height: 'auto'}}
+        style={{
+            width: '100%',
+            height: 'auto',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            overflow: 'hidden',
+            
+        }}
     >
-        <Image 
-            fit='cover'
+        <img
             src={props.image.src} 
-            alt={props.image.alt} 
-            style={{borderRadius: '12px'}}
+            alt={props.image.alt}
             onClick={() => { 
                 setYOffSet(window.pageYOffset);
                 setShow(true)
             }}
-            />
+            style={{
+                flexShrink: '0',
+                maxWidth: '100%',
+                maxHeight: '100%',
+                borderRadius: '12px',
+            }}
+        />
         {show && (
            <Layer 
            style={{ 
-               height: '60%',
-               transform: 'translateY(50%)'
+            //    height: '60%',
+            //    transform: 'translateY(50%)'
            }}
            onEsc={() => {
                 setShow(false);

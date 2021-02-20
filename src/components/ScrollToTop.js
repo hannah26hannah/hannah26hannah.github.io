@@ -57,7 +57,7 @@ export default class ScrollToTop extends Component {
                     right: '1.5rem',
                     display: 'inline-flex',
                     cursor: 'pointer',
-                    width: ['medium', 'large'].includes(size) ? '5rem' : '4rem',
+                    width: '3rem',
                     backgroundColor: 'yello',
                     height: 'auto'
                 }}

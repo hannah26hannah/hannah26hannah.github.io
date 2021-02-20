@@ -35,17 +35,28 @@ const PreviewSlider = (props) => (
         border={{side: 'all', color: 'dark-2'}}
         round
         pad='small'
-        style={{width: '100%', height: 'auto'}}
-
+        style={{
+            width: '100%',
+            height: 'auto',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            overflow: 'hidden',
+        }}
     >
     {props.images.map(img => (
         <Image 
-            fit='cover' 
+            // fit='cover' 
             src={img.src} 
             key={img.order} 
             alt={img.alt} 
-            style={{borderRadius: '12px'}}
-            />
+            style={{
+                flexShrink: '0',
+                maxWidth: '100%',
+                maxHeight: '100%',
+                borderRadius: '12px',
+            }}
+        />
     ))}
     </Box>
 )
