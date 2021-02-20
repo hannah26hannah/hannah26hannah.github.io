@@ -85,6 +85,7 @@
   },
   "scripts": {
     "start": "node scripts/start.js",
+    "style": "node-sass --watch src/assets/css/index.scss src/index.css",
     "server": "nodemon server/server.js",
     "dev": "concurrently \"nodemon server/server.js\" \"node scripts/start.js\"",
     "build": "node scripts/build.js && rmdir /s docs && ren build docs",
