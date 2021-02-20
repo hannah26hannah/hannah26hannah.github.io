@@ -44,21 +44,20 @@ export default class ScrollToTop extends Component {
     }
     
     render() { 
-        const { isVisible } = this.state;
+        const { isVisible, size } = this.state;
 
         return (
             <Box 
                 responsive={true}
                 a11yTitle='Back to top'
-                pad={{ right: 'medium', bottom: 'large' }}
                 style={{
                     transition: 'all .25s ease-in-out',
                     position: 'fixed',
-                    bottom: '0',
-                    right: '0',
+                    bottom: '1rem',
+                    right: '1.5rem',
                     display: 'inline-flex',
                     cursor: 'pointer',
-                    width: '10vh',
+                    width: ['medium', 'large'].includes(size) ? '5rem' : '4rem',
                     backgroundColor: 'yello',
                     height: 'auto'
                 }}

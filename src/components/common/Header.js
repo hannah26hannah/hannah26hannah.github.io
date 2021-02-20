@@ -45,25 +45,38 @@ const LinkToHome = (prop) => (
 const scrollTo = (param) => { 
   document.querySelector(param).scrollIntoView({ behavior: 'smooth', block: 'start' })
 }
+
+
 const MenuNav = (prop) => (
   <Nav 
     className={'commonAlign' + (prop.location === 'header' ? ' headerAlign' : ' sideAlign')}
     >
     {useLocation().pathname === '/' && (
       <Box className='subAlign'>
-        <Anchor className='anchorLink' href='#About' label='About' onClick={ () => scrollTo('#About') } />
-        <Anchor className='anchorLink' href='#Portfolio' label='Portfolio' onClick={ () => scrollTo('#Portfolio') } />
-        <Anchor className='anchorLink' href='#Contact' label='Contact' onClick={() => scrollTo('#Contact')} />
+        <Anchor className='anchorLink' href='#About' label='About' onClick={ 
+          () => {
+            prop.sendDataToParent()
+            scrollTo('#About')
+          } } />
+        <Anchor className='anchorLink' href='#Portfolio' label='Portfolio' onClick={ () => {
+          prop.sendDataToParent()
+          scrollTo('#Portfolio')
+        }} />
+        <Anchor className='anchorLink' href='#Contact' label='Contact' onClick={() => {
+          prop.sendDataToParent()
+          scrollTo('#Contact')
+        }} />
       </Box>
     )}
     {useLocation().pathname !== '/' && (
       <Box className='subAlign'>
-        <Link className='routeLink' to='/'>👈 Take me to Home</Link>
+        <Link className='routeLink' to='/' onClick={() => prop.sendDataToParent()}>👈 Take me to Home</Link>
       </Box>
     )}
     <Box className='subAlign'>
-      <Anchor className='resumeLink' label='Resume' href={resumeLink} color='moon' target='_blank'/>
-      <Link className='routeLink' to='blog'>Blog</Link>
+      <Anchor className='resumeLink' label='Resume' href={resumeLink} color='moon' target='_blank' onClick={() => prop.sendDataToParent()}
+      />
+      <Link className='routeLink' to='blog' onClick={() => prop.sendDataToParent()}>Blog</Link>
     </Box>
   </Nav>
 )
@@ -123,17 +136,23 @@ export default class Header extends Component {
         showSidebar: false,
         channel: props.channel
       }
+      
   }
-  render() { 
+  
+  sendDataToParent = () => {
+    this.setState({ showSidebar: !this.state.showSidebar });
+  }
+  
+  render() {
         return (
             <ResponsiveContext.Consumer>
                 {size => (
                 <Box fill>
                   <AppBar>
                     <Link to='/'><LinkToHome size={size} /></Link>
-                    {['medium', 'large'].includes(size) && (<MenuNav location='header' size={size} />)}
+                    {['large'].includes(size) && (<MenuNav location='header' size={size} />)}
                   </AppBar>
-                  {['xsmall', 'small'].includes(size) && (
+                  {['xsmall', 'small', 'medium'].includes(size) && (
                   <Collapsible
                       direction='horizontal'
                       open={this.state.showSidebar}
@@ -169,11 +188,11 @@ export default class Header extends Component {
                                 }}
                                 size='small'
                             />
-                            <MenuNav />
+                            <MenuNav sendDataToParent={this.sendDataToParent} />
                           </Sidebar>
                       </Collapsible>
                   )}
-                    {['xsmall', 'small'].includes(size) && (
+                    {['xsmall', 'small', 'medium'].includes(size) && (
                         <Button
                         icon={<Menu />}
                             onClick={() => { this.setState({ showSidebar: !this.state.showSidebar})}}
