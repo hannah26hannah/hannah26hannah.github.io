@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import up from '../assets/svg/up.svg';
 import { Box } from 'grommet';
 
+
 export default class ScrollToTop extends Component {
     constructor(props) {
         super(props);
@@ -46,7 +47,7 @@ export default class ScrollToTop extends Component {
         const { isVisible, size } = this.state;
 
         return (
-            <Box className='App-scroll'
+            <Box 
                 responsive={true}
                 a11yTitle='Back to top'
                 pad={{ right: 'medium', bottom: 'large' }}
@@ -57,8 +58,8 @@ export default class ScrollToTop extends Component {
                     right: '0',
                     display: 'inline-flex',
                     cursor: 'pointer',
+                    width: '10vh',
                     backgroundColor: 'yello',
-                    width: ['medium', 'large'].includes(size) ? '85px' : '60px',
                     height: 'auto'
                 }}
             >
