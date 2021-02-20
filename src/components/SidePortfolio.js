@@ -30,7 +30,7 @@ const Preview = (props) => {
             
         }}
     >
-        <img
+        <Image
             src={props.image.src} 
             alt={props.image.alt}
             onClick={() => { 
@@ -46,10 +46,6 @@ const Preview = (props) => {
         />
         {show && (
            <Layer 
-           style={{ 
-            //    height: '60%',
-            //    transform: 'translateY(50%)'
-           }}
            onEsc={() => {
                 setShow(false);
                 returnYOffset(yOffSet)
