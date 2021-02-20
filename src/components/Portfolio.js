@@ -35,6 +35,7 @@ const PreviewSlider = (props) => (
         border={{side: 'all', color: 'dark-2'}}
         round
         pad='small'
+        style={{width: '100%', height: 'auto'}}
 
     >
     {props.images.map(img => (
@@ -91,9 +92,9 @@ const WorkSlice = (props) => (
             border={{ side: 'all', color: 'light-4' }}
             round={{ size: 'small' }}
             pad='large'
+            elevation='medium'
             gap='xxsmall'
             margin={{ top: 'medium', bottom: 'medium' }}
-            elevation='medium'
             key={content.detail}
         >
             <Heading level={1} textAlign='start'

@@ -1,6 +1,6 @@
 import React, { Component, useState } from 'react';
 import sideContents from './sideContents.js';
-import { Box, Image, Heading, Anchor, Text, Layer, Button, Grid } from 'grommet';
+import { Box, Image, Heading, Anchor, Text, Layer, Button } from 'grommet';
 
 function returnYOffset(y) {
     if (window.pageYOffset === 0) {
@@ -20,6 +20,7 @@ const Preview = (props) => {
         border={{side: 'all', color: 'dark-2'}}
         round
         pad='small'
+        style={{width: '100%', height: 'auto'}}
     >
         <Image 
             fit='cover'
@@ -33,6 +34,10 @@ const Preview = (props) => {
             />
         {show && (
            <Layer 
+           style={{ 
+               height: '60%',
+               transform: 'translateY(50%)'
+           }}
            onEsc={() => {
                 setShow(false);
                 returnYOffset(yOffSet)
@@ -101,11 +106,13 @@ const SideSlice = (props) => (
         <Box tag='section'
             border={{ side: 'all', color: 'light-4'}}
             round={{ size: 'small'}}
-            pad='medium'
+            pad='large'
             elevation='medium'
+            gap='xxsmall'
+            // width='large'
+            // margin='small'
+            margin={{ top: 'medium', bottom: 'medium' }}
             key={content.detail}
-            width='large'
-            margin='small'
             
             >
             <Heading level={3} textAlign='start' 
@@ -135,12 +142,12 @@ export default class SidePortfolio extends Component {
             <Box 
                 tag='main' 
                 flex
-                direction='row-responsive'
                 justify='center'
                 align='center'
                 pad={{left: '3vw'}}
             >
-            {['medium', 'large'].includes(this.state.size) && (
+                <SideSlice contents={sideContents} size={ this.state.size } />
+            {/* {['large'].includes(this.state.size) && (
                 <Grid 
                 gap='medium' 
                 rows='auto'
@@ -152,9 +159,9 @@ export default class SidePortfolio extends Component {
                 <SideSlice contents={sideContents} size={ this.state.size } />
             </Grid>
             )}
-            {['xsmall','small'].includes(this.state.size) && (
+            {['xsmall','small', 'medium'].includes(this.state.size) && (
                 <SideSlice contents={sideContents} size={ this.state.size } />
-            )}
+            )} */}
             </Box>
         )
     }
