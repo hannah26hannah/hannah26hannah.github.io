@@ -48,7 +48,7 @@ const scrollTo = (param) => {
 
 
 const MenuNav = (prop) => (
-  <Nav 
+  <Nav
     className={'commonAlign' + (prop.location === 'header' ? ' headerAlign' : ' sideAlign')}
     >
     {useLocation().pathname === '/' && (
@@ -84,6 +84,8 @@ const MenuNav = (prop) => (
 const SidebarButton = ({label, href, ...rest}) => (
   <Box pad='small'>
     <Button
+      role='tab'
+      id={label+'-anchor'}
       alignSelf='start'
       plain
       label={label}
@@ -121,7 +123,7 @@ const SidebarFooter = (props) => (
   >
     {
       props.channel.map( my => (
-        <SidebarButton icon={my.icon} href={my.href} a11yTitle={ my.a11yTitle } key={my.name} color='black'/>
+        <SidebarButton icon={my.icon} href={my.href} a11yTitle={ my.a11yTitle } name={my.name} key={my.name} color='black'/>
       ))
     }
     
@@ -150,7 +152,7 @@ export default class Header extends Component {
                 <Box fill>
                   <AppBar>
                     <Link to='/'><LinkToHome size={size} /></Link>
-                    {['large'].includes(size) && (<MenuNav location='header' size={size} />)}
+                    {['large'].includes(size) && (<MenuNav location='header' size={size} aria-labelledby='global-navigation' />)}
                   </AppBar>
                   {['xsmall', 'small', 'medium'].includes(size) && (
                   <Collapsible
@@ -188,7 +190,7 @@ export default class Header extends Component {
                                 }}
                                 size='small'
                             />
-                            <MenuNav sendDataToParent={this.sendDataToParent} />
+                            <MenuNav sendDataToParent={this.sendDataToParent} aria-labelledby='side-navigation' />
                           </Sidebar>
                       </Collapsible>
                   )}
