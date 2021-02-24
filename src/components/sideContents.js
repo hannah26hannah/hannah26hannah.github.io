@@ -14,7 +14,7 @@ const sideContents = [
         detail: 'Practice vanilla JavaScript & webpack system.',
         image: {alt: 'preview image of meditation app', src: meditation},
         links: [
-            {title: 'Demo', href: 'https://hannah-meditation-app.netlify.app/', icon: <CirclePlay color='black' />},
+            {title: 'Demo (PC)', href: 'https://hannah-meditation-app.netlify.app/', icon: <CirclePlay color='black' />},
             {title: 'Work Log', href: '', icon: <Archive color='black' />},
             {title: 'Github Source Code', href: `${BASE_REPO}meditation-app`, icon: <Console color='black' />}
         ]
@@ -22,10 +22,10 @@ const sideContents = [
     {
         title: 'Weather App', 
         tags: 'HTML5, CSS3, JavaScript, Open API',
-        detail: 'Practice vanilla JavaScript & fetching Open API',
+        detail: 'Practice vanilla JavaScript & fetching Open API (Responsive Design)',
         image: {alt: 'preview image of weather app', src: weather},
         links: [
-            {title: 'Demo', href: 'https://hannah-weather-app.netlify.app', icon: <CirclePlay color='black' />},
+            {title: 'Demo (Mobile & PC)', href: 'https://hannah-weather-app.netlify.app', icon: <CirclePlay color='black' />},
             {title: 'Work Log', href: '', icon: <Archive color='black' />},
             {title: 'Github Source Code', href: `${BASE_REPO}weather-app`, icon: <Console color='black' />}
         ]
@@ -36,7 +36,7 @@ const sideContents = [
         detail: 'Practice HTML5, CSS3 and JavaScript',
         image: {alt: 'preview image of kakaotalk clone app', src: kakao},
         links: [
-            {title: 'Demo', href: `${BASE_DEMO}kakao/index.html`, icon: <CirclePlay color='black' />},
+            {title: 'Demo (Mobile)', href: `${BASE_DEMO}kakao/index.html`, icon: <CirclePlay color='black' />},
             {title: 'Work Log', href: '', icon: <Archive color='black' />},
             {title: 'Github Source Code', href: `${BASE_REPO}kakao`, icon: <Console color='black' />}
         ]

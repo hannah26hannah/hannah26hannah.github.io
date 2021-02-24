@@ -117,8 +117,6 @@ const SideSlice = (props) => (
             pad='large'
             elevation='medium'
             gap='xxsmall'
-            // width='large'
-            // margin='small'
             margin={{ top: 'medium', bottom: 'medium' }}
             key={content.detail}
             
@@ -155,21 +153,6 @@ export default class SidePortfolio extends Component {
                 pad={{left: '3vw'}}
             >
                 <SideSlice contents={sideContents} size={ this.state.size } />
-            {/* {['large'].includes(this.state.size) && (
-                <Grid 
-                gap='medium' 
-                rows='auto'
-                columns={{ 
-                    count: 'fill', 
-                    size: ['small', 'medium']
-                }}
-                >
-                <SideSlice contents={sideContents} size={ this.state.size } />
-            </Grid>
-            )}
-            {['xsmall','small', 'medium'].includes(this.state.size) && (
-                <SideSlice contents={sideContents} size={ this.state.size } />
-            )} */}
             </Box>
         )
     }

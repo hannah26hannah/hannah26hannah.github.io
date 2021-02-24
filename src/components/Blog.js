@@ -22,7 +22,7 @@ class Blog extends Component {
     render() { 
         const { match } = this.props
         return (
-            <Box pad='large'>
+            <Box pad='large' role='tabpanel' aria-labelledby='blog-anchor'>
                 <Box pad='small' background='paper' margin={{ bottom: 'large' }} gap='small'>
                     <span>Still Working On .. 🚧</span>
                     <br />

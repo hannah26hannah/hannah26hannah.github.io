@@ -53,16 +53,16 @@ const MenuNav = (prop) => (
     >
     {useLocation().pathname === '/' && (
       <Box className='subAlign'>
-        <Anchor className='anchorLink' href='#About' label='About' onClick={ 
+        <Anchor id='about-anchor' className='anchorLink' href='#About' label='About' a11yTitle='About' role='tab' onClick={ 
           () => {
             prop.sendDataToParent()
             scrollTo('#About')
           } } />
-        <Anchor className='anchorLink' href='#Portfolio' label='Portfolio' onClick={ () => {
+        <Anchor id='portfolio-anchor' className='anchorLink' href='#Portfolio' label='Portfolio' a11yTitle='portfolio' role='tab' onClick={ () => {
           prop.sendDataToParent()
           scrollTo('#Portfolio')
         }} />
-        <Anchor className='anchorLink' href='#Contact' label='Contact' onClick={() => {
+        <Anchor id='contact-anchor' className='anchorLink' href='#Contact' label='Contact' a11yTitle='contact' role='tab' onClick={() => {
           prop.sendDataToParent()
           scrollTo('#Contact')
         }} />
@@ -70,13 +70,13 @@ const MenuNav = (prop) => (
     )}
     {useLocation().pathname !== '/' && (
       <Box className='subAlign'>
-        <Link className='routeLink' to='/' onClick={() => prop.sendDataToParent()}>👈 Take me to Home</Link>
+        <Link className='routeLink' to='/' a11yTitle='switch navigation view' role='tab' onClick={() => prop.sendDataToParent()}>👈 Take me to Home</Link>
       </Box>
     )}
     <Box className='subAlign'>
-      <Anchor className='resumeLink' label='Resume' href={resumeLink} color='moon' target='_blank' onClick={() => prop.sendDataToParent()}
+      <Anchor id='resume-anchor' className='resumeLink' label='Resume' href={resumeLink} color='moon' target='_blank' a11yTitle='resume' role='tab' onClick={() => prop.sendDataToParent()}
       />
-      <Link className='routeLink' to='blog' onClick={() => prop.sendDataToParent()}>Blog</Link>
+      <Link id='blog-anchor' className='routeLink' to='blog' a11yTitle='blog' role='tab' onClick={() => prop.sendDataToParent()}>Blog</Link>
     </Box>
   </Nav>
 )

@@ -14,6 +14,8 @@ const MainSection = (props) => (
          <Box
             tag='section'
             id={content.link}
+            role="tabpanel"
+            aria-labelledby={content.link+'-anchor'}
             direction='row-responsive'
             flex
             justify='around'
