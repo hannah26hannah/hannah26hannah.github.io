@@ -1,9 +1,8 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import { withTranslation } from 'react-i18next';
 import { Menu, FormClose } from 'grommet-icons'
 import logo from '../../assets/svg/logo.svg';
 import logoMobile from '../../assets/svg/logo_m.svg';
-
 import { Link, useLocation } from 'react-router-dom';
 
 import {
@@ -16,6 +15,7 @@ import {
   Sidebar,
   Stack,
   Anchor,
+  Select,
 } from 'grommet';
 
 
@@ -124,19 +124,35 @@ const SidebarHeader = (prop) => (
     </Stack>
   </Box>
 )
-const SidebarFooter = (props) => (
-  <Nav responsive={false}
-  direction='row'
-    alignSelf='end'
-  >
-    {
-      props.channel.map( my => (
-        <SidebarButton icon={my.icon} href={my.href} a11ytitle={ my.a11yTitle } name={my.name} key={my.name} color='black'/>
-      ))
-    }
-    
-  </Nav>
-)
+const SidebarFooter = (props) => {
+  const [value, setValue] = useState('한국어');
+  const options = ['English', '한국어']
+  return (
+    <Nav responsive={false}
+      direction='column'
+    >
+      <Select
+        options={options}
+        value={value}
+        onChange={({ option }) => setValue(option)}
+        alignSelf='end'
+        placeholder='Language'
+        size='small'
+        style={{
+          width: '150px',
+        }}
+      />
+      <Box 
+        direction='row' 
+        alignSelf='end'>
+      {props.channel.map( my => (
+          <SidebarButton icon={my.icon} href={my.href} a11ytitle={ my.a11yTitle } name={my.name} key={my.name} color='black'/>
+        ))}
+      </Box>
+    </Nav>
+  )
+}
+
 
 
 class Header extends Component { 

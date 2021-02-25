@@ -14,7 +14,7 @@ const GoBack = (props) => (
     <Button
         primary
         label='Back to List'
-        style={{ background: 'lightblue', border: 'none', width:'12rem' }}
+        style={{ border: 'none', width:'12rem' }}
         onClick={ () => props.history.goBack()}
     />
 )
