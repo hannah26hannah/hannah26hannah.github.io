@@ -54,7 +54,7 @@ const Preview = (props) => {
             }}
         >
         {props.images.map(img => (
-            <>
+            <Box key={img.order}>
             <Image 
                 src={img.src} 
                 key={img.order} 
@@ -90,7 +90,8 @@ const Preview = (props) => {
                         <Image 
                             fit='contain'
                             src={img.src} 
-                            alt={img.alt} 
+                            alt={img.alt}
+                            key={img.order} 
                             style={{borderRadius: '12px', paddingTop: '1rem'}}
                         />
                         <Box
@@ -111,7 +112,7 @@ const Preview = (props) => {
                     </Box>
                 </Layer>
             )}
-            </>
+            </Box>
         ))}
     </Box>
     )

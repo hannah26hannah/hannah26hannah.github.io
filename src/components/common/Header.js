@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { withTranslation } from 'react-i18next';
 import { Menu, FormClose } from 'grommet-icons'
 import logo from '../../assets/svg/logo.svg';
 import logoMobile from '../../assets/svg/logo_m.svg';
@@ -46,40 +47,47 @@ const scrollTo = (param) => {
   document.querySelector(param).scrollIntoView({ behavior: 'smooth', block: 'start' })
 }
 
-
-const MenuNav = (prop) => (
-  <Nav
-    className={'commonAlign' + (prop.location === 'header' ? ' headerAlign' : ' sideAlign')}
-    >
-    {useLocation().pathname === '/' && (
-      <Box className='subAlign'>
-        <Anchor id='about-anchor' className='anchorLink' href='#About' label='About' a11yTitle='About' role='tab' onClick={ 
-          () => {
+const MenuNav = (prop) => {
+  const t = prop.multi
+  return (
+    <Nav
+      className={'commonAlign' + (prop.location === 'header' ? ' headerAlign' : ' sideAlign')}
+      >
+      {useLocation().pathname === '/' && (
+        <Box className='subAlign'>
+          <Anchor id='about-anchor' className='anchorLink' href='#About' label={t('About')} a11ytitle='About' role='tab' onClick={ 
+            () => {
+              prop.sendDataToParent()
+              scrollTo('#About')
+            } } />
+          <Anchor id='portfolio-anchor' className='anchorLink' href='#Portfolio' label={t('Portfolio')} a11ytitle='portfolio' role='tab' onClick={ () => {
             prop.sendDataToParent()
-            scrollTo('#About')
-          } } />
-        <Anchor id='portfolio-anchor' className='anchorLink' href='#Portfolio' label='Portfolio' a11yTitle='portfolio' role='tab' onClick={ () => {
-          prop.sendDataToParent()
-          scrollTo('#Portfolio')
-        }} />
-        <Anchor id='contact-anchor' className='anchorLink' href='#Contact' label='Contact' a11yTitle='contact' role='tab' onClick={() => {
-          prop.sendDataToParent()
-          scrollTo('#Contact')
-        }} />
-      </Box>
-    )}
-    {useLocation().pathname !== '/' && (
+            scrollTo('#Portfolio')
+          }} />
+          <Anchor id='contact-anchor' className='anchorLink' href='#Contact' label={t('Contact')} a11ytitle='contact' role='tab' onClick={() => {
+            prop.sendDataToParent()
+            scrollTo('#Contact')
+          }} />
+        </Box>
+      )}
+      {useLocation().pathname !== '/' && (
+        <Box className='subAlign'>
+          <Link className='routeLink' to='/' a11ytitle='switch navigation view' role='tab' onClick={() => prop.sendDataToParent}>
+          👈 {t('Take me to Home')}
+          </Link>
+        </Box>
+      )}
       <Box className='subAlign'>
-        <Link className='routeLink' to='/' a11yTitle='switch navigation view' role='tab' onClick={() => prop.sendDataToParent()}>👈 Take me to Home</Link>
+        <Anchor id='resume-anchor' className='resumeLink' label={t('Resume')} href={resumeLink} color='moon' target='_blank' a11ytitle='resume' role='tab' onClick={() => prop.sendDataToParent}
+        />
+        <Link id='blog-anchor' className='routeLink' to='blog' a11ytitle='blog' role='tab' onClick={() => prop.sendDataToParent}>
+          {t('Blog')}
+        </Link>
       </Box>
-    )}
-    <Box className='subAlign'>
-      <Anchor id='resume-anchor' className='resumeLink' label='Resume' href={resumeLink} color='moon' target='_blank' a11yTitle='resume' role='tab' onClick={() => prop.sendDataToParent()}
-      />
-      <Link id='blog-anchor' className='routeLink' to='blog' a11yTitle='blog' role='tab' onClick={() => prop.sendDataToParent()}>Blog</Link>
-    </Box>
-  </Nav>
-)
+    </Nav>
+  )
+}
+
 
 const SidebarButton = ({label, href, ...rest}) => (
   <Box pad='small'>
@@ -123,7 +131,7 @@ const SidebarFooter = (props) => (
   >
     {
       props.channel.map( my => (
-        <SidebarButton icon={my.icon} href={my.href} a11yTitle={ my.a11yTitle } name={my.name} key={my.name} color='black'/>
+        <SidebarButton icon={my.icon} href={my.href} a11ytitle={ my.a11yTitle } name={my.name} key={my.name} color='black'/>
       ))
     }
     
@@ -131,7 +139,7 @@ const SidebarFooter = (props) => (
 )
 
 
-export default class Header extends Component { 
+class Header extends Component { 
   constructor(props) { 
       super(props);
       this.state = {
@@ -146,13 +154,14 @@ export default class Header extends Component {
   }
   
   render() {
+    const {t} = this.props;
         return (
             <ResponsiveContext.Consumer>
                 {size => (
                 <Box fill>
                   <AppBar>
                     <Link to='/'><LinkToHome size={size} /></Link>
-                    {['large'].includes(size) && (<MenuNav location='header' size={size} aria-labelledby='global-navigation' />)}
+                    {['large'].includes(size) && (<MenuNav multi={t} location='header' size={size} aria-labelledby='global-navigation' />)}
                   </AppBar>
                   {['xsmall', 'small', 'medium'].includes(size) && (
                   <Collapsible
@@ -190,7 +199,8 @@ export default class Header extends Component {
                                 }}
                                 size='small'
                             />
-                            <MenuNav sendDataToParent={this.sendDataToParent} aria-labelledby='side-navigation' />
+                            <MenuNav multi={t}
+                            sendDataToParent={this.sendDataToParent} aria-labelledby='side-navigation' />
                           </Sidebar>
                       </Collapsible>
                   )}
@@ -213,3 +223,5 @@ export default class Header extends Component {
         )
     }
 }
+
+export default withTranslation()(Header);
