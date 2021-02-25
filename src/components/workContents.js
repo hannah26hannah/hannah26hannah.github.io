@@ -1,9 +1,9 @@
 // import moon1 from '../assets/images/moon_1.png';
 import moon from '../assets/images/moon_mob_pad.png';
 import koopkorea from '../assets/images/koopkorea_b_m.png';
-
 import port_preview from '../assets/images/portfolio_b_m.png';
 import { CirclePlay, Console, Archive } from 'grommet-icons';
+import { Trans } from 'react-i18next';
 
 const BASE_DEMO = 'https://hannah26hannah.github.io/';
 const BASE_REPO = 'https://github.com/hannah26hannah/';
@@ -16,7 +16,7 @@ const workContents = [
         tags: [
             'React.js', 'Grommet', 'Responsive', 'Markdown'
         ],
-        detail: 'This project is mainly built with React.js. I used grommet, node-sass for styling and react router for navigating menu. I also chose markdown for managing blog posts.',
+        detail: <Trans>tech_desc</Trans>,
         images: [
             {
                 order: 1,
@@ -37,7 +37,7 @@ const workContents = [
         tags: [
             'Stencil CLI', 'jQuery', 'scss', 'Handlebar.js'
         ],
-        detail: 'I re-developed some web components for online store, KoopKorea. I used BigCommerce-Stencil CLI emulator for devleopment, bundling and publishing.',
+        detail: <Trans>koop_desc</Trans>,
         images: [
             {
                 order: 1,
@@ -56,7 +56,7 @@ const workContents = [
         tags: [
             'Vue.js', 'Tailwinds', 'TypeScript', 'Chart.js'
         ],
-        detail: 'Moon-todo is a personal dashboard Web application. Calendar and Chart Report are offered based on simple to do feature. I used Vue.js, Vuex, TypeScript, Chart.js, Tailwinds CSS library, SCSS for this app.',
+        detail: <Trans>moon_desc</Trans>,
         images: [
             {
                 order: 1,

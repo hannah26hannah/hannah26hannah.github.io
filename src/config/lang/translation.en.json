@@ -6,5 +6,24 @@
     "About" : "About",
     "Portfolio" : "Portfolio",
     "Contact" : "Contact",
-    "About Me" : "About Me"
+    "About Me" : "About Me",
+    "title_1" : "Hi! I'm<br />",
+    "title_2" : "Jeongwon 🙌",
+    "title_3" : "<br />A Junior Developer",
+    "intro" : "Hi! I'm Jeongwon, a junior developer seeking for the job opportunity based in Seoul, South Korea. <br /><br />I enjoy consuming almost all kinds of media contents, but love to think of human experience and technology behind them more. <br /><br />I hope I can act as a bridge between them with my skill and insight.",
+    "main_intro" : "who loves to learn modern technologies to solve problems in real world. Welcome to my portfolio web site!",
+    "Featured" : "Featured Works",
+    "portfolio_desc" : "My goal as a developer is to make well-functioning web products as well as to give pleasant experience to users. Here are my main projects to achieve this goal:",
+    "Side" : "Side Projects",
+    "Side_desc" : "I made several side projects to learn various techniques as many as possible during training period.",
+    "Contact_desc" : "I'm ready to do any valuable moments with you! Public resume is ready on Notion as well 😊",
+    "contact_sub" : "via these channels",
+    "medi_desc" : "Practice vanilla JavaScript & webpack system.",
+    "weather_desc" : "Practice vanilla JavaScript & fetching Open API (Responsive Design)",
+    "kakao_desc" : "Practice HTML5, CSS3 and JavaScript",
+    "tech_desc" : "This project is mainly built with React.js. I used grommet, node-sass for styling and various React libraries to experience React eco system. (markdown, i18n..)",
+    "koop_desc" : "I re-developed some web components for online store, KoopKorea. I used BigCommerce-Stencil CLI emulator for devleopment, bundling and publishing.",
+    "moon_desc" : "Moon-todo is a personal dashboard Web application. Calendar and Chart Report are offered based on simple to do feature. I used Vue.js, Vuex, TypeScript, Chart.js, Tailwinds CSS library, SCSS for this app."
+
+
 }

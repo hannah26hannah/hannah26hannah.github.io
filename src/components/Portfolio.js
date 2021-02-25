@@ -1,6 +1,7 @@
 import React, { Component, useState } from 'react';
 import { Box, Image, Heading, Button, Anchor, Text, Layer } from 'grommet';
 import workContents from './workContents.js';
+import { withTranslation } from 'react-i18next';
 
 function returnYOffset(y) {
     if (window.pageYOffset === 0) {
@@ -165,11 +166,10 @@ const WorkSlice = (props) => (
             elevation='medium'
             gap='xxsmall'
             margin={{ top: 'medium', bottom: 'medium' }}
-            key={content.detail}
+            key={content.title}
         >
             <Heading level={1} textAlign='start'
-                style={{ margin: 0 }}>
-                {content.title} </Heading>
+                style={{ margin: 0 }}>{content.title}</Heading>
         
             <Text size='medium' margin={{ top: '2rem', bottom: '2rem' }} color='dark-2'>{content.detail}</Text>
             <Tags tags={content.tags} size={props.size} />
@@ -182,7 +182,8 @@ const WorkSlice = (props) => (
     ))
 )
 
-export default class Portfolio extends Component {    
+
+class Portfolio extends Component {    
     constructor(props) { 
         super(props)
         this.state = {
@@ -190,8 +191,11 @@ export default class Portfolio extends Component {
         }
     }
     render() {
+        const {t} = this.props
         return (
-            <WorkSlice contents={workContents} size={ this.state.size } />
+            <WorkSlice contents={workContents} size={ this.state.size } multi={t} />
         )
     }
 }
+
+export default withTranslation()(Portfolio)

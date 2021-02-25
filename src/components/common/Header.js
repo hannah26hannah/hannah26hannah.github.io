@@ -1,4 +1,4 @@
-import React, { Component, useState } from 'react';
+import React, { Component } from 'react';
 import { withTranslation } from 'react-i18next';
 import { Menu, FormClose } from 'grommet-icons'
 import logo from '../../assets/svg/logo.svg';
@@ -15,11 +15,12 @@ import {
   Sidebar,
   Stack,
   Anchor,
-  Select,
 } from 'grommet';
+import LangSelect from './MultiLang';
 
 
 const resumeLink = 'https://www.notion.so/Jeongwon-Yoo-72675253e1284032a53a8749a383d31a';
+
 const AppBar = (props) => ( 
   <Box
     tag='header'
@@ -124,24 +125,14 @@ const SidebarHeader = (prop) => (
     </Stack>
   </Box>
 )
+
+
 const SidebarFooter = (props) => {
-  const [value, setValue] = useState('한국어');
-  const options = ['English', '한국어']
   return (
     <Nav responsive={false}
       direction='column'
     >
-      <Select
-        options={options}
-        value={value}
-        onChange={({ option }) => setValue(option)}
-        alignSelf='end'
-        placeholder='Language'
-        size='small'
-        style={{
-          width: '150px',
-        }}
-      />
+      <LangSelect />
       <Box 
         direction='row' 
         alignSelf='end'>

@@ -80,6 +80,15 @@ html {
     left: 5%;
     padding: 12px;
 }
+
+/* multiLangSelect */
+.selectWrapper {
+    position: absolute;
+    top: calc(17px * 6);
+    right: 5%;
+
+}
+
 /* Blog */
 .blogListWrap {
     list-style-type: disc;

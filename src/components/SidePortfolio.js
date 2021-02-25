@@ -118,7 +118,7 @@ const SideSlice = (props) => (
             elevation='medium'
             gap='xxsmall'
             margin={{ top: 'medium', bottom: 'medium' }}
-            key={content.detail}
+            key={content.title}
             
             >
             <Heading level={3} textAlign='start' 
