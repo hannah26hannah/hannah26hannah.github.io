@@ -1,5 +1,5 @@
 import { Select } from 'grommet';
-import React, { useState } from 'react';
+import React from 'react';
 import i18next from 'i18next';
 
 function changeLang(lang) {
@@ -11,7 +11,7 @@ const LangSelect = () => {
         { label: '한국어', value: 'ko' },
         { label: 'English', value: 'en'}
     ];
-    const [value, setState] = useState(options[0].value)
+    
     return (
         <Select
             options={options}
@@ -19,8 +19,7 @@ const LangSelect = () => {
             labelKey='label'
             valueKey='value'
             onChange={({ option }) => {
-            setState(option.value)
-            changeLang(option.value);
+                changeLang(option.value);
             }}
             alignSelf='end'
             size='small'
