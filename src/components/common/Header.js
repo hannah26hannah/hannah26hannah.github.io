@@ -50,6 +50,7 @@ const scrollTo = (param) => {
 
 const MenuNav = (prop) => {
   const t = prop.multi
+  
   return (
     <Nav
       className={'commonAlign' + (prop.location === 'header' ? ' headerAlign' : ' sideAlign')}
@@ -73,15 +74,15 @@ const MenuNav = (prop) => {
       )}
       {useLocation().pathname !== '/' && (
         <Box className='subAlign'>
-          <Link className='routeLink' to='/' a11ytitle='switch navigation view' role='tab' onClick={() => prop.sendDataToParent}>
+          <Link className='routeLink' to='/' a11ytitle='switch navigation view' role='tab' onClick={() => prop.sendDataToParent() }>
           👈 {t('Take me to Home')}
           </Link>
         </Box>
       )}
       <Box className='subAlign'>
-        <Anchor id='resume-anchor' className='resumeLink' label={t('Resume')} href={resumeLink} color='moon' target='_blank' a11ytitle='resume' role='tab' onClick={() => prop.sendDataToParent}
+        <Anchor id='resume-anchor' className='resumeLink' label={t('Resume')} href={resumeLink} color='moon' target='_blank' a11ytitle='resume' role='tab' onClick={() => prop.sendDataToParent() }
         />
-        <Link id='blog-anchor' className='routeLink' to='blog' a11ytitle='blog' role='tab' onClick={() => prop.sendDataToParent}>
+        <Link id='blog-anchor' className='routeLink' to='blog' a11ytitle='blog' role='tab' onClick={() => prop.sendDataToParent() }>
           {t('Blog')}
         </Link>
       </Box>
