@@ -75,7 +75,7 @@ const MenuNav = (prop) => {
       {useLocation().pathname !== '/' && (
         <Box className='subAlign'>
           <Link className='routeLink' to='/' a11ytitle='switch navigation view' role='tab' onClick={() => prop.sendDataToParent() }>
-          👈 {t('Take me to Home')}
+          👈 {t('Take me Home')}
           </Link>
         </Box>
       )}

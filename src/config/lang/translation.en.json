@@ -1,6 +1,6 @@
 {
     "Blog" : "Blog",
-    "Take me to Home" : "Take me to Home",
+    "Take me Home" : "Take me Home",
     "Resume" : "Resume",
     "About" : "About",
     "Portfolio" : "Portfolio",
@@ -22,7 +22,8 @@
     "kakao_desc" : "Practice HTML5, CSS3 and JavaScript",
     "tech_desc" : "This project is mainly built with React.js. I used grommet, node-sass for styling and various React libraries to experience React eco system. (markdown, i18n..)",
     "koop_desc" : "I re-developed some web components for online store, KoopKorea. I used BigCommerce-Stencil CLI emulator for devleopment, bundling and publishing.",
-    "moon_desc" : "Moon-todo is a personal dashboard Web application. Calendar and Chart Report are offered based on simple to do feature. I used Vue.js, Vuex, TypeScript, Chart.js, Tailwinds CSS library, SCSS for this app."
+    "moon_desc" : "Moon-todo is a personal dashboard Web application. Calendar and Chart Report are offered based on simple to do feature. I used Vue.js, Vuex, TypeScript, Chart.js, Tailwinds CSS library, SCSS for this app.",
+    "Admin" : "Admin"
 
 
 }

@@ -1,6 +1,6 @@
 {
     "Blog" : "블로그",
-    "Take me to Home" : "이전 화면으로",
+    "Take me Home" : "이전 화면으로",
     "Resume" : "이력서",
     "About" : "소개",
     "Portfolio" : "포트폴리오",
@@ -22,6 +22,7 @@
     "kakao_desc" : "HTML5, CSS3, JavaScript를 연습하기 위해 클론 코딩을 진행했습니다.",
     "tech_desc" : "React.js로 제작된 테크 블로그 웹사이트입니다. grommet UI 라이브러리, node-sass를 사용해 스타일링 하고 다양한 리액트 라이브러리를 경험해보기 위해 진행한 프로젝트입니다. (markdown, i18n ..)",
     "koop_desc" : "온라인 스토어 KoopKorea의 스토어 프론트 웹 컴포넌트 리디자인을 맡았습니다. BigCommerce-Stencil CLI emulator를 사용해 개발, 번들, 배포를 경험했습니다.",
-    "moon_desc" : "Moon-todo는 개인화 대시보드 웹 애플리케이션입니다. todo list의 데이터에 기반해 달력과 차트 리포트가 제공됩니다. Vue.js를 중점적으로 활용하고, 상태 관리 라이브러리 Vuex로 효율적인 데이터 관리를 경험했습니다. 리팩토링 시 TypeScript를 시작해보았고, 스타일링에서는 Chart.js 시각화 라이브러리와 Tailwinds CSS 프레임워크, SCSS 등을 활용했습니다."
+    "moon_desc" : "Moon-todo는 개인화 대시보드 웹 애플리케이션입니다. todo list의 데이터에 기반해 달력과 차트 리포트가 제공됩니다. Vue.js를 중점적으로 활용하고, 상태 관리 라이브러리 Vuex로 효율적인 데이터 관리를 경험했습니다. 리팩토링 시 TypeScript를 시작해보았고, 스타일링에서는 Chart.js 시각화 라이브러리와 Tailwinds CSS 프레임워크, SCSS 등을 활용했습니다.",
+    "Admin" : "관리자"
 
 }
