@@ -71,12 +71,12 @@ html {
     .adminWrapper .userAdmin:hover {
       box-shadow: 2px 2px 15px 1px lightgray; }
       .adminWrapper .userAdmin:hover::before {
+        content: "Admin LogOut";
         box-shadow: 2px 2px 15px 1px lightgray;
-        content: 'Admin Login';
         position: absolute;
         right: 62px;
         background-color: lightgray;
-        width: 120px;
+        width: 150px;
         border-radius: 5px;
         display: flex;
         justify-content: center;

@@ -89,7 +89,11 @@ html {
 
 }
 
+
 /* admin */
+$border-color: lightgray;
+
+
 .adminWrapper {
     position: absolute;
     top: calc(17px * 6);
@@ -100,12 +104,12 @@ html {
         &:hover {
             box-shadow: 2px 2px 15px 1px lightgray;
             &::before {
+                content: if($border-color == lightgray, 'Admin LogOut', 'Admin Login');
                 box-shadow: 2px 2px 15px 1px lightgray;
-                content: 'Admin Login';
                 position: absolute;
                 right: 62px;
                 background-color: lightgray;
-                width: 120px;
+                width: if($border-color == lightgray, 150px, 120px);
                 border-radius: 5px;
                 display: flex;
                 justify-content: center;
@@ -113,7 +117,6 @@ html {
             }
         } 
     }
-    
 }
 
 
