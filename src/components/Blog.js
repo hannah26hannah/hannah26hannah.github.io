@@ -3,6 +3,7 @@ import { Tabs, Tab, Box, Anchor } from 'grommet';
 import { Route, withRouter } from 'react-router-dom';
 import BlogPostList from './common/BlogPostList.js';
 import BlogPostDetail from './common/BlogPostDetail';
+import LoginModal from './common/LoginModal.js';
 // import ServerTest from './ServerTest.js'
 
 const TabNames = [
@@ -23,6 +24,7 @@ class Blog extends Component {
         const { match } = this.props
         return (
             <Box pad='large' role='tabpanel' aria-labelledby='blog-anchor'>
+                <LoginModal />
                 <Box pad='small' background='paper' margin={{ bottom: 'large' }} gap='small'>
                     <span>Still Working On .. 🚧</span>
                     <br />
