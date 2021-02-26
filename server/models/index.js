@@ -32,6 +32,7 @@ db.sequelize
         console.log('Unable to connect to the database.', err);
     });
 
+
 db.Posts = require('./posts')(sequelize, Sequelize);
 db.Tags = require('./tags')(sequelize, Sequelize);
 db.Tags.belongsToMany(db.Posts, {
@@ -42,6 +43,9 @@ db.Posts.belongsToMany(db.Tags, {
     through: 'tagMap',
     foreignKey: 'post_id'
 })
+
+db.Admin = require('./admin')(sequelize, Sequelize);
+
 db.secret = '(9*)5$&!3%^0%^@@2$1!#5@2!4';
 
 module.exports = db;
