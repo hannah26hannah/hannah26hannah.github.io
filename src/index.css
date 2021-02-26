@@ -61,6 +61,27 @@ html {
   top: calc(17px * 6);
   right: 5%; }
 
+/* admin */
+.adminWrapper {
+  position: absolute;
+  top: calc(17px * 6);
+  right: 6%; }
+  .adminWrapper .userAdmin {
+    cursor: 'pointer'; }
+    .adminWrapper .userAdmin:hover {
+      box-shadow: 2px 2px 15px 1px lightgray; }
+      .adminWrapper .userAdmin:hover::before {
+        box-shadow: 2px 2px 15px 1px lightgray;
+        content: 'Admin Login';
+        position: absolute;
+        right: 62px;
+        background-color: lightgray;
+        width: 120px;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        padding: 10px; }
+
 /* Blog */
 .blogListWrap {
   list-style-type: disc; }
