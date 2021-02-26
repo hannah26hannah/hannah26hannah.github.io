@@ -99,23 +99,18 @@ $border-color: lightgray;
     top: calc(17px * 6);
     right: 6%;
     
+    .loginAlert {
+        position: absolute;
+        right: 62px;
+        width: if($border-color == lightgray, 150px, 120px);
+        display: flex;
+        justify-content: flex-end;
+        padding: 12px;
+        font-size: 1rem;
+    }
     .userAdmin {
         cursor: 'pointer';
-        &:hover {
-            box-shadow: 2px 2px 15px 1px lightgray;
-            &::before {
-                content: if($border-color == lightgray, 'Admin LogOut', 'Admin Login');
-                box-shadow: 2px 2px 15px 1px lightgray;
-                position: absolute;
-                right: 62px;
-                background-color: lightgray;
-                width: if($border-color == lightgray, 150px, 120px);
-                border-radius: 5px;
-                display: flex;
-                justify-content: center;
-                padding: 10px;
-            }
-        } 
+        &:hover { box-shadow: 2px 2px 15px 1px lightgray; }
     }
 }
 

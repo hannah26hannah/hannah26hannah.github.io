@@ -4,12 +4,14 @@ import { UserAdmin, FormClose } from 'grommet-icons';
 import theme from './theme'
 import axios  from 'axios';
 import adminAvatar from '../../assets/images/rizard.png';
+import { Link, useLocation } from 'react-router-dom';
 
 const LoginModal = (props) => {
     const [open, setOpen] = useState(false);
     const [value, setValue] = useState( { name: '', password: '' } );
-    const [login, setLogin] = useState(false);
+    const [login, setLogin] = useState(sessionStorage.getItem('login'));
     const [errMsg, setErrMsg] = useState('');
+    const [isMenuOpen, setisMenuOpen] = useState(false); 
 
     const selectUserData = async (e) => {
         const res = await axios('/send/pw', {
@@ -30,27 +32,26 @@ const LoginModal = (props) => {
             }
         }
     }
+    const path = useLocation().pathname;
     
     return (
         <Grommet theme={theme}>
             <Box className='adminWrapper' direction='row' gap='small'>
-                {!login && (
+                {isMenuOpen && (
+                    <Text className='loginAlert'>{!login ? 'Admin Login' : 'Admin Logout'}</Text>
+                )}
                     <Avatar
                     className='userAdmin'
                     background="light-4"
                     onClick={() => setOpen(true)}
+                    onMouseEnter={() => setisMenuOpen(true)}
+                    onMouseLeave={() => setisMenuOpen(false)}
+                    style={{ border: login ? '1px solid lightgray' : ''}}
+                    round='medium'
+                    src={login ? adminAvatar : null}
                     >
-                        <UserAdmin />
+                        {!login && (<UserAdmin />)}
                     </Avatar>
-                )}
-                {login && (
-                    <Avatar
-                        className='userAdmin'
-                        src={adminAvatar}
-                        onClick={() => setOpen(true)}
-                        style={{ border: '1px solid lightgray'}}
-                        round='medium' />
-                )}
             </Box>
             {open && (
                 <Layer
@@ -76,7 +77,7 @@ const LoginModal = (props) => {
                             size='small'
                             alignSelf='end'
                         />
-                        <Text>Admin Login</Text>
+                        <Text>{!login ? 'Admin Login' : 'Admin Profile'}</Text>
                         {!login && (
                             <Form
                                 value={value}
@@ -111,11 +112,25 @@ const LoginModal = (props) => {
                         )}
                         {login && (
                             <Box 
-                            justify='center'
-                            direction='row' 
-                            gap='medium'
-                            margin={{ top: 'medium' }}
+                                justify='center'
+                                align='center'
+                                direction='column' 
+                                gap='medium'
+                                margin={{ top: 'medium' }}
                             >
+                                <Avatar
+                                    // className='userAdmin'
+                                    onClick={() => console.log('todo : profile image modification')}
+                                    style={{ border: login ? '1px solid lightgray' : ''}}
+                                    round='full'
+                                    size='xlarge'
+                                    src={adminAvatar}
+                                />
+                                <Link to={`${path}/write`}>
+                                    <Button primary label='Write Post' onClick={() => {
+                                        setOpen(false)
+                                    }}></Button>
+                                </Link>
                                 <Button primary label='logout' onClick={() => setLogin(false)} />
                             </Box>
                         )}

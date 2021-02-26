@@ -66,21 +66,18 @@ html {
   position: absolute;
   top: calc(17px * 6);
   right: 6%; }
+  .adminWrapper .loginAlert {
+    position: absolute;
+    right: 62px;
+    width: 150px;
+    display: flex;
+    justify-content: flex-end;
+    padding: 12px;
+    font-size: 1rem; }
   .adminWrapper .userAdmin {
     cursor: 'pointer'; }
     .adminWrapper .userAdmin:hover {
       box-shadow: 2px 2px 15px 1px lightgray; }
-      .adminWrapper .userAdmin:hover::before {
-        content: "Admin LogOut";
-        box-shadow: 2px 2px 15px 1px lightgray;
-        position: absolute;
-        right: 62px;
-        background-color: lightgray;
-        width: 150px;
-        border-radius: 5px;
-        display: flex;
-        justify-content: center;
-        padding: 10px; }
 
 /* Blog */
 .blogListWrap {
