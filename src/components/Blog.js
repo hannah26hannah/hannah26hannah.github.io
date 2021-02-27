@@ -1,12 +1,13 @@
 import React, { Component, useState } from 'react';
 import { Tabs, Tab, Box, Button } from 'grommet';
-import { Route, withRouter } from 'react-router-dom';
+import { Route, withRouter, useLocation } from 'react-router-dom';
 import BlogPostList from './common/BlogPostList.js';
 import BlogPostDetail from './common/BlogPostDetail';
 import WriteBlogPost from './common/WriteBlogPost';
 import LoginModal from './common/LoginModal.js';
 import AlertSlice from './common/AlertSlice';
 import { Link } from 'react-router-dom';
+import SnackBar from './common/SnackBar';
 // import ServerTest from './ServerTest.js'
 
 export const tabNames = [
@@ -26,10 +27,16 @@ class Blog extends Component {
         super(props);
         this.state = {
             markdownContents: null,
-            isLogin: false
+            isLogin: false,
+            postStatus: '',
         }
     }
-    
+    componentDidMount() {
+        const { location } = this.props
+        this.setState({postStatus: location.state ? location.state.post : ''})
+        
+        console.log('this.state.postStatus', this.state.postStatus);
+    }
     render() { 
         const { match } = this.props
         
@@ -49,8 +56,11 @@ class Blog extends Component {
                         </Tab>
                         ))}
                     </Tabs>
-                    
-                    
+                {/* snack bar alert */}
+                {this.state.postStatus === '' && (
+                    <SnackBar barStatus={this.state.postStatus} />
+                )}
+                
                 </Route>
 
                 {/* admin blog editing */}

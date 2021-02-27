@@ -1,16 +1,21 @@
 import React, { useState } from 'react';
 import { Box, Button, Form, FormField, Heading, Select, TextInput } from 'grommet';
-import { Link } from 'react-router-dom';
+import { Link, useHistory, useLocation } from 'react-router-dom';
 import MDEditor from 'react-markdown-editor-lite';
 import 'react-markdown-editor-lite/lib/index.css';
 import MarkdownIt from 'markdown-it';
 import { tabNames } from '../Blog.js';
 import axios from 'axios';
-// import theme from './theme';
+
 
 const mdParser = new MarkdownIt();
 
+
 const WriteBlogPost = (props) => {
+    const curr = useLocation().pathname;
+    const blogPath = curr.slice(0, curr.lastIndexOf('/'));
+    let history = useHistory();
+
     const detail = props.detail;
     const options = tabNames.map(name => name.title);
     const [post, setPost] = useState({
@@ -31,7 +36,10 @@ const WriteBlogPost = (props) => {
             headers: new Headers()
         })
         if (res.data) {
-            window.location.replace('/blog')
+            history.push({
+                pathname: blogPath,
+                state: { 'post' : 'uploaded' }
+            });
         }
     }
     const handleSubmit = e => {
@@ -39,7 +47,7 @@ const WriteBlogPost = (props) => {
         console.log('print final post', post)
 
         let err = false;
-        if (post.title.trim() === "") { // TODO: add snack bar, validation
+        if (post.title.trim() === "") {
             // updateErrMsg('title', 'Title')
             err = true;
         }
@@ -54,6 +62,13 @@ const WriteBlogPost = (props) => {
         console.log('error status', err)
         if (!err) { sendDataToServer() }
         
+        // test
+        if (err) {
+            history.push({
+                pathname: blogPath,
+                state: { 'post' : 'error' }
+            });
+        }
         
     }
 
