@@ -38,7 +38,7 @@ const LoginModal = (props) => {
         <Grommet theme={theme}>
             <Box className='adminWrapper' direction='row' gap='small'>
                 {isMenuOpen && (
-                    <Text className='loginAlert'>{!login ? 'Admin Login' : 'Admin Logout'}</Text>
+                    <Text className='loginAlert'>{!login ? 'Admin Login' : 'Admin Menu'}</Text>
                 )}
                     <Avatar
                     className='userAdmin'
