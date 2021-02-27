@@ -33,16 +33,16 @@ db.sequelize
     });
 
 
-db.Posts = require('./posts')(sequelize, Sequelize);
+db.Posts = require('./blogPosts')(sequelize, Sequelize);
 db.Tags = require('./tags')(sequelize, Sequelize);
-db.Tags.belongsToMany(db.Posts, {
-    through: 'tagMap',
-    foreignKey: 'tag_id'
-})
-db.Posts.belongsToMany(db.Tags, {
-    through: 'tagMap',
-    foreignKey: 'post_id'
-})
+// db.Tags.belongsToMany(db.Posts, {
+//     through: 'tagMap',
+//     foreignKey: 'tag_id'
+// })
+// db.Posts.belongsToMany(db.Tags, {
+//     through: 'tagMap',
+//     foreignKey: 'post_id'
+// })
 
 db.Admin = require('./admin')(sequelize, Sequelize);
 

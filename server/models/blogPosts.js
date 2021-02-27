@@ -8,6 +8,18 @@ module.exports = (sequelize, DataTypes) => {
                 type: DataTypes.STRING(50), // [CHAR, VARCHAR]
                 allowNull: false
             },
+            category: {
+                type: DataTypes.STRING(50),
+                allowNull: false
+            },
+            contents: {
+                type: DataTypes.TEXT,
+                allowNull : false
+            },
+            date: {
+                type: DataTypes.DATE,
+                allowNull : false
+            }
         },
         {
             charset: 'utf8mb4',

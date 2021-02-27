@@ -1,17 +1,12 @@
 const sequelize = require('./models').sequelize;
 const { Op } = require('sequelize')
 
-const {
-    Tags,
-    // sequelize: { Op }
-} = require('./models');
+const { Tags } = require('./models');
 sequelize.query('SET tagName utf8;'); 
 
-const {
-    Admin, 
-    // sequelize: { Op }
-} = require('./models');
+const { Admin, Posts } = require('./models');
 sequelize.query('SET NAME utf8;')
+
 
 module.exports = {
     api: {
@@ -30,10 +25,20 @@ module.exports = {
             .catch(err => {
                 throw err;
             })
+        },
+        addPost : (body, callback) => {
+            Posts.create({
+                title: body.title,
+                category: body.category,
+                contents: body.content,
+                date: new Date()
+            })
+            .then(data => {
+                callback(true)
+            })
+            .catch(err => {
+                throw err;
+            })
         }
-
-        // addData : callback => {
-        //     Tags.create({ tagName: req.body.data })
-        // }
     }
 }

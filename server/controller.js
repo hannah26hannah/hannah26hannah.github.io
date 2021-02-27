@@ -35,13 +35,14 @@ module.exports = {
             console.log('1. salt 값', salt);
             console.log('2. hash 결과', hash)
         },
-        
-        // addDate: (req, res) => {
-        //     model.api.addData( data => {
-        //         return res.send(data)
-        //     })
-        // },
-        // modifyData: (req, res) => {},
-        // deleteData: (req, res) => {},
-    }
+        addPost: (req, res) => {
+            const body = req.body;
+            model.api.addPost(body, result => {
+                if (result) {
+                    res.send(true);
+                }
+            })
+            console.log('body', body)
+        }
+    },
 }
