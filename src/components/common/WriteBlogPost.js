@@ -12,6 +12,7 @@ const mdParser = new MarkdownIt();
 
 
 const WriteBlogPost = (props) => {
+    const size = props.size;
     const curr = useLocation().pathname;
     const blogPath = curr.slice(0, curr.lastIndexOf('/'));
     let history = useHistory();
@@ -110,23 +111,23 @@ const WriteBlogPost = (props) => {
                     />
                 </FormField>
                 
-                <Box direction='row' justify='between' align='center' margin={{ top:'medium' }}>
-                <Link to='/blog'>
-                    <Button
-                    primary
-                    label='Back to List'
-                    style={{ border: 'none', width:'12rem' }}
-                    />
-                </Link>
-                <Link to='/blog'>
-                    <Button
+                <Box direction={['xsmall', 'small'].includes(size) ? 'column' : 'row'} justify='between' align='center' margin={{ top:'medium' }} gap='small'>
+                    <Link to='/blog'>
+                        <Button
                         primary
-                        type='submit'
-                        label='Save Post'
-                        style={{ border: 'none', width: '12rem' }}
-                        onClick={handleSubmit}
-                    />
-                </Link>
+                        label='Back to List'
+                        style={{ border: 'none', width:'12rem' }}
+                        />
+                    </Link>
+                    <Link to='/blog'>
+                        <Button
+                            primary
+                            type='submit'
+                            label='Save Post'
+                            style={{ border: 'none', width: '12rem' }}
+                            onClick={handleSubmit}
+                        />
+                    </Link>
             </Box>
             </Form>
         </Box>

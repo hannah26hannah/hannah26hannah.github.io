@@ -95,22 +95,13 @@ $border-color: lightgray;
 
 
 .adminWrapper {
-    position: absolute;
-    top: calc(17px * 6);
-    right: 6%;
     
     .loginAlert {
-        position: absolute;
-        right: 62px;
-        width: if($border-color == lightgray, 150px, 120px);
-        display: flex;
-        justify-content: flex-end;
-        padding: 12px;
         font-size: 1rem;
+        color: rgba(0,0,0,0.33);
     }
     .userAdmin {
         cursor: 'pointer';
-        &:hover { box-shadow: 2px 2px 15px 1px lightgray; }
     }
 }
 

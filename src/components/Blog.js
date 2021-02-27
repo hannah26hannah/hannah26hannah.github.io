@@ -1,14 +1,15 @@
-import React, { Component, useState } from 'react';
-import { Tabs, Tab, Box, Button } from 'grommet';
-import { Route, withRouter, useLocation } from 'react-router-dom';
+import React, { Component } from 'react';
+import { Tabs, Tab, Box } from 'grommet';
+import { Route, withRouter } from 'react-router-dom';
 import BlogPostList from './common/BlogPostList.js';
 import BlogPostDetail from './common/BlogPostDetail';
 import WriteBlogPost from './common/WriteBlogPost';
-import LoginModal from './common/LoginModal.js';
+// import LoginModal from './common/LoginModal.js';
 import AlertSlice from './common/AlertSlice';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import SnackBar from './common/SnackBar';
 // import ServerTest from './ServerTest.js'
+
 
 export const tabNames = [
     { title: 'TIL', body: <BlogPostList title='til' detail='🔍 Today I Learned' />},
@@ -16,11 +17,10 @@ export const tabNames = [
     { title: 'Tistory', body: <BlogPostList title='tistory' detail='📝 Published From Tistory' />, state: 'disabled' }
 ]
 
+
 const adminTabNames = [
-    { title: 'Write', body: <WriteBlogPost title='write' detail='📜 blog post editor' />}
+    { title: 'Write' }
 ]
-
-
 
 class Blog extends Component { 
     constructor(props) { 
@@ -29,20 +29,19 @@ class Blog extends Component {
             markdownContents: null,
             isLogin: false,
             postStatus: '',
+            size: ''
         }
     }
     componentDidMount() {
-        const { location } = this.props
+        const { location, size } = this.props
         this.setState({postStatus: location.state ? location.state.post : ''})
-        
-        console.log('this.state.postStatus', this.state.postStatus);
+        this.setState({size: size})
     }
-    render() { 
-        const { match } = this.props
-        
+    render() {        
+        const { match } = this.props; 
         return (
             <Box pad='large' role='tabpanel' aria-labelledby='blog-anchor'>
-                <LoginModal />
+                {/* <LoginModal /> */}
                 {/* <ServerTest /> */}
                 <AlertSlice />
                 <Route exact path={match.path}>
@@ -53,6 +52,7 @@ class Blog extends Component {
                             margin={{ bottom: '2rem' }}
                             disabled={tab.state === 'disabled' ? true : false}>
                             <Route exact path={match.path} component={() => tab.body } />
+                            
                         </Tab>
                         ))}
                     </Tabs>
@@ -71,7 +71,7 @@ class Blog extends Component {
                             key={ tab.title }
                             margin={{ bottom: '2rem' }}
                             disabled={tab.state === 'disabled' ? true : false}>
-                            <Route path={match.path} component={() => tab.body } />
+                            <Route path={match.path} component={() => <WriteBlogPost size={this.state.size} title='write' detail='📜 blog post editor' /> } />
                         </Tab>
                         ))}
                     </Tabs>

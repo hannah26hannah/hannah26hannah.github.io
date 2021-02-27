@@ -12,6 +12,7 @@ const LoginModal = (props) => {
     const [login, setLogin] = useState(sessionStorage.getItem('login'));
     const [errMsg, setErrMsg] = useState('');
     const [isMenuOpen, setisMenuOpen] = useState(false); 
+    
 
     const selectUserData = async (e) => {
         const res = await axios('/send/pw', {
@@ -36,18 +37,25 @@ const LoginModal = (props) => {
     
     return (
         <Grommet theme={theme}>
-            <Box className='adminWrapper' direction='row' gap='small'>
+            <Box 
+                className='adminWrapper'   
+                flex
+                direction='row'
+                align='center'
+                justify='end'
+                gap='medium'
+            >
                 {isMenuOpen && (
                     <Text className='loginAlert'>{!login ? 'Admin Login' : 'Admin Menu'}</Text>
                 )}
                     <Avatar
                     className='userAdmin'
-                    background="light-4"
+                    background='white'
                     onClick={() => setOpen(true)}
                     onMouseEnter={() => setisMenuOpen(true)}
                     onMouseLeave={() => setisMenuOpen(false)}
-                    style={{ border: login ? '1px solid lightgray' : ''}}
-                    round='medium'
+                    style={{ border: login ? '1px solid rgba(0,0,0,0.33)' : ''}}
+                    round='full'
                     src={login ? adminAvatar : null}
                     >
                         {!login && (<UserAdmin />)}
@@ -73,7 +81,7 @@ const LoginModal = (props) => {
                             onClick={(e) => {
                                 setOpen(false)
                             }}
-                            style={{ background: '#57816D', }}
+                            style={{ background: '#57816D', position: 'absolute', right: '1rem', top: '1rem' }}
                             size='small'
                             alignSelf='end'
                         />
@@ -115,7 +123,7 @@ const LoginModal = (props) => {
                                 justify='center'
                                 align='center'
                                 direction='column' 
-                                gap='medium'
+                                gap='large'
                                 margin={{ top: 'medium' }}
                             >
                                 <Avatar
@@ -127,11 +135,17 @@ const LoginModal = (props) => {
                                     src={adminAvatar}
                                 />
                                 <Link to={`${path}/write`}>
-                                    <Button primary label='Write Post' onClick={() => {
+                                    <Button primary 
+                                    style={{ width: '100%' }} label='Write Post' onClick={() => {
                                         setOpen(false)
-                                    }}></Button>
+                                        
+                                    }} />
                                 </Link>
-                                <Button primary label='logout' onClick={() => setLogin(false)} />
+                                <Button 
+                                    primary 
+                                    label='logout' 
+                                    style={{ width: '100%'}}
+                                    onClick={() => setLogin(false)} />
                             </Box>
                         )}
                         

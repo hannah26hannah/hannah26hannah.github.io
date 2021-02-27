@@ -62,22 +62,12 @@ html {
   right: 5%; }
 
 /* admin */
-.adminWrapper {
-  position: absolute;
-  top: calc(17px * 6);
-  right: 6%; }
-  .adminWrapper .loginAlert {
-    position: absolute;
-    right: 62px;
-    width: 150px;
-    display: flex;
-    justify-content: flex-end;
-    padding: 12px;
-    font-size: 1rem; }
-  .adminWrapper .userAdmin {
-    cursor: 'pointer'; }
-    .adminWrapper .userAdmin:hover {
-      box-shadow: 2px 2px 15px 1px lightgray; }
+.adminWrapper .loginAlert {
+  font-size: 1rem;
+  color: rgba(0, 0, 0, 0.33); }
+
+.adminWrapper .userAdmin {
+  cursor: 'pointer'; }
 
 /* Blog */
 .blogListWrap {

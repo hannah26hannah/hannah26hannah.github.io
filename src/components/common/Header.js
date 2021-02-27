@@ -17,6 +17,7 @@ import {
   Anchor,
 } from 'grommet';
 import LangSelect from './MultiLang';
+import LoginModal from './LoginModal';
 
 
 const resumeLink = 'https://www.notion.so/Jeongwon-Yoo-72675253e1284032a53a8749a383d31a';
@@ -133,6 +134,7 @@ const SidebarFooter = (props) => {
     <Nav responsive={false}
       direction='column'
     >
+      <LoginModal size={props.size} />
       <LangSelect />
       <Box 
         direction='row' 
@@ -213,17 +215,17 @@ class Header extends Component {
                       </Collapsible>
                   )}
                     {['xsmall', 'small', 'medium'].includes(size) && (
-                        <Button
-                        icon={<Menu />}
+                          <Button
+                          icon={<Menu />}
                             onClick={() => { this.setState({ showSidebar: !this.state.showSidebar})}}
-                        style={{
-                            display: 'block',
-                            position: 'absolute',
-                            top: '15px', 
-                            right: '5%',
-                            zIndex: '2'
-                        }}
-                        />
+                            style={{
+                              display: 'block',
+                              position: 'absolute',
+                              top: '15px', 
+                              right: '5%',
+                              zIndex: '2'
+                            }}
+                          />
                     )}
                 </Box>
                 )}

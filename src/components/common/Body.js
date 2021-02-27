@@ -117,7 +117,7 @@ class Body extends Component {
                             />
                             <Route
                                 path='/blog'
-                                component={() => <Blog multi={t} />} />
+                                component={() => <Blog size={size} multi={t} />} />
                         <ScrollToTop size={ size } />
                     </Main>
                 )}
