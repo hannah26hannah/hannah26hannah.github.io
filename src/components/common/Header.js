@@ -51,6 +51,13 @@ const scrollTo = (param) => {
 
 const MenuNav = (prop) => {
   const t = prop.multi
+  const sideBarCollapse = () => {
+    if (!prop.location) {
+      prop.sendDataToParent();
+    } else {
+      return
+    }
+  }
   
   return (
     <Nav
@@ -60,30 +67,30 @@ const MenuNav = (prop) => {
         <Box className='subAlign'>
           <Anchor id='about-anchor' className='anchorLink' href='#About' label={t('About')} a11ytitle='About' role='tab' onClick={ 
             () => {
-              prop.sendDataToParent()
+              sideBarCollapse();
               scrollTo('#About')
             } } />
           <Anchor id='portfolio-anchor' className='anchorLink' href='#Portfolio' label={t('Portfolio')} a11ytitle='portfolio' role='tab' onClick={ () => {
-            prop.sendDataToParent()
+            sideBarCollapse();
             scrollTo('#Portfolio')
           }} />
           <Anchor id='contact-anchor' className='anchorLink' href='#Contact' label={t('Contact')} a11ytitle='contact' role='tab' onClick={() => {
-            prop.sendDataToParent()
+            sideBarCollapse();
             scrollTo('#Contact')
           }} />
         </Box>
       )}
       {useLocation().pathname !== '/' && (
         <Box className='subAlign'>
-          <Link className='routeLink' to='/' a11ytitle='switch navigation view' role='tab' onClick={() => prop.sendDataToParent() }>
+          <Link className='routeLink' to='/' a11ytitle='switch navigation view' role='tab' onClick={sideBarCollapse}>
           👈 {t('Take me Home')}
           </Link>
         </Box>
       )}
       <Box className='subAlign'>
-        <Anchor id='resume-anchor' className='resumeLink' label={t('Resume')} href={resumeLink} color='moon' target='_blank' a11ytitle='resume' role='tab' onClick={() => prop.sendDataToParent() }
+        <Anchor id='resume-anchor' className='resumeLink' label={t('Resume')} href={resumeLink} color='moon' target='_blank' a11ytitle='resume' role='tab' onClick={sideBarCollapse}
         />
-        <Link id='blog-anchor' className='routeLink' to='blog' a11ytitle='blog' role='tab' onClick={() => prop.sendDataToParent() }>
+        <Link id='blog-anchor' className='routeLink' to='blog' a11ytitle='blog' role='tab' onClick={sideBarCollapse}>
           {t('Blog')}
         </Link>
       </Box>
