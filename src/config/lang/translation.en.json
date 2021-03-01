@@ -23,7 +23,9 @@
     "tech_desc" : "This project is mainly built with React.js. I used grommet, node-sass for styling and various React libraries to experience React eco system. (markdown, i18n..)",
     "koop_desc" : "I re-developed some web components for online store, KoopKorea. I used BigCommerce-Stencil CLI emulator for devleopment, bundling and publishing.",
     "moon_desc" : "Moon-todo is a personal dashboard Web application. Calendar and Chart Report are offered based on simple to do feature. I used Vue.js, Vuex, TypeScript, Chart.js, Tailwinds CSS library, SCSS for this app.",
-    "Admin" : "Admin"
+    "Admin" : "Admin",
+    "enlarge" : "Click To Enlarge Image",
+    "inform_1" : "Scroll Down If close button is not visible"
 
 
 }

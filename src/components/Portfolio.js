@@ -33,6 +33,7 @@ const Tags = (props) => (
 )
 
 const Preview = (props) => {
+    const t = props.multi;
     const [show, setShow] = useState();
     const [yOffSet, setYOffSet] = useState();
 
@@ -88,6 +89,7 @@ const Preview = (props) => {
                     direction='column'
                     flex
                     background='paper'>
+                        <Text size='small' color='dark-4'>{t('inform_1')}</Text>
                         <Image 
                             fit='contain'
                             src={img.src} 
@@ -95,6 +97,7 @@ const Preview = (props) => {
                             key={img.order} 
                             style={{borderRadius: '12px', paddingTop: '1rem'}}
                         />
+                        
                         <Box
                             pad='small'
                             alignSelf='end'
@@ -157,30 +160,36 @@ const LinkList = (props) => (
     </Box>
 )
 
-const WorkSlice = (props) => (
-    props.contents.map(content => (
-        <Box tag='section'
-            border={{ side: 'all', color: 'light-4' }}
-            round={{ size: 'small' }}
-            pad='large'
-            elevation='medium'
-            gap='xxsmall'
-            margin={{ top: 'medium', bottom: 'medium' }}
-            key={content.title}
-        >
-            <Heading level={1} textAlign='start'
-                style={{ margin: 0 }}>{content.title}</Heading>
-        
-            <Text size='medium' margin={{ top: '2rem', bottom: '2rem' }} color='dark-2'>{content.detail}</Text>
-            <Tags tags={content.tags} size={props.size} />
-            <Preview images={content.images} />
-            {content.gif.src !== '' && (
-                <PreviewGif gif={content.gif} />
-            )}
-            <LinkList links={content.links} />
-        </Box>
-    ))
-)
+const WorkSlice = (props) => {
+    const t = props.multi;
+    
+    return (
+        props.contents.map(content => (
+            <Box tag='section'
+                border={{ side: 'all', color: 'light-4' }}
+                round={{ size: 'small' }}
+                pad='large'
+                elevation='medium'
+                gap='xxsmall'
+                margin={{ top: 'medium', bottom: 'medium' }}
+                key={content.title}
+            >
+                <Heading level={1} textAlign='start'
+                    style={{ margin: 0 }}>{content.title}</Heading>
+            
+                <Text size='medium' margin={{ top: '2rem', bottom: '2rem' }} color='dark-2'>{content.detail}</Text>
+                <Tags tags={content.tags} size={props.size} />
+                <Preview images={content.images} multi={t} />
+                {content.gif.src !== '' && (
+                    <PreviewGif gif={content.gif} />
+                )}
+                <Text size='small' color='status-unknown'>{t('enlarge')}</Text> 
+                <LinkList links={content.links} />
+            </Box>
+        ))
+    )
+} 
+
 
 
 class Portfolio extends Component {    

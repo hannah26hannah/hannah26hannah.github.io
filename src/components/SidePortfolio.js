@@ -1,6 +1,7 @@
 import React, { Component, useState } from 'react';
 import sideContents from './sideContents.js';
 import { Box, Image, Heading, Anchor, Text, Layer, Button } from 'grommet';
+import { withTranslation } from 'react-i18next';
 
 function returnYOffset(y) {
     if (window.pageYOffset === 0) {
@@ -8,6 +9,7 @@ function returnYOffset(y) {
     }
 }
 const Preview = (props) => {
+    const t = props.multi;
     const [show, setShow] = useState();
     const [yOffSet, setYOffSet] = useState();
 
@@ -62,6 +64,7 @@ const Preview = (props) => {
                flex
                background='paper'
             >
+                <Text size='small' color='dark-4'>{t('inform_1')}</Text>
                 <Image 
                    fit='contain'
                    src={props.image.src} 
@@ -109,34 +112,38 @@ const LinkList = (props) => {
 }
 
 
-const SideSlice = (props) => (
-    props.contents.map(content => (
-        <Box tag='section'
-            border={{ side: 'all', color: 'light-4'}}
-            round={{ size: 'small'}}
-            pad='large'
-            elevation='medium'
-            gap='xxsmall'
-            margin={{ top: 'medium', bottom: 'medium' }}
-            key={content.title}
-            
-            >
-            <Heading level={3} textAlign='start' 
-            style={{ margin: 0 }}>
-            {content.title} </Heading>
-            
-            <Text size='medium' margin={{ top: '2rem', bottom: '2rem' }} color='dark-2'>{content.detail}</Text>
-            <Preview image={content.image} />
-            <Text size='medium' margin={{ top: '1rem', bottom: '1rem' }} color='dark-2'>{content.tags}</Text>
-            <LinkList links={content.links}/>
-        </Box>
-    ))
-)
+const SideSlice = (props) => {
+    const t = props.multi;
+    return (
+        props.contents.map(content => (
+            <Box tag='section'
+                border={{ side: 'all', color: 'light-4'}}
+                round={{ size: 'small'}}
+                pad='large'
+                elevation='medium'
+                gap='xxsmall'
+                margin={{ top: 'medium', bottom: 'medium' }}
+                key={content.title}
+                
+                >
+                <Heading level={3} textAlign='start' 
+                style={{ margin: 0 }}>
+                {content.title} </Heading>
+                
+                <Text size='medium' margin={{ top: '2rem', bottom: '2rem' }} color='dark-2'>{content.detail}</Text>
+                <Preview image={content.image} multi={t}/>
+                <Text size='small' color='status-unknown'>{t('enlarge')}</Text>
+                <Text size='medium' margin={{ top: '1rem', bottom: '1rem' }} color='dark-2'>{content.tags}</Text>
+                <LinkList links={content.links}/>
+            </Box>
+        ))
+    )
+}
 
     
     
 
-export default class SidePortfolio extends Component {
+class SidePortfolio extends Component {
     constructor(props) { 
         super(props)
         this.state = {
@@ -144,6 +151,7 @@ export default class SidePortfolio extends Component {
         }
     }
     render() {
+        const {t} = this.props
         return (
             <Box 
                 tag='main' 
@@ -152,8 +160,10 @@ export default class SidePortfolio extends Component {
                 align='center'
                 pad={{left: '3vw'}}
             >
-                <SideSlice contents={sideContents} size={ this.state.size } />
+                <SideSlice contents={sideContents} size={ this.state.size } multi={t} />
             </Box>
         )
     }
 }
+
+export default withTranslation()(SidePortfolio)
