@@ -50,7 +50,8 @@ const scrollTo = (param) => {
 }
 
 const MenuNav = (prop) => {
-  const t = prop.multi
+  const t = prop.multi;
+  const size = prop.size;
   const sideBarCollapse = () => {
     if (!prop.location) {
       prop.sendDataToParent();
@@ -93,6 +94,8 @@ const MenuNav = (prop) => {
         <Link id='blog-anchor' className='routeLink' to='blog' a11ytitle='blog' role='tab' onClick={sideBarCollapse}>
           {t('Blog')}
         </Link>
+        <LoginModal size={size} onClick={sideBarCollapse} invokeCollpase={sideBarCollapse} />
+
       </Box>
     </Nav>
   )
@@ -141,7 +144,6 @@ const SidebarFooter = (props) => {
     <Nav responsive={false}
       direction='column'
     >
-      <LoginModal size={props.size} />
       <LangSelect />
       <Box 
         direction='row' 
@@ -216,7 +218,7 @@ class Header extends Component {
                                 }}
                                 size='small'
                             />
-                            <MenuNav multi={t}
+                            <MenuNav multi={t} size={size}
                             sendDataToParent={this.sendDataToParent} aria-labelledby='side-navigation' />
                           </Sidebar>
                       </Collapsible>
