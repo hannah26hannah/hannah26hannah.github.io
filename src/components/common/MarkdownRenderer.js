@@ -81,22 +81,10 @@ export default class MarkdownRenderer extends Component {
     constructor(props) { 
         super(props);
         this.state = {
-            markdown: null,
-            filename: props.fn,
-
+            markdown: props.source,
         }
     }
     
-    
-    async componentDidMount() {
-        const articleId = this.state.filename;
-        const file = await import(`../../pages/blog/posts/${articleId}.md`);
-        const response = await fetch(file.default);
-        const text = await response.text();
-        this.setState({
-            markdown: text
-        })
-    }
     render() { 
         return (
              <>
