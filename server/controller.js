@@ -17,6 +17,19 @@ module.exports = {
                 return res.send(data)
             })
         },
+        getPost: (req, res) => {
+            model.api.getPost( result => {
+                if (result) {
+                    res.send(result);
+                }
+            })
+        },
+        // getPostCnt: (req, res) => {
+        //     model.api.getPostCnt(cnt => {
+        //         const result = { cnt: cnt }
+        //         res.send(result)
+        //     })
+        // },
         sendPw: (req, res) => {
             const body = req.body;
             const hash = hashing.enc(body.name, body.password, salt)

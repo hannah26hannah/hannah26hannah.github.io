@@ -4,8 +4,11 @@ const { Op } = require('sequelize')
 const { Tags } = require('./models');
 sequelize.query('SET tagName utf8;'); 
 
-const { Admin, Posts } = require('./models');
+const { Admin } = require('./models');
 sequelize.query('SET NAME utf8;')
+
+const { Posts } = require('./models');
+sequelize.query('SET TITLE utf8')
 
 
 module.exports = {
@@ -15,6 +18,17 @@ module.exports = {
                 .then(result => { callback(result) })
                 .catch(err => { throw err })
         },
+        getPost : callback => {
+            Posts.findAll()
+                .then(result => { callback(result) })
+                .catch(err => { throw err })
+        },
+        // getPostCnt : callback => {
+        //     Posts.count()
+        //         .then(result => {
+        //             callback(result);
+        //         })
+        // },
         searchInfo: (body, hash, callback) => {
             Admin.findAll({
                 where: { [Op.and] : [{ name : body.name, password: hash }]}
@@ -39,6 +53,7 @@ module.exports = {
             .catch(err => {
                 throw err;
             })
-        }
+        },
+        
     }
 }
