@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   Box,
   Grommet,
@@ -13,26 +13,24 @@ import Body from './components/common/Body.js';
 import Footer from './components/common/Footer.js';
 import theme from './components/common/theme.js'
 
-
-const MainBody = () => (
-  <Body channel={myMedia} />
-)
-
-
 function App() {
   const dispatch = useDispatch();
+  let [currentSize, setCurrentSize] = useState('')
+  
+  useEffect(() => {
+    dispatch(changeSize(currentSize))
+  }, [dispatch, currentSize])
   
   return (  
       <Grommet id='container' theme={theme}>
         <ResponsiveContext.Consumer>{
-          size => { 
-            dispatch(changeSize(size))
+          size => { setCurrentSize(size)
             return (
               <>
                 <Box>
                   <Header channel={myMedia} theme={theme} />
                 </Box>
-                <MainBody />
+                <Body channel={myMedia} />
                 <Footer channel={myMedia} />
               </>
             )
