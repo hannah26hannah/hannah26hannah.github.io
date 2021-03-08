@@ -33,6 +33,9 @@
     "Name" : "이름",
     "Password" : "비밀번호",
     "Submit" : "확인",
-    "Reset" : "다시 쓰기"
-
+    "Reset" : "다시 쓰기",
+    "Tistory Blog Link" : "티스토리 블로그 링크",
+    "Email Link" : "이메일 링크",
+    "LinkedIn Link" : "링크드인 링크",
+    "Github Profile Link" : "깃헙 프로필 링크"
 }

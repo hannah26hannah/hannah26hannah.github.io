@@ -33,7 +33,10 @@
     "Name" : "Name",
     "Password" : "Password",
     "Submit" : "Submit",
-    "Reset" : "Reset"
-
+    "Reset" : "Reset",
+    "Tistory Blog Link" : "Tistory Blog Link",
+    "Email Link" : "Email Link",
+    "LinkedIn Link" : "LinkedIn Link",
+    "Github Profile Link" : "Github Profile Link"
 
 }
