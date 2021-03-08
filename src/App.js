@@ -4,10 +4,9 @@ import {
   Grommet,
   ResponsiveContext
 } from 'grommet';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { changeSize } from './store/actions'
 
-import myMedia from './components/common/social.js';
 import Header from './components/common/Header.js';
 import Body from './components/common/Body.js';
 import Footer from './components/common/Footer.js';
@@ -15,12 +14,13 @@ import theme from './components/common/theme.js'
 
 function App() {
   const dispatch = useDispatch();
+  const channel = useSelector(state => state.channel.channel);
   let [currentSize, setCurrentSize] = useState('')
   
   useEffect(() => {
     dispatch(changeSize(currentSize))
   }, [dispatch, currentSize])
-  
+
   return (  
       <Grommet id='container' theme={theme}>
         <ResponsiveContext.Consumer>{
@@ -28,10 +28,10 @@ function App() {
             return (
               <>
                 <Box>
-                  <Header channel={myMedia} theme={theme} />
+                  <Header theme={theme} />
                 </Box>
-                <Body channel={myMedia} />
-                <Footer channel={myMedia} />
+                <Body channel={channel} />
+                <Footer channel={channel} />
               </>
             )
           } 

@@ -146,7 +146,7 @@ const SidebarFooter = (props) => {
 
 function Header(props) {
   let [showSidebar, setShowSidebar] = useState(false);
-  let [channel] = useState(props.channel);
+  const channel = useSelector(state => state.channel.channel);
   const size = useSelector(state => state.resize.size)
   const {t} = props; // i18n
 

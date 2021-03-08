@@ -4,3 +4,9 @@ export const changeSize = (size) => {
         size: size
     }
 }
+
+export const getChannel = () => {
+    return {
+        type: 'GET_CHANNEL'
+    }
+}
