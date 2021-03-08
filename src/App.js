@@ -4,7 +4,7 @@ import {
   Grommet,
   ResponsiveContext
 } from 'grommet';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { changeSize } from './store/actions'
 
 import Header from './components/common/Header.js';
@@ -14,7 +14,6 @@ import theme from './components/common/theme.js'
 
 function App() {
   const dispatch = useDispatch();
-  const channel = useSelector(state => state.channel.channel);
   let [currentSize, setCurrentSize] = useState('')
   
   useEffect(() => {
@@ -30,8 +29,8 @@ function App() {
                 <Box>
                   <Header theme={theme} />
                 </Box>
-                <Body channel={channel} />
-                <Footer channel={channel} />
+                <Body />
+                <Footer />
               </>
             )
           } 

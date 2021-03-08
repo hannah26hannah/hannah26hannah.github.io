@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import { Tabs, Tab, Box } from 'grommet';
 import { Route, withRouter } from 'react-router-dom';
 import BlogPostList from './common/BlogPostList.js';
@@ -23,7 +23,8 @@ const adminTabNames = [
     { title: 'Write' }
 ]
 
-
+// TODO: BLog => function 
+// TODO: isLogin -> reduxpattern
 
 class Blog extends Component { 
     constructor(props) { 

@@ -14,7 +14,7 @@ const Notification = (props) => {
             onOpen();
             setStatus(props.barStatus);
         }
-    })
+    }, [setOpen, setStatus, props])
     
 
     const onOpen = () => {

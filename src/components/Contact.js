@@ -1,11 +1,15 @@
 import { Box, List, Text, Anchor } from 'grommet';
-import React, { Component } from 'react';
+import React from 'react';
+import { useSelector } from 'react-redux'
+import { withTranslation } from 'react-i18next';
 
-const ContactList = (props) => {
-    
+function Contact (props) {
+    const channel = useSelector(state => state.channel.channel);
+    const {t} = props
+
     return (
         <List
-            data={props.channel}
+            data={channel}
             pad='small'
             border={false}
             direction='column'
@@ -13,41 +17,29 @@ const ContactList = (props) => {
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'start'
-            }}
-        >
+            }}>
             {datum => (
-                <Box direction='row-responsive' flex gap='medium' alignSelf='center' size='medium' align='center' justify='around' pad='small'>
-                    <Anchor icon={datum.icon} href={datum.href} a11yTitle={datum.a11yTitle} key={datum.name} size='small'
-                        style={{
-                            backgroundColor: 'orange',
-                            width: '3rem',
-                            height: '3rem',
-                            borderRadius: '1rem',
-                            fontSize: '2rem'
-                    }}/>
-                        <Text weight='normal' size='medium'>
-                            {datum.a11yTitle}
-                        </Text>
-               </Box>
-            )}
+            <Box 
+                direction='row-responsive' flex gap='medium' alignSelf='center' size='medium' align='center' justify='around' pad='small'>
+                <Anchor 
+                    icon={datum.icon} 
+                    href={datum.href} 
+                    a11yTitle={t(datum.a11yTitle)} 
+                    key={datum.name} size='small'
+                    style={{
+                        backgroundColor: 'orange',
+                        width: '3rem',
+                        height: '3rem',
+                        borderRadius: '1rem',
+                        fontSize: '2rem'
+                        }}
+                />
+                <Text weight='normal' size='medium'>
+                    {t(datum.a11yTitle)}
+                </Text>
+            </Box>)}
         </List>
     )
 }
 
-export default class Contact extends Component {
-    constructor(props) { 
-        super(props);
-        this.state = {
-            channel: props.channel,
-        }
-    }
-    render() {
-        const t = this.props.multi
-        return (
-            <ContactList 
-                channel={ this.state.channel } 
-                multi={t}
-            />
-        )
-    }
-}
+export default withTranslation()(Contact);

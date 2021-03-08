@@ -1,7 +1,6 @@
 import { Heading, Text } from 'grommet';
 import profile from '../assets/images/memoji.jpg';
 import profile2 from '../assets/images/memoji_2.jpg';
-// import profile3 from '../assets/images/rizard.png';
 import { Trans } from 'react-i18next';
 
 const TitleContent1 = () => (
