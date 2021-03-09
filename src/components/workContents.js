@@ -1,5 +1,3 @@
-// import moon1 from '../assets/images/moon_1.png';
-import moon from '../assets/images/moon_mob_pad.png';
 import koopkorea from '../assets/images/koopkorea_b_m.png';
 import port_preview from '../assets/images/portfolio_b_m.png';
 import { CirclePlay, Console, Archive } from 'grommet-icons';
@@ -17,14 +15,7 @@ const workContents = [
             'React.js', 'Grommet', 'Responsive', 'Markdown'
         ],
         detail: <Trans>tech_desc</Trans>,
-        images: [
-            {
-                order: 1,
-                alt: 'browser window preview',
-                src: port_preview
-            }
-        ],
-        gif: {alt: 'preview gif', src: ''},
+        image: {alt: 'preview image', src: port_preview},
         links: [
             {title: 'Demo', href: BASE_DEMO, icon: <CirclePlay color='black' />},
             {title: 'Work Log', href: `${BASE_BLOG}techBlog`, icon: <Archive color='black' />},
@@ -34,41 +25,11 @@ const workContents = [
     {
         title: 'KoopKorea Online Store Front',
         year: '2020',
-        tags: [
-            'Stencil CLI', 'jQuery', 'scss', 'Handlebar.js'
-        ],
+        tags: ['Stencil CLI', 'jQuery', 'scss', 'Handlebar.js'],
         detail: <Trans>koop_desc</Trans>,
-        images: [
-            {
-                order: 1,
-                alt: 'browser window preview',
-                src: koopkorea
-            }
-        ],
-        gif: {alt: 'preview gif', src: ''},
+        image: {alt: 'preview image',src: koopkorea},
         links: [
             {title: 'Website', href: 'https://koopkorea.nl/', icon: <CirclePlay color='black' />},
-        ]
-    },
-    {
-        title: 'Moon-todo',
-        year: '2021',
-        tags: [
-            'Vue.js', 'Tailwinds', 'TypeScript', 'Chart.js'
-        ],
-        detail: <Trans>moon_desc</Trans>,
-        images: [
-            {
-                order: 1,
-                alt: 'preview image',
-                src: moon
-            }
-        ],
-        gif: {alt: 'preview gif', src: ''},
-        links: [
-            {title: 'Demo', href: `${BASE_DEMO}vuejs-todolist-2.0`, icon: <CirclePlay color='black' />},
-            {title: 'Work Log', href: `${BASE_BLOG}todolist`, icon: <Archive color='black' />},
-            {title: 'Github Source Code', href: `${BASE_REPO}vuejs-todolist-2.0`, icon: <Console color='black' />}
         ]
     }
 ]

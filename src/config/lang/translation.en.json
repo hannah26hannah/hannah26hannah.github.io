@@ -11,6 +11,7 @@
     "title_3" : "<br />A Junior Developer",
     "intro" : "Hi! I'm Jeongwon, a junior front-end developer seeking for the job opportunity in Seoul, South Korea. <br /><br />I enjoy almost all kinds of media contents, but love to think of experience and technology behind them more. I can be the bridge between them with my skill and insight.",
     "main_intro" : "who loves to learn modern technology to solve problem in real world. Welcome to my portfolio web site!",
+    "linkToPortfolio" : "👇 Link To Portfolio",
     "Featured" : "Featured Works",
     "portfolio_desc" : "My goal as a developer is to make well-functioning web products as well as to give pleasant experience to users. Here are my main projects to achieve this goal:",
     "Side" : "Side Projects",
@@ -37,6 +38,7 @@
     "Tistory Blog Link" : "Tistory Blog Link",
     "Email Link" : "Email Link",
     "LinkedIn Link" : "LinkedIn Link",
-    "Github Profile Link" : "Github Profile Link"
+    "Github Profile Link" : "Github Profile Link",
+    "preview image" : "preview image"
 
 }
