@@ -15,6 +15,7 @@ function Contact (props) {
                 {channels.map(channel => (
                 <Box flex  justify='center' align='center' gap='medium' key={channel.name}>
                     <Anchor 
+                        target='_blank'
                         icon={channel.icon}
                         href={channel.href} 
                         a11yTitle={t(channel.a11yTitle)} 
