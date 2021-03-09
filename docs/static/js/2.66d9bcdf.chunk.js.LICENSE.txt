@@ -4,21 +4,7 @@ object-assign
 @license MIT
 */
 
-/*!
- * Determine if an object is a Buffer
- *
- * @author   Feross Aboukhadijeh <https://feross.org>
- * @license  MIT
- */
-
-/**
- * Prism: Lightweight, robust, elegant syntax highlighting
- *
- * @license MIT <https://opensource.org/licenses/MIT>
- * @author Lea Verou <https://lea.verou.me>
- * @namespace
- * @public
- */
+/*! https://mths.be/punycode v1.4.1 by @mathias */
 
 /** @license React v0.20.1
  * scheduler.production.min.js
