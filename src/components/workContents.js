@@ -10,10 +10,6 @@ const BASE_BLOG = 'https://uiyoji-journal.tistory.com/tag/';
 const workContents = [
     {
         title: 'Tech Portfolio Blog',
-        year: '2021',
-        tags: [
-            'React.js', 'Grommet', 'Responsive', 'Markdown'
-        ],
         detail: <Trans>tech_desc</Trans>,
         image: {alt: 'preview image', src: port_preview},
         links: [
@@ -24,8 +20,6 @@ const workContents = [
     },
     {
         title: 'KoopKorea Online Store Front',
-        year: '2020',
-        tags: ['Stencil CLI', 'jQuery', 'scss', 'Handlebar.js'],
         detail: <Trans>koop_desc</Trans>,
         image: {alt: 'preview image',src: koopkorea},
         links: [

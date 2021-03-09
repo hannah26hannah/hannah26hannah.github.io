@@ -12,9 +12,6 @@ const BASE_BLOG = 'https://uiyoji-journal.tistory.com/tag/';
 const sideContents = [
     {
         title: 'Moon-todo',
-        tags: [
-            'Vue.js', 'Tailwinds', 'TypeScript', 'Chart.js'
-        ],
         detail: <Trans>moon_desc</Trans>,
         image: {alt: 'preview image', src: moon},
         links: [
@@ -25,7 +22,6 @@ const sideContents = [
     },
     {
         title: 'Meditation App',
-        tags: 'HTML5, CSS3, JavaScript, WebPack',
         detail: <Trans>medi_desc</Trans>,
         image: {alt: 'preview image', src: meditation},
         links: [
@@ -36,7 +32,6 @@ const sideContents = [
     },
     {
         title: 'Weather App', 
-        tags: 'HTML5, CSS3, JavaScript, Open API',
         detail: <Trans>weather_desc</Trans>,
         image: {alt: 'preview image', src: weather},
         links: [
@@ -47,7 +42,6 @@ const sideContents = [
     },
     {
         title: 'Kakao Talk Clone', 
-        tags: 'HTML5, CSS3, JavaScript',
         detail: <Trans>kakao_desc</Trans>,
         image: {alt: 'preview image', src: kakao},
         links: [

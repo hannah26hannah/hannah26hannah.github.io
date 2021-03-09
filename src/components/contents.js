@@ -49,8 +49,7 @@ const LinkToPortfolio = () => {
                 onClick={e => scrollTo(e, "#Portfolio")}>
                 <Anchor
                     style={{textDecoration: 'none'}}
-                    href='#Portfolio'
-                    a11yTitle={<Trans>intro</Trans>}>
+                    href='#Portfolio'>
                         <Trans>linkToPortfolio</Trans>
                 </Anchor>
             </Button>

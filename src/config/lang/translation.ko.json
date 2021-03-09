@@ -31,6 +31,7 @@
     "Write_Post" : "포스트 쓰기",
     "enlarge" : "이미지를 누르면 확대됩니다.",
     "inform_1" : "Close 버튼이 안 보이면 스크롤해주세요.",
+    "inform_2" : "태그를 누르면 Github에서 관련 프로젝트로 이동합니다.",
     "Name" : "이름",
     "Password" : "비밀번호",
     "Submit" : "확인",
