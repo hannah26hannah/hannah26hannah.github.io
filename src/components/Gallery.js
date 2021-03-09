@@ -54,7 +54,7 @@ function Gallery (props) {
     return (
     <Grommet theme={theme}>
         <Box>
-            <Grid columns={size === 'xsmall' ? ['100%'] : ['1/2', '1/2']} gap='small'>
+            <Grid columns={['xsmall', 'small'].includes(size) ? ['100%'] : ['1/2', '1/2']} gap='small'>
                 {isFeatured(subject).map((content, index) => (
                     <Card key={index} pad='small' gap='small' flex direction='column' justify='between' width='100%'
                     onClick={() => {
