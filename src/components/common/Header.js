@@ -17,7 +17,7 @@ import {
   Anchor,
 } from 'grommet';
 import LangSelect from './MultiLang';
-import LoginModal from './LoginModal';
+// import LoginModal from './LoginModal';
 
 const RESUME_LINK = 'https://www.notion.so/Jeongwon-Yoo-72675253e1284032a53a8749a383d31a';
 
@@ -43,13 +43,13 @@ const LinkToHome = (prop) => {
   )
 }
 
-const scrollTo = (param) => { 
+const scrollTo = (e, param) => {
+  e.preventDefault();
   document.querySelector(param).scrollIntoView({ behavior: 'smooth', block: 'start' })
 }
 
 const MenuNav = (prop) => {
   const t = prop.multi;
-  const size = prop.size;
   const sideBarCollapse = () => {
     if (!prop.location) {
       prop.sendDataToParent();
@@ -65,17 +65,16 @@ const MenuNav = (prop) => {
       {useLocation().pathname === '/' ?
         <Box className='subAlign'>
           <Anchor id='about-anchor' className='anchorLink' href='#About' label={t('About')} a11ytitle='About' role='tab' onClick={ 
-            () => {
+            e => {
               sideBarCollapse();
-              scrollTo('#About')
+              scrollTo(e, '#About')
             } } />
-          <Anchor id='portfolio-anchor' className='anchorLink' href='#Portfolio' label={t('Portfolio')} a11ytitle='portfolio' role='tab' onClick={ () => {
+          <Anchor id='portfolio-anchor' className='anchorLink' href='#Portfolio' label={t('Portfolio')} a11ytitle='portfolio' role='tab' onClick={e => {
             sideBarCollapse();
-            scrollTo('#Portfolio')
+            scrollTo(e, '#Portfolio')
           }} />
-          <Anchor id='contact-anchor' className='anchorLink' href='#Contact' label={t('Contact')} a11ytitle='contact' role='tab' onClick={() => {
-            sideBarCollapse();
-            scrollTo('#Contact')
+          <Anchor id='contact-anchor' className='anchorLink' href='#Contact' label={t('Contact')} a11ytitle='contact' role='tab' onClick={e => {sideBarCollapse();
+            scrollTo(e, '#Contact')
           }} />
         </Box> :
         <Box className='subAlign'>
@@ -87,8 +86,8 @@ const MenuNav = (prop) => {
 
       <Box className='subAlign'>
         <Anchor id='resume-anchor' className='resumeLink' label={t('Resume')} href={RESUME_LINK} color='moon' target='_blank' a11ytitle='resume' role='tab' onClick={sideBarCollapse}/>
-        <Link id='blog-anchor' className='routeLink' to='blog' a11ytitle='blog' role='tab' onClick={sideBarCollapse}>{t('Blog')}</Link>
-        <LoginModal size={size} onClick={sideBarCollapse} invokeCollpase={sideBarCollapse} />
+        {/* <Link id='blog-anchor' className='routeLink' to='blog' a11ytitle='blog' role='tab' onClick={sideBarCollapse}>{t('Blog')}</Link> */}
+        {/* <LoginModal size={size} onClick={sideBarCollapse} invokeCollpase={sideBarCollapse} /> */}
       </Box>
     </Nav>
   )

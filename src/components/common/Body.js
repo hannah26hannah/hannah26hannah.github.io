@@ -5,11 +5,12 @@ import { Main, Box, Heading, Text } from 'grommet';
 import contents from '../contents';
 import Contact from '../Contact.js'
 import ScrollToTop from '../ScrollToTop.js';
-import Portfolio from '../Portfolio.js'
-import SidePortfolio from '../SidePortfolio.js'
+// import Portfolio from '../Portfolio.js'
+// import SidePortfolio from '../SidePortfolio.js'
 import Blog from '../Blog.js';
 import LangSelect from './MultiLang';
 import { useSelector } from 'react-redux'
+import Gallery from '../Gallery';
 
 
 const MainSection = (props) => {
@@ -24,10 +25,12 @@ const MainSection = (props) => {
                 direction='row-responsive' flex justify='around' align='center'
                 pad={{ top: 'large', bottom: 'large' }}
                 key={content.order}
-                margin={{ top: '2rem', bottom: '3rem' }}
+                margin={{ top: '3rem', bottom: '3rem' }}
                 border={{ side: 'bottom', color: 'dark-2'}}>
                 {content.order === 1 && (
-                    <Box className='selectWrapper'><LangSelect /></Box>)}
+                    <Box className='selectWrapper'>
+                        <LangSelect />
+                    </Box>)}
                 {content.image && (
                     <Box
                         tag='article'
@@ -46,18 +49,23 @@ const MainSection = (props) => {
                     )}
                 {content.titleComponent}
                 
-                <Text size='large' margin={{ top: '2rem', bottom: '4rem' }} color='dark-2'>
+                <Text size='large' margin={{ top: '2rem', bottom: '2rem' }} color='dark-2'>
                     {content.contents}
                 </Text>
-
+                
+                {content.button}
+                
                 {content.contentsComponent}
 
+                
                 {content.order === 3 && (
-                    <Portfolio />
+                    // <Portfolio />
+                    <Gallery subject='featured'/>
                 )}
                 
                 {content.order === 4 && (
-                    <SidePortfolio />
+                    // <SidePortfolio />
+                    <Gallery subject='side' />
                 )}
                 {content.order === 6 && (
                     <Contact />
