@@ -5,6 +5,7 @@ import workContents from './workContents.js';
 import sideContents from './sideContents.js';
 import { withTranslation } from 'react-i18next';
 import { Close } from 'grommet-icons';
+import { useSelector } from 'react-redux';
 
 
 
@@ -45,7 +46,7 @@ function Gallery (props) {
     const isFeatured = (subject) => {
         return subject === 'featured' ? workContents : sideContents
     }
-
+    const size = useSelector(state => state.resize.size);
     const [show, setShow] = useState();
     const [yOffSet, setYOffSet] = useState();
     const [selected, setSelected] = useState();
@@ -53,9 +54,9 @@ function Gallery (props) {
     return (
     <Grommet theme={theme}>
         <Box>
-            <Grid columns={['1/2', '1/2']} gap='small'>
+            <Grid columns={size === 'xsmall' ? ['100%'] : ['1/2', '1/2']} gap='small'>
                 {isFeatured(subject).map((content, index) => (
-                    <Card key={index} pad='small' gap='medium' flex direction='column' justify='between'
+                    <Card key={index} pad='small' gap='small' flex direction='column' justify='between' width='100%'
                     onClick={() => {
                         setSelected(content);
                         setYOffSet(window.pageYOffset);
@@ -64,7 +65,7 @@ function Gallery (props) {
                         <Image src={content.image.src} alt={t(content.image.alt)} style={{
                             flexShrink: '0',
                             maxWidth: '100%',
-                            maxHeight: '100%',
+                            // maxHeight: '100%',
                             borderRadius: '12px'
                         }}
                         />
@@ -77,6 +78,7 @@ function Gallery (props) {
                 position='center'
                 overflow='auto'
                 margin={'xlarge'}
+                padding='large'
                 onEsc={() => {setShow(false); returnYOffset(yOffSet)}}
                 onClickOutside={() => { setShow(false); returnYOffset(yOffSet)}}
                 background='paper'
@@ -84,6 +86,7 @@ function Gallery (props) {
                 <Box overflow='auto' flex direction='column' align='center' gap='small'
                 style={{paddingBottom: '3rem'}}
                 pad={{left: 'small', right: 'small', top: 'small', bottom: 'small'}}
+                margin={{bottom: 'medium'}}
                 >
 
                     <Button
@@ -94,7 +97,7 @@ function Gallery (props) {
                     <Heading level={2} textAlign='center'>{selected.title}</Heading>
                 
                     <Box tag='main' pad={{left: 'medium', right: 'medium', bottom: 'medium'}} gap='small'>
-                        <Box style={{
+                        {/* <Box style={{
                             width: '90vw',
                             height: 'auto'
                         }}>
@@ -103,7 +106,7 @@ function Gallery (props) {
                             src={selected.image.src} 
                             alt={selected.image.alt}
                             style={{borderRadius: '12px', paddingTop: '1rem'}} />
-                        </Box>
+                        </Box> */}
                         <Text 
                             size='medium' 
                             margin={{ top: '2rem', bottom: '1rem' }} 

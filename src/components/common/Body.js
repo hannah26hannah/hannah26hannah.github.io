@@ -5,8 +5,6 @@ import { Main, Box, Heading, Text } from 'grommet';
 import contents from '../contents';
 import Contact from '../Contact.js'
 import ScrollToTop from '../ScrollToTop.js';
-// import Portfolio from '../Portfolio.js'
-// import SidePortfolio from '../SidePortfolio.js'
 import Blog from '../Blog.js';
 import LangSelect from './MultiLang';
 import { useSelector } from 'react-redux'
@@ -25,7 +23,6 @@ const MainSection = (props) => {
                 direction='row-responsive' flex justify='around' align='center'
                 pad={{ top: 'large', bottom: 'large' }}
                 key={content.order}
-                margin={{ top: '3rem', bottom: '3rem' }}
                 border={{ side: 'bottom', color: 'dark-2'}}>
                 {content.order === 1 && (
                     <Box className='selectWrapper'>
@@ -57,14 +54,11 @@ const MainSection = (props) => {
                 
                 {content.contentsComponent}
 
-                
                 {content.order === 3 && (
-                    // <Portfolio />
                     <Gallery subject='featured'/>
                 )}
                 
                 {content.order === 4 && (
-                    // <SidePortfolio />
                     <Gallery subject='side' />
                 )}
                 {content.order === 6 && (
