@@ -3,16 +3,7 @@
 ## Process log
 - Set up for development
 - Set up for UI library, grommet
-- Merged with master branch with second branch
-- Integrated markdown editor in React app (Blog)
-- add Blog Write Page & markdown editor
-    - TODO: handling snackbar notification for login & editor
-    - TODO: multiple selection for tagMap
-- Activate AWS RDS for mySQL
-- Set up for admin login
 - Add multi language (`i18n`)
-- TODO: Accessibility
-- Authentification/React-Router Redirection
 
 ## Blog Posts
 - [[React.js로 만드는 Tech Blog] #1 Figma 프로토타이핑/개발환경 세팅/Grommet UI Library/useState/Responsive Header 만들기](https://uiyoji-journal.tistory.com/62?category=928261)
@@ -24,6 +15,4 @@
 
 ## Dev Stacks
 - React.js
-- Node.js(Express)
-- Grommet, Sass (UI/UX)
-- AWS RDS MySQL
+- Grommet, Sass
