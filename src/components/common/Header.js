@@ -17,11 +17,10 @@ import {
   Anchor,
 } from 'grommet';
 import LangSelect from './MultiLang';
-// import LoginModal from './LoginModal';
 
 const RESUME_LINK = 'https://www.notion.so/Jeongwon-Yoo-72675253e1284032a53a8749a383d31a';
 
-const AppBar = (props) => ( 
+const AppBar = (props) => (
   <Box
     tag='header'
     direction='row'
@@ -29,16 +28,16 @@ const AppBar = (props) => (
     justify='between'
     pad={{ left: 'medium', right: 'medium', vertical: 'small' }}
     elevation='medium'
-    style={{ zIndex: '1'}}
+    style={{ zIndex: '1' }}
     {...props}
   />
 )
 const LinkToHome = (prop) => {
   return (
     <Heading level='3' margin='none'>
-      {prop.size === 'xsmall' ? 
-      <img src={logoMobile} className='mobile-App-logo' alt='logo' /> : 
-      <img src={logo} className='App-logo' alt='logo' />}
+      {prop.size === 'xsmall' ?
+        <img src={logoMobile} className='mobile-App-logo' alt='logo' /> :
+        <img src={logo} className='App-logo' alt='logo' />}
     </Heading>
   )
 }
@@ -57,51 +56,40 @@ const MenuNav = (prop) => {
       return
     }
   }
-  
+
   return (
     <Nav
       className={'commonAlign' + (prop.location === 'header' ? ' headerAlign' : ' sideAlign')}
-      >
-      {useLocation().pathname === '/' ?
-        <Box className='subAlign'>
-          <Anchor id='about-anchor' className='anchorLink' href='#About' label={t('About')} a11ytitle='About' role='tab' onClick={ 
-            e => {
-              sideBarCollapse();
-              scrollTo(e, '#About')
-            } } />
-          <Anchor id='portfolio-anchor' className='anchorLink' href='#Portfolio' label={t('Portfolio')} a11ytitle='portfolio' role='tab' onClick={e => {
-            sideBarCollapse();
-            scrollTo(e, '#Portfolio')
-          }} />
-          <Anchor id='contact-anchor' className='anchorLink' href='#Contact' label={t('Contact')} a11ytitle='contact' role='tab' onClick={e => {sideBarCollapse();
-            scrollTo(e, '#Contact')
-          }} />
-        </Box> :
-        <Box className='subAlign'>
-          <Link className='routeLink' to='/' a11ytitle='switch navigation view' role='tab' onClick={sideBarCollapse}>
-          👈 {t('Take me Home')}
-          </Link>
-        </Box>
-      }
-
+    >
       <Box className='subAlign'>
-        <Anchor id='resume-anchor' className='resumeLink' label={t('Resume')} href={RESUME_LINK} color='moon' target='_blank' a11ytitle='resume' role='tab' onClick={sideBarCollapse}/>
-        {/* <Link id='blog-anchor' className='routeLink' to='blog' a11ytitle='blog' role='tab' onClick={sideBarCollapse}>{t('Blog')}</Link> */}
-        {/* <LoginModal size={size} onClick={sideBarCollapse} invokeCollpase={sideBarCollapse} /> */}
+        <Anchor id='about-anchor' className='anchorLink' href='#About' label={t('About')} a11ytitle='About' role='tab' onClick={
+          e => {
+            sideBarCollapse();
+            scrollTo(e, '#About')
+          }} />
+        <Anchor id='portfolio-anchor' className='anchorLink' href='#Portfolio' label={t('Portfolio')} a11ytitle='portfolio' role='tab' onClick={e => {
+          sideBarCollapse();
+          scrollTo(e, '#Portfolio')
+        }} />
+        <Anchor id='contact-anchor' className='anchorLink' href='#Contact' label={t('Contact')} a11ytitle='contact' role='tab' onClick={e => {
+          sideBarCollapse();
+          scrollTo(e, '#Contact')
+        }} />
+        <Anchor id='resume-anchor' className='resumeLink' label={t('Resume')} href={RESUME_LINK} color='moon' target='_blank' a11ytitle='resume' role='tab' onClick={sideBarCollapse} />
       </Box>
     </Nav>
   )
 }
 
-const SidebarButton = ({label, href, ...rest}) => (
+const SidebarButton = ({ label, href, ...rest }) => (
   <Box pad='small'>
     <Button
       role='tab'
-      id={label+'-anchor'}
+      id={label + '-anchor'}
       alignSelf='start'
       plain
       label={label}
-      href={ href }
+      href={href}
       {...rest}
     />
   </Box>
@@ -114,14 +102,14 @@ const SidebarHeader = (prop) => (
     direction='row'
     margin={{ bottom: 'large' }}>
     <Stack
-      alignSelf='start' 
+      alignSelf='start'
       align='center'
       anchor='top-right'
     >
-    {['xsmall'].includes(prop.size) ?
-      <img src={logoMobile} className='mobile-App-logo' alt='logo' /> :
-      <img src={logo} className='App-logo' alt='logo' />
-    }  
+      {['xsmall'].includes(prop.size) ?
+        <img src={logoMobile} className='mobile-App-logo' alt='logo' /> :
+        <img src={logo} className='App-logo' alt='logo' />
+      }
     </Stack>
   </Box>
 )
@@ -132,11 +120,11 @@ const SidebarFooter = (props) => {
       direction='column'
     >
       <LangSelect />
-      <Box 
-        direction='row' 
+      <Box
+        direction='row'
         alignSelf='end'>
         {props.channel.map(my => (
-          <SidebarButton icon={my.icon} href={my.href} a11ytitle={ my.a11yTitle } name={my.name} key={my.name} color='black'/>
+          <SidebarButton icon={my.icon} href={my.href} a11ytitle={my.a11yTitle} name={my.name} key={my.name} color='black' />
         ))}
       </Box>
     </Nav>
@@ -147,69 +135,71 @@ function Header(props) {
   let [showSidebar, setShowSidebar] = useState(false);
   const channel = useSelector(state => state.channel.channel);
   const size = useSelector(state => state.resize.size)
-  const {t} = props; // i18n
+  const { t } = props; // i18n
 
   const handleSidebar = () => {
     setShowSidebar(!showSidebar)
   }
-  
+
   return (
     <Box fill>
       <AppBar>
         <Link to='/'>
-          <LinkToHome size={size}/>
-        </Link>  
+          <LinkToHome size={size} />
+        </Link>
         {['large'].includes(size) && (<MenuNav multi={t} location='header' size={size} aria-labelledby='global-navigation' />)}
       </AppBar>
-                
+
       {!['large'].includes(size) && (
         <>
-        <Collapsible
-          direction='horizontal'
-          open={showSidebar}
-          style={{ height: '100vh' }}>
-          <Sidebar
-            responsive={false}
-            width='medium'
-            background='orange'
-            header={<SidebarHeader size={size} />}
-            footer={<SidebarFooter channel={channel} />}
-            pad={{ left: 'small', right: 'medium', vertical: 'small' }}
-            elevation='small'
-            style={{
+          <Collapsible
+            direction='horizontal'
+            open={showSidebar}
+            style={{ height: '100vh' }}>
+            <Sidebar
+              responsive={false}
+              width='medium'
+              background='orange'
+              header={<SidebarHeader size={size} />}
+              footer={<SidebarFooter channel={channel} />}
+              pad={{ left: 'small', right: 'medium', vertical: 'small' }}
+              elevation='small'
+              style={{
                 position: 'absolute',
                 top: '0px',
-                zIndex: '3'}}>
-            <Button
-              plain primary
-              icon={<FormClose />}
-              onClick={handleSidebar}
-              style={{
+                zIndex: '3'
+              }}>
+              <Button
+                plain primary
+                icon={<FormClose />}
+                onClick={handleSidebar}
+                style={{
                   display: 'block',
                   position: 'absolute',
-                  top: '17px', 
+                  top: '17px',
                   right: '5%',
                   zIndex: '3',
                   background: '#57816D',
                   margin: '12px'
-              }}
-              size='small'/>
+                }}
+                size='small' />
               <MenuNav multi={t} size={size}
-              sendDataToParent={handleSidebar} aria-labelledby='side-navigation' />
-          </Sidebar>
-        </Collapsible>
-        <Button
-        icon={<Menu />}
-          onClick={handleSidebar}
-          style={{
-            display: 'block',
-            position: 'absolute',
-            top: '15px', 
-            right: '5%',
-            zIndex: '2'}}/>
+                sendDataToParent={handleSidebar} aria-labelledby='side-navigation' />
+            </Sidebar>
+          </Collapsible>
+          <Button
+            icon={<Menu />}
+            onClick={handleSidebar}
+            style={{
+              display: 'block',
+              position: 'absolute',
+              top: '15px',
+              right: '5%',
+              zIndex: '2'
+            }} />
         </>
-        )}
-       
+      )}
+
     </Box>
   )
 }
